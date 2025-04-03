@@ -11,6 +11,10 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
         // Dictionary lưu các Form đã tạo để dùng lại
         private Dictionary<string, Form> openForms = new Dictionary<string, Form>();
 
+
+        // Định nghĩa sự kiện để gọi từ frmHome
+        public event Action<string> OnChildFormRequested;
+
         public frmMenu()
         {
             InitializeComponent();
@@ -24,14 +28,63 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
             UIHelper.SetSelectedButton(btnHome);
 
             
-            // Mở mặc định trang Home
-            OpenChildForm("frmHome");
+            
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
             // Load trước các Form con
             LoadAllChildForms();
+            // Mở mặc định trang Home
+            OpenChildForm("frmHome");
+
+            //// Khi `frmHome` muốn mở form khác, nó sẽ gọi sự kiện này
+            //if (openForms["frmHome"] is frmHome homeForm)
+            //{
+            //    homeForm.RequestFormChange += (formName) => OnChildFormRequested?.Invoke(formName);
+            //}
+
+            // Kết nối sự kiện từ frmHome
+            if (openForms["frmHome"] is frmHome homeForm)
+            {
+                homeForm.RequestFormChange += (formName) =>
+                {
+                    OpenChildForm(formName);
+                    // Cập nhật nút được chọn khi mở form mới
+                    UpdateSelectedButton(formName);
+                };
+            }
+
+        }
+
+        // Hàm để cập nhật nút được chọn
+        private void UpdateSelectedButton(string formName)
+        {
+            // Gọi UIHelper.SetSelectedButton với nút tương ứng
+            switch (formName)
+            {
+                case "frmHome":
+                    UIHelper.SetSelectedButton(btnHome);
+                    break;
+                case "frmCustomer":
+                    UIHelper.SetSelectedButton(btnCustomer);
+                    break;
+                case "frmProduct":
+                    UIHelper.SetSelectedButton(btnProduct);
+                    break;
+                case "frmSupplier":
+                    UIHelper.SetSelectedButton(btnSuppiler);
+                    break;
+                case "frmInvoices":
+                    UIHelper.SetSelectedButton(btnInvoices);
+                    break;
+                case "frmThongKe":
+                    UIHelper.SetSelectedButton(btnStonk);
+                    break;
+                default:
+                    // Mặc định nếu formName không hợp lệ
+                    break;
+            }
         }
 
         private void LoadAllChildForms()
@@ -126,7 +179,5 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
         {
             UIHelper.HandleLogout(this);
         }
-
-        
     }
 }

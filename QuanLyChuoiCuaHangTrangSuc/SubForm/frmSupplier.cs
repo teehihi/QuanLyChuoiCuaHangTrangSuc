@@ -19,17 +19,17 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void frmSupplier_Load(object sender, EventArgs e)
         {
-            UIHelper.InitializeUI(panelLeft, btnHome, btnCustomer, btnInvoices,
-                         btnProduct, btnStonk, btnSuppiler, sephLine,
-                         btnNotification, btnSetting, topSeph);
+            //UIHelper.InitializeUI(panelLeft, btnHome, btnCustomer, btnInvoices,
+            //             btnProduct, btnStonk, btnSuppiler, sephLine,
+            //             btnNotification, btnSetting, topSeph);
 
         }
 
-        private void picMenu_Click(object sender, EventArgs e)
-        {
-            UIHelper.TogglePannelVisibility(panelLeft, lblAdmin, picLogo, picMenu, btnHome, btnCustomer,
-                btnProduct, btnInvoices, btnStonk, sephLine, btnNotification, btnSetting, topSeph, btnSuppiler);
-        }
+        //private void picMenu_Click(object sender, EventArgs e)
+        //{
+        //    UIHelper.TogglePannelVisibility(panelLeft, lblAdmin, picLogo, picMenu, btnHome, btnCustomer,
+        //        btnProduct, btnInvoices, btnStonk, sephLine, btnNotification, btnSetting, topSeph, btnSuppiler);
+        //}
 
         private void lblLogOut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

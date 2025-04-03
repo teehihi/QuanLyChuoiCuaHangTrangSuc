@@ -90,8 +90,8 @@ namespace QuanLyChuoiCuaHangTrangSuc
         }
 
 
-        // Chuyển đổi Form
-        public static void SwitchForm(Form currentForm, Form newForm)
+            // Chuyển đổi Form
+            public static void SwitchForm(Form currentForm, Form newForm)
         {
             currentForm.BeginInvoke(new Action(() =>
             {

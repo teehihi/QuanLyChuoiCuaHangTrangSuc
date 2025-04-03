@@ -12,6 +12,10 @@ namespace QuanLyChuoiCuaHangTrangSuc
 {
     public partial class frmHome : Form
     {
+
+        // Sự kiện để yêu cầu mở form con
+        public event Action<string> RequestFormChange;
+
         public frmHome()
         {
             InitializeComponent();
@@ -19,24 +23,8 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void frmHome_Load(object sender, EventArgs e)
         {
-            UIHelper.InitializeUI(panelLeft, btnHome, btnCustomer, btnInvoices,
-                         btnProduct, btnStonk, btnSuppiler, sephLine,
-                         btnNotification, btnSetting, topSeph);
-            panelWelcomeText.Visible = true;
-        }
 
-        private void picMenu_Click(object sender, EventArgs e)
-        {
-            UIHelper.TogglePannelVisibility(panelLeft, lblAdmin ,picLogo, picMenu,btnHome, btnCustomer,
-                btnProduct, btnInvoices, btnStonk, sephLine, btnNotification, btnSetting, topSeph, btnSuppiler);
-            if(panelLeft.Width == 320)
-            {
-                panelWelcomeText.Visible =false;
-            }
-            else 
-            {
-                panelWelcomeText.Visible =true;
-            }
+            panelWelcomeText.Visible = true;
         }
 
         private void lblLogOut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -44,10 +32,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
             UIHelper.HandleLogout(this);
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            UIHelper.SwitchForm(this, new frmHome());
-        }
+        
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
@@ -56,11 +41,14 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void btnSuppiler_Click(object sender, EventArgs e)
         {
+            
             UIHelper.SwitchForm(this, new frmSupplier());
         }
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            UIHelper.SwitchForm(this, new frmProduct());
+            RequestFormChange?.Invoke("frmProduct");
+
+            //UIHelper.SwitchForm(this, new frmProduct());
         }
 
         private void btnInvoices_Click(object sender, EventArgs e)

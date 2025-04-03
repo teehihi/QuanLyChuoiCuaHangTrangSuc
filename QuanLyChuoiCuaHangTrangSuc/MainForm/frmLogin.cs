@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyChuoiCuaHangTrangSuc.MainForm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,14 @@ namespace QuanLyChuoiCuaHangTrangSuc
 {
     public partial class frmLogin : Form
     {
+       
         private bool isPasswordVisible = false;
         public frmLogin()
         {
             InitializeComponent();
         }
+
+        
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
@@ -36,7 +40,8 @@ namespace QuanLyChuoiCuaHangTrangSuc
         {
             if (txtUsername.Text == "admin" && txtPassword.Text == "2105")
             {
-                UIHelper.SwitchForm(this, new frmHome());
+                UIHelper.SwitchForm(this, new frmMenu());
+                
             }
             else
             {

@@ -58,70 +58,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCustomer.cs">
+    <Compile Include="MainForm\frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomer.Designer.cs">
+    <Compile Include="MainForm\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHome.cs">
+    <Compile Include="SubForm\frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHome.Designer.cs">
+    <Compile Include="SubForm\frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInvoices.cs">
+    <Compile Include="SubForm\frmInvoices.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInvoices.Designer.cs">
+    <Compile Include="SubForm\frmInvoices.Designer.cs">
       <DependentUpon>frmInvoices.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="MainForm\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="MainForm\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProduct.cs">
+    <Compile Include="SubForm\frmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProduct.Designer.cs">
+    <Compile Include="SubForm\frmProduct.Designer.cs">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSupplier.cs">
+    <Compile Include="SubForm\frmSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSupplier.Designer.cs">
+    <Compile Include="SubForm\frmSupplier.Designer.cs">
       <DependentUpon>frmSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongKe.cs">
+    <Compile Include="SubForm\frmThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongKe.Designer.cs">
+    <Compile Include="SubForm\frmThongKe.Designer.cs">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIHelper.cs" />
-    <EmbeddedResource Include="frmCustomer.resx">
+    <EmbeddedResource Include="MainForm\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHome.resx">
+    <EmbeddedResource Include="SubForm\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInvoices.resx">
+    <EmbeddedResource Include="SubForm\frmInvoices.resx">
       <DependentUpon>frmInvoices.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="MainForm\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProduct.resx">
+    <EmbeddedResource Include="SubForm\frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSupplier.resx">
+    <EmbeddedResource Include="SubForm\frmSupplier.resx">
       <DependentUpon>frmSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongKe.resx">
+    <EmbeddedResource Include="SubForm\frmThongKe.resx">
       <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

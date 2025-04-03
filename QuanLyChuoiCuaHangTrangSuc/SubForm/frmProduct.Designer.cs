@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation4 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduct));
             this.btnSuppiler = new Guna.UI2.WinForms.Guna2Button();
             this.topSeph = new Guna.UI2.WinForms.Guna2Separator();
@@ -48,13 +48,18 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.panelLeft = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.picMenu = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelMid = new Guna.UI2.WinForms.Guna2Panel();
+            this.flpProduct = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelProduct = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblNameSP = new System.Windows.Forms.Label();
+            this.picProduct = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblProduct = new System.Windows.Forms.Label();
             this.panelRight = new Guna.UI2.WinForms.Guna2Panel();
             this.cbLoaiSP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtBranchId = new Guna.UI2.WinForms.Guna2TextBox();
@@ -84,34 +89,28 @@
             this.txtProductID = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblInfor = new System.Windows.Forms.Label();
-            this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
-            this.btnAll = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRing = new Guna.UI2.WinForms.Guna2Button();
-            this.btnNecklace = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEarrings = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBracelet = new Guna.UI2.WinForms.Guna2Button();
-            this.lblDanhMục = new System.Windows.Forms.Label();
-            this.btnPendant = new Guna.UI2.WinForms.Guna2Button();
             this.panelCategory = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblProduct = new System.Windows.Forms.Label();
-            this.panelProduct = new Guna.UI2.WinForms.Guna2Panel();
-            this.picProduct = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblNameSP = new System.Windows.Forms.Label();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.flpProduct = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnPendant = new Guna.UI2.WinForms.Guna2Button();
+            this.lblDanhMục = new System.Windows.Forms.Label();
+            this.btnBracelet = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEarrings = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNecklace = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRing = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAll = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.panelTop.SuspendLayout();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelMid.SuspendLayout();
+            this.flpProduct.SuspendLayout();
+            this.panelProduct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             this.panelRight.SuspendLayout();
             this.panelThemSuaXoa.SuspendLayout();
             this.panelLuuHuy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).BeginInit();
             this.panelCategory.SuspendLayout();
-            this.panelProduct.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
-            this.flpProduct.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSuppiler
@@ -433,10 +432,6 @@
             this.guna2AnimateWindow1.Interval = 100;
             this.guna2AnimateWindow1.TargetForm = this;
             // 
-            // guna2ShadowForm1
-            // 
-            this.guna2ShadowForm1.TargetForm = this;
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 15;
@@ -541,6 +536,79 @@
             this.panelMid.Name = "panelMid";
             this.panelMid.Size = new System.Drawing.Size(1264, 681);
             this.panelMid.TabIndex = 15;
+            // 
+            // flpProduct
+            // 
+            this.flpProduct.Controls.Add(this.panelProduct);
+            this.guna2Transition1.SetDecoration(this.flpProduct, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.flpProduct.Location = new System.Drawing.Point(83, 310);
+            this.flpProduct.Name = "flpProduct";
+            this.flpProduct.Size = new System.Drawing.Size(857, 356);
+            this.flpProduct.TabIndex = 22;
+            // 
+            // panelProduct
+            // 
+            this.panelProduct.BorderRadius = 15;
+            this.panelProduct.Controls.Add(this.lblPrice);
+            this.panelProduct.Controls.Add(this.lblNameSP);
+            this.panelProduct.Controls.Add(this.picProduct);
+            this.panelProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.panelProduct, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.panelProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(47)))));
+            this.panelProduct.Location = new System.Drawing.Point(3, 3);
+            this.panelProduct.Name = "panelProduct";
+            this.panelProduct.Size = new System.Drawing.Size(150, 170);
+            this.panelProduct.TabIndex = 0;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblPrice, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblPrice.ForeColor = System.Drawing.Color.White;
+            this.lblPrice.Location = new System.Drawing.Point(5, 150);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(38, 13);
+            this.lblPrice.TabIndex = 24;
+            this.lblPrice.Text = "TenSP\r\n";
+            // 
+            // lblNameSP
+            // 
+            this.lblNameSP.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblNameSP, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblNameSP.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblNameSP.ForeColor = System.Drawing.Color.White;
+            this.lblNameSP.Location = new System.Drawing.Point(5, 110);
+            this.lblNameSP.Name = "lblNameSP";
+            this.lblNameSP.Size = new System.Drawing.Size(51, 20);
+            this.lblNameSP.TabIndex = 23;
+            this.lblNameSP.Text = "TenSP\r\n";
+            // 
+            // picProduct
+            // 
+            this.picProduct.BackColor = System.Drawing.Color.Transparent;
+            this.picProduct.BorderRadius = 15;
+            this.guna2Transition1.SetDecoration(this.picProduct, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.picProduct.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icnThongKeNOHOVER;
+            this.picProduct.ImageRotate = 0F;
+            this.picProduct.Location = new System.Drawing.Point(5, 5);
+            this.picProduct.Name = "picProduct";
+            this.picProduct.Size = new System.Drawing.Size(140, 100);
+            this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProduct.TabIndex = 0;
+            this.picProduct.TabStop = false;
+            // 
+            // lblProduct
+            // 
+            this.lblProduct.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblProduct, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblProduct.Font = new System.Drawing.Font("Segoe UI", 13.25F, System.Drawing.FontStyle.Bold);
+            this.lblProduct.ForeColor = System.Drawing.Color.White;
+            this.lblProduct.Location = new System.Drawing.Point(86, 270);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(185, 25);
+            this.lblProduct.TabIndex = 21;
+            this.lblProduct.Text = "Danh mục sản phẩm";
             // 
             // panelRight
             // 
@@ -1071,167 +1139,20 @@
             this.lblInfor.TabIndex = 22;
             this.lblInfor.Text = "Thông tin sản phẩm";
             // 
-            // guna2Transition1
+            // panelCategory
             // 
-            this.guna2Transition1.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation4;
-            // 
-            // btnAll
-            // 
-            this.btnAll.Animated = true;
-            this.btnAll.BorderRadius = 20;
-            this.btnAll.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.btnAll.CheckedState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconTraiTimFill;
-            this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.btnAll, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAll.FillColor = System.Drawing.Color.White;
-            this.btnAll.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAll.ForeColor = System.Drawing.Color.Black;
-            this.btnAll.HoverState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconTraiTimFill;
-            this.btnAll.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconTraiTim;
-            this.btnAll.ImageOffset = new System.Drawing.Point(13, -20);
-            this.btnAll.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnAll.Location = new System.Drawing.Point(25, 38);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(120, 150);
-            this.btnAll.TabIndex = 14;
-            this.btnAll.Text = "Tất cả";
-            this.btnAll.TextOffset = new System.Drawing.Point(-12, 50);
-            // 
-            // btnRing
-            // 
-            this.btnRing.Animated = true;
-            this.btnRing.BorderRadius = 20;
-            this.btnRing.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.btnRing.CheckedState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconNhanFILL;
-            this.btnRing.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.btnRing, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnRing.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRing.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRing.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRing.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRing.FillColor = System.Drawing.Color.White;
-            this.btnRing.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnRing.ForeColor = System.Drawing.Color.Black;
-            this.btnRing.HoverState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconNhanFILL;
-            this.btnRing.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconNhan;
-            this.btnRing.ImageOffset = new System.Drawing.Point(15, -20);
-            this.btnRing.ImageSize = new System.Drawing.Size(80, 80);
-            this.btnRing.Location = new System.Drawing.Point(165, 38);
-            this.btnRing.Name = "btnRing";
-            this.btnRing.Size = new System.Drawing.Size(120, 150);
-            this.btnRing.TabIndex = 16;
-            this.btnRing.Text = "Nhẫn";
-            this.btnRing.TextOffset = new System.Drawing.Point(-19, 50);
-            // 
-            // btnNecklace
-            // 
-            this.btnNecklace.Animated = true;
-            this.btnNecklace.BorderRadius = 20;
-            this.btnNecklace.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.btnNecklace.CheckedState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconNecklaceFILL;
-            this.btnNecklace.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.btnNecklace, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnNecklace.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNecklace.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNecklace.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNecklace.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNecklace.FillColor = System.Drawing.Color.White;
-            this.btnNecklace.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnNecklace.ForeColor = System.Drawing.Color.Black;
-            this.btnNecklace.HoverState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconNecklaceFILL;
-            this.btnNecklace.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconNecklace;
-            this.btnNecklace.ImageOffset = new System.Drawing.Point(24, -20);
-            this.btnNecklace.ImageSize = new System.Drawing.Size(70, 70);
-            this.btnNecklace.Location = new System.Drawing.Point(305, 38);
-            this.btnNecklace.Name = "btnNecklace";
-            this.btnNecklace.Size = new System.Drawing.Size(120, 150);
-            this.btnNecklace.TabIndex = 17;
-            this.btnNecklace.Text = "Dây chuyền";
-            this.btnNecklace.TextOffset = new System.Drawing.Point(-18, 50);
-            // 
-            // btnEarrings
-            // 
-            this.btnEarrings.Animated = true;
-            this.btnEarrings.BorderRadius = 20;
-            this.btnEarrings.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.btnEarrings.CheckedState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconBongTaiFILL;
-            this.btnEarrings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.btnEarrings, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnEarrings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEarrings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEarrings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEarrings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEarrings.FillColor = System.Drawing.Color.White;
-            this.btnEarrings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEarrings.ForeColor = System.Drawing.Color.Black;
-            this.btnEarrings.HoverState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconBongTaiFILL;
-            this.btnEarrings.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconBongTai;
-            this.btnEarrings.ImageOffset = new System.Drawing.Point(18, -20);
-            this.btnEarrings.ImageSize = new System.Drawing.Size(70, 70);
-            this.btnEarrings.Location = new System.Drawing.Point(445, 38);
-            this.btnEarrings.Name = "btnEarrings";
-            this.btnEarrings.Size = new System.Drawing.Size(120, 150);
-            this.btnEarrings.TabIndex = 18;
-            this.btnEarrings.Text = "Bông tai";
-            this.btnEarrings.TextOffset = new System.Drawing.Point(-17, 50);
-            // 
-            // btnBracelet
-            // 
-            this.btnBracelet.Animated = true;
-            this.btnBracelet.BorderRadius = 20;
-            this.btnBracelet.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.btnBracelet.CheckedState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconBraceletFILL;
-            this.btnBracelet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.btnBracelet, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnBracelet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBracelet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBracelet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBracelet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBracelet.FillColor = System.Drawing.Color.White;
-            this.btnBracelet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnBracelet.ForeColor = System.Drawing.Color.Black;
-            this.btnBracelet.HoverState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconBraceletFILL;
-            this.btnBracelet.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconBracelet;
-            this.btnBracelet.ImageOffset = new System.Drawing.Point(15, -20);
-            this.btnBracelet.ImageSize = new System.Drawing.Size(75, 75);
-            this.btnBracelet.Location = new System.Drawing.Point(585, 38);
-            this.btnBracelet.Name = "btnBracelet";
-            this.btnBracelet.Size = new System.Drawing.Size(120, 150);
-            this.btnBracelet.TabIndex = 19;
-            this.btnBracelet.Text = "Lắc tay";
-            this.btnBracelet.TextOffset = new System.Drawing.Point(-18, 50);
-            // 
-            // lblDanhMục
-            // 
-            this.lblDanhMục.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.lblDanhMục, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblDanhMục.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDanhMục.ForeColor = System.Drawing.Color.White;
-            this.lblDanhMục.Location = new System.Drawing.Point(3, 7);
-            this.lblDanhMục.Name = "lblDanhMục";
-            this.lblDanhMục.Size = new System.Drawing.Size(152, 20);
-            this.lblDanhMục.TabIndex = 13;
-            this.lblDanhMục.Text = "Danh mục sản phẩm";
+            this.panelCategory.Controls.Add(this.btnPendant);
+            this.panelCategory.Controls.Add(this.lblDanhMục);
+            this.panelCategory.Controls.Add(this.btnBracelet);
+            this.panelCategory.Controls.Add(this.btnEarrings);
+            this.panelCategory.Controls.Add(this.btnNecklace);
+            this.panelCategory.Controls.Add(this.btnRing);
+            this.panelCategory.Controls.Add(this.btnAll);
+            this.guna2Transition1.SetDecoration(this.panelCategory, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.panelCategory.Location = new System.Drawing.Point(83, 43);
+            this.panelCategory.Name = "panelCategory";
+            this.panelCategory.Size = new System.Drawing.Size(864, 203);
+            this.panelCategory.TabIndex = 17;
             // 
             // btnPendant
             // 
@@ -1259,93 +1180,167 @@
             this.btnPendant.Text = "Mặt dây chuyền";
             this.btnPendant.TextOffset = new System.Drawing.Point(-20, 50);
             // 
-            // panelCategory
+            // lblDanhMục
             // 
-            this.panelCategory.Controls.Add(this.btnPendant);
-            this.panelCategory.Controls.Add(this.lblDanhMục);
-            this.panelCategory.Controls.Add(this.btnBracelet);
-            this.panelCategory.Controls.Add(this.btnEarrings);
-            this.panelCategory.Controls.Add(this.btnNecklace);
-            this.panelCategory.Controls.Add(this.btnRing);
-            this.panelCategory.Controls.Add(this.btnAll);
-            this.guna2Transition1.SetDecoration(this.panelCategory, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.panelCategory.Location = new System.Drawing.Point(83, 43);
-            this.panelCategory.Name = "panelCategory";
-            this.panelCategory.Size = new System.Drawing.Size(864, 203);
-            this.panelCategory.TabIndex = 17;
+            this.lblDanhMục.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblDanhMục, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblDanhMục.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDanhMục.ForeColor = System.Drawing.Color.White;
+            this.lblDanhMục.Location = new System.Drawing.Point(3, 7);
+            this.lblDanhMục.Name = "lblDanhMục";
+            this.lblDanhMục.Size = new System.Drawing.Size(152, 20);
+            this.lblDanhMục.TabIndex = 13;
+            this.lblDanhMục.Text = "Danh mục sản phẩm";
             // 
-            // lblProduct
+            // btnBracelet
             // 
-            this.lblProduct.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.lblProduct, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblProduct.Font = new System.Drawing.Font("Segoe UI", 13.25F, System.Drawing.FontStyle.Bold);
-            this.lblProduct.ForeColor = System.Drawing.Color.White;
-            this.lblProduct.Location = new System.Drawing.Point(86, 270);
-            this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(185, 25);
-            this.lblProduct.TabIndex = 21;
-            this.lblProduct.Text = "Danh mục sản phẩm";
+            this.btnBracelet.Animated = true;
+            this.btnBracelet.BorderRadius = 20;
+            this.btnBracelet.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.btnBracelet.CheckedState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconBraceletFILL;
+            this.btnBracelet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnBracelet, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnBracelet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBracelet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBracelet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBracelet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBracelet.FillColor = System.Drawing.Color.White;
+            this.btnBracelet.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnBracelet.ForeColor = System.Drawing.Color.Black;
+            this.btnBracelet.HoverState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconBraceletFILL;
+            this.btnBracelet.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconBracelet;
+            this.btnBracelet.ImageOffset = new System.Drawing.Point(15, -20);
+            this.btnBracelet.ImageSize = new System.Drawing.Size(75, 75);
+            this.btnBracelet.Location = new System.Drawing.Point(585, 38);
+            this.btnBracelet.Name = "btnBracelet";
+            this.btnBracelet.Size = new System.Drawing.Size(120, 150);
+            this.btnBracelet.TabIndex = 19;
+            this.btnBracelet.Text = "Lắc tay";
+            this.btnBracelet.TextOffset = new System.Drawing.Point(-18, 50);
             // 
-            // panelProduct
+            // btnEarrings
             // 
-            this.panelProduct.BorderRadius = 15;
-            this.panelProduct.Controls.Add(this.lblPrice);
-            this.panelProduct.Controls.Add(this.lblNameSP);
-            this.panelProduct.Controls.Add(this.picProduct);
-            this.panelProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.panelProduct, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.panelProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(47)))));
-            this.panelProduct.Location = new System.Drawing.Point(3, 3);
-            this.panelProduct.Name = "panelProduct";
-            this.panelProduct.Size = new System.Drawing.Size(150, 170);
-            this.panelProduct.TabIndex = 0;
+            this.btnEarrings.Animated = true;
+            this.btnEarrings.BorderRadius = 20;
+            this.btnEarrings.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.btnEarrings.CheckedState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconBongTaiFILL;
+            this.btnEarrings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnEarrings, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnEarrings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEarrings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEarrings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEarrings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEarrings.FillColor = System.Drawing.Color.White;
+            this.btnEarrings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEarrings.ForeColor = System.Drawing.Color.Black;
+            this.btnEarrings.HoverState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconBongTaiFILL;
+            this.btnEarrings.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconBongTai;
+            this.btnEarrings.ImageOffset = new System.Drawing.Point(18, -20);
+            this.btnEarrings.ImageSize = new System.Drawing.Size(70, 70);
+            this.btnEarrings.Location = new System.Drawing.Point(445, 38);
+            this.btnEarrings.Name = "btnEarrings";
+            this.btnEarrings.Size = new System.Drawing.Size(120, 150);
+            this.btnEarrings.TabIndex = 18;
+            this.btnEarrings.Text = "Bông tai";
+            this.btnEarrings.TextOffset = new System.Drawing.Point(-17, 50);
             // 
-            // picProduct
+            // btnNecklace
             // 
-            this.picProduct.BackColor = System.Drawing.Color.Transparent;
-            this.picProduct.BorderRadius = 15;
-            this.guna2Transition1.SetDecoration(this.picProduct, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.picProduct.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icnThongKeNOHOVER;
-            this.picProduct.ImageRotate = 0F;
-            this.picProduct.Location = new System.Drawing.Point(5, 5);
-            this.picProduct.Name = "picProduct";
-            this.picProduct.Size = new System.Drawing.Size(140, 100);
-            this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picProduct.TabIndex = 0;
-            this.picProduct.TabStop = false;
+            this.btnNecklace.Animated = true;
+            this.btnNecklace.BorderRadius = 20;
+            this.btnNecklace.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.btnNecklace.CheckedState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconNecklaceFILL;
+            this.btnNecklace.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnNecklace, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnNecklace.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNecklace.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNecklace.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNecklace.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNecklace.FillColor = System.Drawing.Color.White;
+            this.btnNecklace.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnNecklace.ForeColor = System.Drawing.Color.Black;
+            this.btnNecklace.HoverState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconNecklaceFILL;
+            this.btnNecklace.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconNecklace;
+            this.btnNecklace.ImageOffset = new System.Drawing.Point(24, -20);
+            this.btnNecklace.ImageSize = new System.Drawing.Size(70, 70);
+            this.btnNecklace.Location = new System.Drawing.Point(305, 38);
+            this.btnNecklace.Name = "btnNecklace";
+            this.btnNecklace.Size = new System.Drawing.Size(120, 150);
+            this.btnNecklace.TabIndex = 17;
+            this.btnNecklace.Text = "Dây chuyền";
+            this.btnNecklace.TextOffset = new System.Drawing.Point(-18, 50);
             // 
-            // lblNameSP
+            // btnRing
             // 
-            this.lblNameSP.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.lblNameSP, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblNameSP.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblNameSP.ForeColor = System.Drawing.Color.White;
-            this.lblNameSP.Location = new System.Drawing.Point(5, 110);
-            this.lblNameSP.Name = "lblNameSP";
-            this.lblNameSP.Size = new System.Drawing.Size(51, 20);
-            this.lblNameSP.TabIndex = 23;
-            this.lblNameSP.Text = "TenSP\r\n";
+            this.btnRing.Animated = true;
+            this.btnRing.BorderRadius = 20;
+            this.btnRing.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.btnRing.CheckedState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconNhanFILL;
+            this.btnRing.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnRing, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnRing.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRing.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRing.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRing.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRing.FillColor = System.Drawing.Color.White;
+            this.btnRing.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRing.ForeColor = System.Drawing.Color.Black;
+            this.btnRing.HoverState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconNhanFILL;
+            this.btnRing.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconNhan;
+            this.btnRing.ImageOffset = new System.Drawing.Point(15, -20);
+            this.btnRing.ImageSize = new System.Drawing.Size(80, 80);
+            this.btnRing.Location = new System.Drawing.Point(165, 38);
+            this.btnRing.Name = "btnRing";
+            this.btnRing.Size = new System.Drawing.Size(120, 150);
+            this.btnRing.TabIndex = 16;
+            this.btnRing.Text = "Nhẫn";
+            this.btnRing.TextOffset = new System.Drawing.Point(-19, 50);
             // 
-            // lblPrice
+            // btnAll
             // 
-            this.lblPrice.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.lblPrice, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(5, 150);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(38, 13);
-            this.lblPrice.TabIndex = 24;
-            this.lblPrice.Text = "TenSP\r\n";
+            this.btnAll.Animated = true;
+            this.btnAll.BorderRadius = 20;
+            this.btnAll.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.btnAll.CheckedState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconTraiTimFill;
+            this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.btnAll, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAll.FillColor = System.Drawing.Color.White;
+            this.btnAll.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAll.ForeColor = System.Drawing.Color.Black;
+            this.btnAll.HoverState.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconTraiTimFill;
+            this.btnAll.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconTraiTim;
+            this.btnAll.ImageOffset = new System.Drawing.Point(13, -20);
+            this.btnAll.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnAll.Location = new System.Drawing.Point(25, 38);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(120, 150);
+            this.btnAll.TabIndex = 14;
+            this.btnAll.Text = "Tất cả";
+            this.btnAll.TextOffset = new System.Drawing.Point(-12, 50);
             // 
-            // flpProduct
+            // guna2Transition1
             // 
-            this.flpProduct.Controls.Add(this.panelProduct);
-            this.guna2Transition1.SetDecoration(this.flpProduct, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.flpProduct.Location = new System.Drawing.Point(83, 310);
-            this.flpProduct.Name = "flpProduct";
-            this.flpProduct.Size = new System.Drawing.Size(857, 356);
-            this.flpProduct.TabIndex = 22;
+            this.guna2Transition1.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation1;
             // 
             // frmProduct
             // 
@@ -1372,6 +1367,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panelMid.ResumeLayout(false);
             this.panelMid.PerformLayout();
+            this.flpProduct.ResumeLayout(false);
+            this.panelProduct.ResumeLayout(false);
+            this.panelProduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
             this.panelRight.ResumeLayout(false);
             this.panelRight.PerformLayout();
             this.panelThemSuaXoa.ResumeLayout(false);
@@ -1379,10 +1378,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProduct)).EndInit();
             this.panelCategory.ResumeLayout(false);
             this.panelCategory.PerformLayout();
-            this.panelProduct.ResumeLayout(false);
-            this.panelProduct.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
-            this.flpProduct.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1408,7 +1403,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox btnClose;
         private Guna.UI2.WinForms.Guna2ControlBox btnMinimize;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2GradientPanel panelLeft;

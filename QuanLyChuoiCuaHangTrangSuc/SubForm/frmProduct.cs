@@ -206,8 +206,6 @@ namespace QuanLyChuoiCuaHangTrangSuc
             }
 
 
-            
-
             // Gán dữ liệu vào TextBox
             txtProductID.Text = row["ProductID"].ToString();
             txtProductName.Text = row["Name"].ToString();

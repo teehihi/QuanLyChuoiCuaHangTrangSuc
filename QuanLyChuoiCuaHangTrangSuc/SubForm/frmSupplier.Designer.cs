@@ -49,7 +49,6 @@
             this.btnMaximize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.panelLeft = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -393,10 +392,6 @@
             this.btnMinimize.Size = new System.Drawing.Size(25, 25);
             this.btnMinimize.TabIndex = 3;
             // 
-            // guna2ShadowForm1
-            // 
-            this.guna2ShadowForm1.TargetForm = this;
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 15;
@@ -510,7 +505,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox btnMaximize;
         private Guna.UI2.WinForms.Guna2ControlBox btnClose;
         private Guna.UI2.WinForms.Guna2ControlBox btnMinimize;
-        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2GradientPanel panelLeft;
         private Guna.UI2.WinForms.Guna2Button btnHome;

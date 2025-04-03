@@ -1,6 +1,6 @@
 ﻿namespace QuanLyChuoiCuaHangTrangSuc
 {
-    partial class frmInvoices
+    partial class frmThongKe
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInvoices));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongKe));
             this.btnSuppiler = new Guna.UI2.WinForms.Guna2Button();
             this.topSeph = new Guna.UI2.WinForms.Guna2Separator();
             this.btnSetting = new Guna.UI2.WinForms.Guna2Button();
@@ -47,7 +47,6 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.panelLeft = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -364,10 +363,6 @@
             this.guna2AnimateWindow1.Interval = 100;
             this.guna2AnimateWindow1.TargetForm = this;
             // 
-            // guna2ShadowForm1
-            // 
-            this.guna2ShadowForm1.TargetForm = this;
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 15;
@@ -464,21 +459,23 @@
             this.panelMid.Size = new System.Drawing.Size(1264, 681);
             this.panelMid.TabIndex = 15;
             // 
-            // frmInvoices
+            // frmThongKe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.panelMid);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmInvoices";
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "frmThongKe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý hóa đơn";
-            this.Load += new System.EventHandler(this.frmInvoices_Load);
+            this.Text = "Thống kê doanh thu";
+            this.Load += new System.EventHandler(this.frmThongKe_Load);
             this.panelTop.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
@@ -509,7 +506,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox btnClose;
         private Guna.UI2.WinForms.Guna2ControlBox btnMinimize;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2GradientPanel panelLeft;

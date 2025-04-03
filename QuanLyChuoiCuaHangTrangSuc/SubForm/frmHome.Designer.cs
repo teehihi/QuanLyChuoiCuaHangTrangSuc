@@ -41,7 +41,9 @@
             this.btnProduct = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.lblAdmin = new System.Windows.Forms.Label();
+            this.picMenu = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblLogOut = new System.Windows.Forms.LinkLabel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.lblHello = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -58,39 +60,37 @@
             this.btnThongKe = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.picThongKeBig = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelCustomerMain = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelProduct = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelInvoices = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelSupplier = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelMid = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.picMenu = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picLogo = new System.Windows.Forms.PictureBox();
-            this.picSupplier = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnMainSupplier = new Guna.UI2.WinForms.Guna2Button();
-            this.picInvoices = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnMainInvoices = new Guna.UI2.WinForms.Guna2Button();
-            this.picProduct = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnMainProduct = new Guna.UI2.WinForms.Guna2Button();
             this.picCustomer = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnMainCustomer = new Guna.UI2.WinForms.Guna2Button();
-            this.picThongKeBig = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.panelProduct = new Guna.UI2.WinForms.Guna2Panel();
+            this.picProduct = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnMainProduct = new Guna.UI2.WinForms.Guna2Button();
+            this.panelInvoices = new Guna.UI2.WinForms.Guna2Panel();
+            this.picInvoices = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnMainInvoices = new Guna.UI2.WinForms.Guna2Button();
+            this.panelSupplier = new Guna.UI2.WinForms.Guna2Panel();
+            this.picSupplier = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnMainSupplier = new Guna.UI2.WinForms.Guna2Button();
+            this.panelMid = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panelLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panelWelcomeText.SuspendLayout();
             this.panelInfo.SuspendLayout();
-            this.panelCustomerMain.SuspendLayout();
-            this.panelProduct.SuspendLayout();
-            this.panelInvoices.SuspendLayout();
-            this.panelSupplier.SuspendLayout();
-            this.panelMid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSupplier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInvoices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picThongKeBig)).BeginInit();
+            this.panelCustomerMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).BeginInit();
+            this.panelProduct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
+            this.panelInvoices.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picInvoices)).BeginInit();
+            this.panelSupplier.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSupplier)).BeginInit();
+            this.panelMid.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeft
@@ -334,12 +334,27 @@
             this.lblAdmin.AutoSize = true;
             this.lblAdmin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdmin.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblAdmin.Location = new System.Drawing.Point(24, 190);
+            this.lblAdmin.Location = new System.Drawing.Point(25, 190);
             this.lblAdmin.Name = "lblAdmin";
             this.lblAdmin.Size = new System.Drawing.Size(95, 20);
             this.lblAdmin.TabIndex = 2;
             this.lblAdmin.Text = "Admin tools";
             this.lblAdmin.Visible = false;
+            // 
+            // picMenu
+            // 
+            this.picMenu.BackColor = System.Drawing.Color.Transparent;
+            this.picMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picMenu.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.menu_icon;
+            this.picMenu.ImageRotate = 0F;
+            this.picMenu.Location = new System.Drawing.Point(32, 33);
+            this.picMenu.Name = "picMenu";
+            this.picMenu.Size = new System.Drawing.Size(30, 30);
+            this.picMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMenu.TabIndex = 0;
+            this.picMenu.TabStop = false;
+            this.picMenu.UseTransparentBackground = true;
+            this.picMenu.Click += new System.EventHandler(this.picMenu_Click);
             // 
             // lblLogOut
             // 
@@ -357,6 +372,20 @@
             this.lblLogOut.Text = "Đăng xuất";
             this.lblLogOut.VisitedLinkColor = System.Drawing.Color.White;
             this.lblLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogOut_LinkClicked);
+            // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picLogo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.picLogo.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.MediumLogo;
+            this.picLogo.Location = new System.Drawing.Point(45, 80);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(254, 101);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 2;
+            this.picLogo.TabStop = false;
+            this.picLogo.Visible = false;
             // 
             // btnHome
             // 
@@ -557,6 +586,19 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Theo dõi Doanh thu \r\nMỘT CÁCH HIỆU QUẢ";
             // 
+            // picThongKeBig
+            // 
+            this.picThongKeBig.BackColor = System.Drawing.Color.Transparent;
+            this.picThongKeBig.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.picTHONGKEbig;
+            this.picThongKeBig.ImageRotate = 0F;
+            this.picThongKeBig.Location = new System.Drawing.Point(596, 5);
+            this.picThongKeBig.Name = "picThongKeBig";
+            this.picThongKeBig.Size = new System.Drawing.Size(240, 240);
+            this.picThongKeBig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picThongKeBig.TabIndex = 0;
+            this.picThongKeBig.TabStop = false;
+            this.picThongKeBig.UseTransparentBackground = true;
+            // 
             // panelCustomerMain
             // 
             this.panelCustomerMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
@@ -568,214 +610,6 @@
             this.panelCustomerMain.Name = "panelCustomerMain";
             this.panelCustomerMain.Size = new System.Drawing.Size(420, 110);
             this.panelCustomerMain.TabIndex = 10;
-            // 
-            // panelProduct
-            // 
-            this.panelProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panelProduct.BorderRadius = 22;
-            this.panelProduct.Controls.Add(this.picProduct);
-            this.panelProduct.Controls.Add(this.btnMainProduct);
-            this.panelProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.panelProduct.Location = new System.Drawing.Point(530, 421);
-            this.panelProduct.Name = "panelProduct";
-            this.panelProduct.Size = new System.Drawing.Size(420, 110);
-            this.panelProduct.TabIndex = 12;
-            // 
-            // panelInvoices
-            // 
-            this.panelInvoices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panelInvoices.BorderRadius = 22;
-            this.panelInvoices.Controls.Add(this.picInvoices);
-            this.panelInvoices.Controls.Add(this.btnMainInvoices);
-            this.panelInvoices.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.panelInvoices.Location = new System.Drawing.Point(530, 550);
-            this.panelInvoices.Name = "panelInvoices";
-            this.panelInvoices.Size = new System.Drawing.Size(420, 111);
-            this.panelInvoices.TabIndex = 13;
-            // 
-            // panelSupplier
-            // 
-            this.panelSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panelSupplier.BorderRadius = 22;
-            this.panelSupplier.Controls.Add(this.picSupplier);
-            this.panelSupplier.Controls.Add(this.btnMainSupplier);
-            this.panelSupplier.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.panelSupplier.Location = new System.Drawing.Point(90, 550);
-            this.panelSupplier.Name = "panelSupplier";
-            this.panelSupplier.Size = new System.Drawing.Size(420, 110);
-            this.panelSupplier.TabIndex = 11;
-            // 
-            // panelMid
-            // 
-            this.panelMid.Controls.Add(this.panelSupplier);
-            this.panelMid.Controls.Add(this.panelInvoices);
-            this.panelMid.Controls.Add(this.panelProduct);
-            this.panelMid.Controls.Add(this.panelCustomerMain);
-            this.panelMid.Controls.Add(this.panelInfo);
-            this.panelMid.Controls.Add(this.panelRight);
-            this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMid.Location = new System.Drawing.Point(0, 0);
-            this.panelMid.Name = "panelMid";
-            this.panelMid.Size = new System.Drawing.Size(1264, 681);
-            this.panelMid.TabIndex = 9;
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this.panelTop;
-            this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // picMenu
-            // 
-            this.picMenu.BackColor = System.Drawing.Color.Transparent;
-            this.picMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picMenu.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.menu_icon;
-            this.picMenu.ImageRotate = 0F;
-            this.picMenu.Location = new System.Drawing.Point(32, 33);
-            this.picMenu.Name = "picMenu";
-            this.picMenu.Size = new System.Drawing.Size(30, 30);
-            this.picMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMenu.TabIndex = 0;
-            this.picMenu.TabStop = false;
-            this.picMenu.UseTransparentBackground = true;
-            this.picMenu.Click += new System.EventHandler(this.picMenu_Click);
-            // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picLogo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picLogo.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.MediumLogo;
-            this.picLogo.Location = new System.Drawing.Point(45, 81);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(254, 101);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 2;
-            this.picLogo.TabStop = false;
-            this.picLogo.Visible = false;
-            // 
-            // picSupplier
-            // 
-            this.picSupplier.BackColor = System.Drawing.Color.Transparent;
-            this.picSupplier.BorderRadius = 10;
-            this.picSupplier.FillColor = System.Drawing.Color.RosyBrown;
-            this.picSupplier.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.picSupplier;
-            this.picSupplier.ImageRotate = 0F;
-            this.picSupplier.Location = new System.Drawing.Point(0, 5);
-            this.picSupplier.Name = "picSupplier";
-            this.picSupplier.Size = new System.Drawing.Size(100, 100);
-            this.picSupplier.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSupplier.TabIndex = 3;
-            this.picSupplier.TabStop = false;
-            this.picSupplier.UseTransparentBackground = true;
-            this.picSupplier.Click += new System.EventHandler(this.btnSuppiler_Click);
-            // 
-            // btnMainSupplier
-            // 
-            this.btnMainSupplier.Animated = true;
-            this.btnMainSupplier.BackColor = System.Drawing.Color.Transparent;
-            this.btnMainSupplier.BorderRadius = 22;
-            this.btnMainSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMainSupplier.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMainSupplier.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMainSupplier.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMainSupplier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMainSupplier.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.btnMainSupplier.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.btnMainSupplier.ForeColor = System.Drawing.Color.White;
-            this.btnMainSupplier.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconRight_chevron;
-            this.btnMainSupplier.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnMainSupplier.Location = new System.Drawing.Point(52, 0);
-            this.btnMainSupplier.Name = "btnMainSupplier";
-            this.btnMainSupplier.Size = new System.Drawing.Size(365, 110);
-            this.btnMainSupplier.TabIndex = 6;
-            this.btnMainSupplier.Text = "Quản lý nhà cung cấp";
-            this.btnMainSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMainSupplier.TextOffset = new System.Drawing.Point(50, -5);
-            this.btnMainSupplier.UseTransparentBackground = true;
-            this.btnMainSupplier.Click += new System.EventHandler(this.btnSuppiler_Click);
-            // 
-            // picInvoices
-            // 
-            this.picInvoices.BackColor = System.Drawing.Color.Transparent;
-            this.picInvoices.BorderRadius = 10;
-            this.picInvoices.FillColor = System.Drawing.Color.RosyBrown;
-            this.picInvoices.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.picHoaDon;
-            this.picInvoices.ImageRotate = 0F;
-            this.picInvoices.Location = new System.Drawing.Point(0, 5);
-            this.picInvoices.Name = "picInvoices";
-            this.picInvoices.Size = new System.Drawing.Size(100, 100);
-            this.picInvoices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picInvoices.TabIndex = 3;
-            this.picInvoices.TabStop = false;
-            this.picInvoices.UseTransparentBackground = true;
-            this.picInvoices.Click += new System.EventHandler(this.btnInvoices_Click);
-            // 
-            // btnMainInvoices
-            // 
-            this.btnMainInvoices.Animated = true;
-            this.btnMainInvoices.BackColor = System.Drawing.Color.Transparent;
-            this.btnMainInvoices.BorderRadius = 22;
-            this.btnMainInvoices.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMainInvoices.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMainInvoices.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMainInvoices.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMainInvoices.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMainInvoices.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.btnMainInvoices.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.btnMainInvoices.ForeColor = System.Drawing.Color.White;
-            this.btnMainInvoices.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconRight_chevron;
-            this.btnMainInvoices.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnMainInvoices.Location = new System.Drawing.Point(52, 0);
-            this.btnMainInvoices.Name = "btnMainInvoices";
-            this.btnMainInvoices.Size = new System.Drawing.Size(365, 110);
-            this.btnMainInvoices.TabIndex = 6;
-            this.btnMainInvoices.Text = "Quản lý hóa đơn";
-            this.btnMainInvoices.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMainInvoices.TextOffset = new System.Drawing.Point(50, -5);
-            this.btnMainInvoices.UseTransparentBackground = true;
-            this.btnMainInvoices.Click += new System.EventHandler(this.btnInvoices_Click);
-            // 
-            // picProduct
-            // 
-            this.picProduct.BackColor = System.Drawing.Color.Transparent;
-            this.picProduct.BorderRadius = 10;
-            this.picProduct.FillColor = System.Drawing.Color.RosyBrown;
-            this.picProduct.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.picProduct1;
-            this.picProduct.ImageRotate = 0F;
-            this.picProduct.Location = new System.Drawing.Point(0, 5);
-            this.picProduct.Name = "picProduct";
-            this.picProduct.Size = new System.Drawing.Size(100, 100);
-            this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picProduct.TabIndex = 1;
-            this.picProduct.TabStop = false;
-            this.picProduct.UseTransparentBackground = true;
-            this.picProduct.Click += new System.EventHandler(this.btnProduct_Click);
-            // 
-            // btnMainProduct
-            // 
-            this.btnMainProduct.Animated = true;
-            this.btnMainProduct.BackColor = System.Drawing.Color.Transparent;
-            this.btnMainProduct.BorderRadius = 22;
-            this.btnMainProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMainProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnMainProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnMainProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMainProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMainProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.btnMainProduct.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
-            this.btnMainProduct.ForeColor = System.Drawing.Color.White;
-            this.btnMainProduct.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconRight_chevron;
-            this.btnMainProduct.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnMainProduct.Location = new System.Drawing.Point(52, 0);
-            this.btnMainProduct.Name = "btnMainProduct";
-            this.btnMainProduct.Size = new System.Drawing.Size(365, 110);
-            this.btnMainProduct.TabIndex = 6;
-            this.btnMainProduct.Text = "Quản lý sản phẩm";
-            this.btnMainProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMainProduct.TextOffset = new System.Drawing.Point(50, -5);
-            this.btnMainProduct.UseTransparentBackground = true;
-            this.btnMainProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // picCustomer
             // 
@@ -818,18 +652,184 @@
             this.btnMainCustomer.UseTransparentBackground = true;
             this.btnMainCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
-            // picThongKeBig
+            // panelProduct
             // 
-            this.picThongKeBig.BackColor = System.Drawing.Color.Transparent;
-            this.picThongKeBig.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.picTHONGKEbig;
-            this.picThongKeBig.ImageRotate = 0F;
-            this.picThongKeBig.Location = new System.Drawing.Point(596, 5);
-            this.picThongKeBig.Name = "picThongKeBig";
-            this.picThongKeBig.Size = new System.Drawing.Size(240, 240);
-            this.picThongKeBig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picThongKeBig.TabIndex = 0;
-            this.picThongKeBig.TabStop = false;
-            this.picThongKeBig.UseTransparentBackground = true;
+            this.panelProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelProduct.BorderRadius = 22;
+            this.panelProduct.Controls.Add(this.picProduct);
+            this.panelProduct.Controls.Add(this.btnMainProduct);
+            this.panelProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
+            this.panelProduct.Location = new System.Drawing.Point(530, 421);
+            this.panelProduct.Name = "panelProduct";
+            this.panelProduct.Size = new System.Drawing.Size(420, 110);
+            this.panelProduct.TabIndex = 12;
+            // 
+            // picProduct
+            // 
+            this.picProduct.BackColor = System.Drawing.Color.Transparent;
+            this.picProduct.BorderRadius = 10;
+            this.picProduct.FillColor = System.Drawing.Color.RosyBrown;
+            this.picProduct.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.picProduct1;
+            this.picProduct.ImageRotate = 0F;
+            this.picProduct.Location = new System.Drawing.Point(0, 5);
+            this.picProduct.Name = "picProduct";
+            this.picProduct.Size = new System.Drawing.Size(100, 100);
+            this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picProduct.TabIndex = 1;
+            this.picProduct.TabStop = false;
+            this.picProduct.UseTransparentBackground = true;
+            this.picProduct.Click += new System.EventHandler(this.btnProduct_Click);
+            // 
+            // btnMainProduct
+            // 
+            this.btnMainProduct.Animated = true;
+            this.btnMainProduct.BackColor = System.Drawing.Color.Transparent;
+            this.btnMainProduct.BorderRadius = 22;
+            this.btnMainProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMainProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMainProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMainProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMainProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMainProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
+            this.btnMainProduct.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.btnMainProduct.ForeColor = System.Drawing.Color.White;
+            this.btnMainProduct.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconRight_chevron;
+            this.btnMainProduct.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnMainProduct.Location = new System.Drawing.Point(52, 0);
+            this.btnMainProduct.Name = "btnMainProduct";
+            this.btnMainProduct.Size = new System.Drawing.Size(365, 110);
+            this.btnMainProduct.TabIndex = 6;
+            this.btnMainProduct.Text = "Quản lý sản phẩm";
+            this.btnMainProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMainProduct.TextOffset = new System.Drawing.Point(50, -5);
+            this.btnMainProduct.UseTransparentBackground = true;
+            this.btnMainProduct.Click += new System.EventHandler(this.btnProduct_Click);
+            // 
+            // panelInvoices
+            // 
+            this.panelInvoices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelInvoices.BorderRadius = 22;
+            this.panelInvoices.Controls.Add(this.picInvoices);
+            this.panelInvoices.Controls.Add(this.btnMainInvoices);
+            this.panelInvoices.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
+            this.panelInvoices.Location = new System.Drawing.Point(530, 550);
+            this.panelInvoices.Name = "panelInvoices";
+            this.panelInvoices.Size = new System.Drawing.Size(420, 111);
+            this.panelInvoices.TabIndex = 13;
+            // 
+            // picInvoices
+            // 
+            this.picInvoices.BackColor = System.Drawing.Color.Transparent;
+            this.picInvoices.BorderRadius = 10;
+            this.picInvoices.FillColor = System.Drawing.Color.RosyBrown;
+            this.picInvoices.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.picHoaDon;
+            this.picInvoices.ImageRotate = 0F;
+            this.picInvoices.Location = new System.Drawing.Point(0, 5);
+            this.picInvoices.Name = "picInvoices";
+            this.picInvoices.Size = new System.Drawing.Size(100, 100);
+            this.picInvoices.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picInvoices.TabIndex = 3;
+            this.picInvoices.TabStop = false;
+            this.picInvoices.UseTransparentBackground = true;
+            this.picInvoices.Click += new System.EventHandler(this.btnInvoices_Click);
+            // 
+            // btnMainInvoices
+            // 
+            this.btnMainInvoices.Animated = true;
+            this.btnMainInvoices.BackColor = System.Drawing.Color.Transparent;
+            this.btnMainInvoices.BorderRadius = 22;
+            this.btnMainInvoices.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMainInvoices.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMainInvoices.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMainInvoices.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMainInvoices.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMainInvoices.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
+            this.btnMainInvoices.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.btnMainInvoices.ForeColor = System.Drawing.Color.White;
+            this.btnMainInvoices.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconRight_chevron;
+            this.btnMainInvoices.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnMainInvoices.Location = new System.Drawing.Point(52, 0);
+            this.btnMainInvoices.Name = "btnMainInvoices";
+            this.btnMainInvoices.Size = new System.Drawing.Size(365, 110);
+            this.btnMainInvoices.TabIndex = 6;
+            this.btnMainInvoices.Text = "Quản lý hóa đơn";
+            this.btnMainInvoices.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMainInvoices.TextOffset = new System.Drawing.Point(50, -5);
+            this.btnMainInvoices.UseTransparentBackground = true;
+            this.btnMainInvoices.Click += new System.EventHandler(this.btnInvoices_Click);
+            // 
+            // panelSupplier
+            // 
+            this.panelSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelSupplier.BorderRadius = 22;
+            this.panelSupplier.Controls.Add(this.picSupplier);
+            this.panelSupplier.Controls.Add(this.btnMainSupplier);
+            this.panelSupplier.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
+            this.panelSupplier.Location = new System.Drawing.Point(90, 550);
+            this.panelSupplier.Name = "panelSupplier";
+            this.panelSupplier.Size = new System.Drawing.Size(420, 110);
+            this.panelSupplier.TabIndex = 11;
+            // 
+            // picSupplier
+            // 
+            this.picSupplier.BackColor = System.Drawing.Color.Transparent;
+            this.picSupplier.BorderRadius = 10;
+            this.picSupplier.FillColor = System.Drawing.Color.RosyBrown;
+            this.picSupplier.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.picSupplier;
+            this.picSupplier.ImageRotate = 0F;
+            this.picSupplier.Location = new System.Drawing.Point(0, 5);
+            this.picSupplier.Name = "picSupplier";
+            this.picSupplier.Size = new System.Drawing.Size(100, 100);
+            this.picSupplier.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSupplier.TabIndex = 3;
+            this.picSupplier.TabStop = false;
+            this.picSupplier.UseTransparentBackground = true;
+            this.picSupplier.Click += new System.EventHandler(this.btnSuppiler_Click);
+            // 
+            // btnMainSupplier
+            // 
+            this.btnMainSupplier.Animated = true;
+            this.btnMainSupplier.BackColor = System.Drawing.Color.Transparent;
+            this.btnMainSupplier.BorderRadius = 22;
+            this.btnMainSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMainSupplier.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMainSupplier.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMainSupplier.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMainSupplier.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMainSupplier.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
+            this.btnMainSupplier.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            this.btnMainSupplier.ForeColor = System.Drawing.Color.White;
+            this.btnMainSupplier.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconRight_chevron;
+            this.btnMainSupplier.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnMainSupplier.Location = new System.Drawing.Point(52, 0);
+            this.btnMainSupplier.Name = "btnMainSupplier";
+            this.btnMainSupplier.Size = new System.Drawing.Size(365, 110);
+            this.btnMainSupplier.TabIndex = 6;
+            this.btnMainSupplier.Text = "Quản lý nhà cung cấp";
+            this.btnMainSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMainSupplier.TextOffset = new System.Drawing.Point(50, -5);
+            this.btnMainSupplier.UseTransparentBackground = true;
+            this.btnMainSupplier.Click += new System.EventHandler(this.btnSuppiler_Click);
+            // 
+            // panelMid
+            // 
+            this.panelMid.Controls.Add(this.panelSupplier);
+            this.panelMid.Controls.Add(this.panelInvoices);
+            this.panelMid.Controls.Add(this.panelProduct);
+            this.panelMid.Controls.Add(this.panelCustomerMain);
+            this.panelMid.Controls.Add(this.panelInfo);
+            this.panelMid.Controls.Add(this.panelRight);
+            this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMid.Location = new System.Drawing.Point(0, 0);
+            this.panelMid.Name = "panelMid";
+            this.panelMid.Size = new System.Drawing.Size(1264, 681);
+            this.panelMid.TabIndex = 9;
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.panelTop;
+            this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // frmHome
             // 
@@ -850,23 +850,23 @@
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelWelcomeText.ResumeLayout(false);
             this.panelWelcomeText.PerformLayout();
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
-            this.panelCustomerMain.ResumeLayout(false);
-            this.panelProduct.ResumeLayout(false);
-            this.panelInvoices.ResumeLayout(false);
-            this.panelSupplier.ResumeLayout(false);
-            this.panelMid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSupplier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInvoices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picThongKeBig)).EndInit();
+            this.panelCustomerMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomer)).EndInit();
+            this.panelProduct.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
+            this.panelInvoices.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picInvoices)).EndInit();
+            this.panelSupplier.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picSupplier)).EndInit();
+            this.panelMid.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

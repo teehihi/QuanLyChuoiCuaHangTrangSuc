@@ -1,8 +1,14 @@
 ﻿
+using DataAcessLayer;
+using Guna.UI2.WinForms;
+using QuanLyChuoiCuaHangTrangSuc.SubForm.NhanVien;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+
 
 namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 {
@@ -35,14 +41,25 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
         {
             // Load trước các Form con
             LoadAllChildForms();
-            // Mở mặc định trang Home
-            OpenChildForm("frmHome");
 
-            //// Khi `frmHome` muốn mở form khác, nó sẽ gọi sự kiện này
-            //if (openForms["frmHome"] is frmHome homeForm)
-            //{
-            //    homeForm.RequestFormChange += (formName) => OnChildFormRequested?.Invoke(formName);
-            //}
+            if (ConnectionHelper.IsManager)
+            {
+                OpenChildForm("frmHome"); // Giao diện Quản lý
+            }
+            else
+            {
+                OpenChildForm("frmHomeNV"); // Giao diện Nhân viên
+                btnSuppiler.Visible = false; // Ẩn nút nhà cung cấp
+                // Di chuyển các nút lên 50px
+                btnStonk.Location = new Point(btnStonk.Location.X, btnStonk.Location.Y - 50);
+                btnProduct.Location = new Point(btnProduct.Location.X, btnProduct.Location.Y - 50);
+                btnInvoices.Location = new Point(btnInvoices.Location.X, btnInvoices.Location.Y - 50);
+                lblAdmin.Text = "Employee Tools"; // Đổi tên admin thành Employee
+
+            }
+
+
+
 
             // Kết nối sự kiện từ frmHome
             if (openForms["frmHome"] is frmHome homeForm)
@@ -50,10 +67,18 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
                 homeForm.RequestFormChange += (formName) =>
                 {
                     OpenChildForm(formName);
-                    // Cập nhật nút được chọn khi mở form mới
                     UpdateSelectedButton(formName);
                 };
             }
+            if (openForms["frmHomeNV"] is frmHomeNV homeNVForm)
+            {
+                homeNVForm.RequestFormChange += (formName) =>
+                {
+                    OpenChildForm(formName);
+                    UpdateSelectedButton(formName);
+                };
+            }
+
 
         }
 
@@ -63,6 +88,9 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
             // Gọi UIHelper.SetSelectedButton với nút tương ứng
             switch (formName)
             {
+                case "frmHomeNV":
+                    UIHelper.SetSelectedButton(btnHome);
+                    break;
                 case "frmHome":
                     UIHelper.SetSelectedButton(btnHome);
                     break;
@@ -91,6 +119,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
         {
             // Tạo sẵn các Form để tránh delay khi mở
             openForms["frmHome"] = new frmHome();
+            openForms["frmHomeNV"] = new frmHomeNV();
             openForms["frmCustomer"] = new frmCustomer();
             openForms["frmProduct"] = new frmProduct();
             openForms["frmSupplier"] = new frmSupplier();
@@ -141,7 +170,18 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            OpenChildForm("frmHome");
+
+            if (ConnectionHelper.IsManager)
+            {
+                OpenChildForm("frmHome"); // Giao diện Quản lý
+            }
+            else
+            {
+                OpenChildForm("frmHomeNV"); // Giao diện Nhân viên
+                
+
+            }
+
             UIHelper.SetSelectedButton(btnHome);
         }
 

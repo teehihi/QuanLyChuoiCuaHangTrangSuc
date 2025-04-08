@@ -453,6 +453,16 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap picKnowMore {
+            get {
+                object obj = ResourceManager.GetObject("picKnowMore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap picProduct1 {
             get {
                 object obj = ResourceManager.GetObject("picProduct1", resourceCulture);

@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAcessLayer;
 
 namespace QuanLyChuoiCuaHangTrangSuc
 {
@@ -38,17 +40,37 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "admin" && txtPassword.Text == "2105")
+            
+
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text;
+
+            string connectionString = $"Data Source=TEE\\TEE;Initial Catalog=JwelrySystemDBMSFinal;User ID={username};Password={password}";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
+                conn.Open(); // Nếu mở được => đúng tài khoản SQL
+
+                // Gán connection string cho toàn bộ chương trình
+                DataAcessLayer.ConnectionHelper.CurrentConnectionString = connectionString;
+                DataAcessLayer.ConnectionHelper.CurrentUserName = username; // Lưu tên đăng nhập hiện tại
+
+
+                // Kiểm tra role bằng IS_MEMBER
+                string roleQuery = "SELECT IS_MEMBER('db_owner')";
+                using (SqlCommand cmd = new SqlCommand(roleQuery, conn))
+                {
+                    int isManager = Convert.ToInt32(cmd.ExecuteScalar());
+                    DataAcessLayer.ConnectionHelper.IsManager = (isManager == 1);
+                }
+
+                // Mở form Menu (màn hình chính)
                 UIHelper.SwitchForm(this, new frmMenu());
-                
             }
-            else
-            {
-                lblWrongAccount.Visible = true;
-                txtPassword.Focus();
-            }
+
         }
+
+
 
         //Hàm đóng mở mật khẩu
         private void TogglePasswordVisibility(object sender, EventArgs e)

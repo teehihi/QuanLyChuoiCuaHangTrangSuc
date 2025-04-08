@@ -10,7 +10,9 @@ namespace DataAcessLayer
 {
     public class DAL
     {
-        private readonly string connectionString = "Data Source=TEE\\TEE;Initial Catalog=JwelrySystemDBMSFinal;Integrated Security=True;";
+        //   private readonly string connectionString = "Data Source=TEE\\TEE;Initial Catalog=JwelrySystemDBMSFinal;Integrated Security=True;";
+
+        private readonly string connectionString = ConnectionHelper.CurrentConnectionString;
 
         public DataSet ExecuteQueryDataSet(string query, CommandType commandType, SqlParameter[] parameters = null)
         {

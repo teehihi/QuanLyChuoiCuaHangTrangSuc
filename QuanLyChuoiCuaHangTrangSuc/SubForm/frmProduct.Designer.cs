@@ -644,6 +644,7 @@
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(291, 681);
             this.panelRight.TabIndex = 15;
+            this.panelRight.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRight_Paint);
             // 
             // cbLoaiSP
             // 

@@ -38,7 +38,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "admin" && txtPassword.Text == "2105")
+            if (txtUsername.Text == "" && txtPassword.Text == "")
             {
                 UIHelper.SwitchForm(this, new frmMenu());
                 
@@ -80,6 +80,14 @@ namespace QuanLyChuoiCuaHangTrangSuc
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(e.KeyChar == (char)Keys.Enter)
+            {
+                btnSignIn.PerformClick();
+            }
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 btnSignIn.PerformClick();
             }

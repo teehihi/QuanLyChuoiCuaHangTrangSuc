@@ -58,24 +58,27 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(628, 359);
+            this.label3.Location = new System.Drawing.Point(837, 442);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 13);
+            this.label3.Size = new System.Drawing.Size(22, 19);
             this.label3.TabIndex = 33;
             this.label3.Text = "or";
             // 
             // guna2Separator2
             // 
-            this.guna2Separator2.Location = new System.Drawing.Point(645, 361);
+            this.guna2Separator2.Location = new System.Drawing.Point(860, 444);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(160, 10);
+            this.guna2Separator2.Size = new System.Drawing.Size(213, 12);
             this.guna2Separator2.TabIndex = 32;
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(465, 361);
+            this.guna2Separator1.Location = new System.Drawing.Point(620, 444);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(160, 10);
+            this.guna2Separator1.Size = new System.Drawing.Size(213, 12);
             this.guna2Separator1.TabIndex = 29;
             // 
             // checkRemember
@@ -86,9 +89,10 @@
             this.checkRemember.CheckedState.BorderThickness = 1;
             this.checkRemember.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.checkRemember.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.checkRemember.Location = new System.Drawing.Point(466, 267);
+            this.checkRemember.Location = new System.Drawing.Point(621, 329);
+            this.checkRemember.Margin = new System.Windows.Forms.Padding(4);
             this.checkRemember.Name = "checkRemember";
-            this.checkRemember.Size = new System.Drawing.Size(99, 17);
+            this.checkRemember.Size = new System.Drawing.Size(121, 23);
             this.checkRemember.TabIndex = 28;
             this.checkRemember.Text = "Remember Me";
             this.checkRemember.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -111,9 +115,10 @@
             this.btnSignIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
             this.btnSignIn.IndicateFocus = true;
-            this.btnSignIn.Location = new System.Drawing.Point(466, 305);
+            this.btnSignIn.Location = new System.Drawing.Point(621, 375);
+            this.btnSignIn.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(341, 45);
+            this.btnSignIn.Size = new System.Drawing.Size(455, 55);
             this.btnSignIn.TabIndex = 26;
             this.btnSignIn.Text = "Đăng nhập";
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
@@ -122,9 +127,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(467, 204);
+            this.label2.Location = new System.Drawing.Point(623, 251);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 19);
+            this.label2.Size = new System.Drawing.Size(95, 25);
             this.label2.TabIndex = 21;
             this.label2.Text = "Mật Khẩu";
             // 
@@ -132,9 +138,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(467, 140);
+            this.label1.Location = new System.Drawing.Point(623, 172);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 19);
+            this.label1.Size = new System.Drawing.Size(143, 25);
             this.label1.TabIndex = 20;
             this.label1.Text = "Tên Đăng Nhập";
             // 
@@ -154,9 +161,10 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.Red;
             this.btnClose.IndicateFocus = true;
-            this.btnClose.Location = new System.Drawing.Point(810, -3);
+            this.btnClose.Location = new System.Drawing.Point(1080, -4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(46, 40);
+            this.btnClose.Size = new System.Drawing.Size(61, 49);
             this.btnClose.TabIndex = 17;
             this.btnClose.Text = "❌";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -166,9 +174,10 @@
             this.lblWrongAccount.AutoSize = true;
             this.lblWrongAccount.Font = new System.Drawing.Font("Segoe UI", 8.75F);
             this.lblWrongAccount.ForeColor = System.Drawing.Color.Red;
-            this.lblWrongAccount.Location = new System.Drawing.Point(518, 284);
+            this.lblWrongAccount.Location = new System.Drawing.Point(691, 350);
+            this.lblWrongAccount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWrongAccount.Name = "lblWrongAccount";
-            this.lblWrongAccount.Size = new System.Drawing.Size(239, 15);
+            this.lblWrongAccount.Size = new System.Drawing.Size(295, 20);
             this.lblWrongAccount.TabIndex = 35;
             this.lblWrongAccount.Text = "Tên đăng nhập hoặc mật khẩu không đúng!";
             this.lblWrongAccount.Visible = false;
@@ -192,9 +201,10 @@
             this.btnTogglePassword.BackColor = System.Drawing.Color.Transparent;
             this.btnTogglePassword.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.eye_closed;
             this.btnTogglePassword.ImageRotate = 0F;
-            this.btnTogglePassword.Location = new System.Drawing.Point(779, 233);
+            this.btnTogglePassword.Location = new System.Drawing.Point(1039, 287);
+            this.btnTogglePassword.Margin = new System.Windows.Forms.Padding(4);
             this.btnTogglePassword.Name = "btnTogglePassword";
-            this.btnTogglePassword.Size = new System.Drawing.Size(20, 20);
+            this.btnTogglePassword.Size = new System.Drawing.Size(27, 25);
             this.btnTogglePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnTogglePassword.TabIndex = 34;
             this.btnTogglePassword.TabStop = false;
@@ -219,9 +229,10 @@
             this.btnFBSign.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnFBSign.ImageSize = new System.Drawing.Size(25, 25);
             this.btnFBSign.IndicateFocus = true;
-            this.btnFBSign.Location = new System.Drawing.Point(645, 377);
+            this.btnFBSign.Location = new System.Drawing.Point(860, 464);
+            this.btnFBSign.Margin = new System.Windows.Forms.Padding(4);
             this.btnFBSign.Name = "btnFBSign";
-            this.btnFBSign.Size = new System.Drawing.Size(160, 45);
+            this.btnFBSign.Size = new System.Drawing.Size(213, 55);
             this.btnFBSign.TabIndex = 31;
             this.btnFBSign.Text = "Sign in with FB";
             // 
@@ -241,9 +252,10 @@
             this.btnGGSign.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.GoogleLogo;
             this.btnGGSign.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGGSign.IndicateFocus = true;
-            this.btnGGSign.Location = new System.Drawing.Point(465, 377);
+            this.btnGGSign.Location = new System.Drawing.Point(620, 464);
+            this.btnGGSign.Margin = new System.Windows.Forms.Padding(4);
             this.btnGGSign.Name = "btnGGSign";
-            this.btnGGSign.Size = new System.Drawing.Size(160, 45);
+            this.btnGGSign.Size = new System.Drawing.Size(213, 55);
             this.btnGGSign.TabIndex = 30;
             this.btnGGSign.Text = "Sign in with Google";
             this.btnGGSign.TextOffset = new System.Drawing.Point(10, 0);
@@ -252,7 +264,7 @@
             // 
             this.txtUsername.Animated = true;
             this.txtUsername.AutoRoundedCorners = true;
-            this.txtUsername.BorderRadius = 17;
+            this.txtUsername.BorderRadius = 21;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.DefaultText = "";
             this.txtUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -266,21 +278,24 @@
             this.txtUsername.IconLeft = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.user_icon;
             this.txtUsername.IconLeftOffset = new System.Drawing.Point(5, 0);
             this.txtUsername.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtUsername.Location = new System.Drawing.Point(466, 164);
+            this.txtUsername.Location = new System.Drawing.Point(621, 202);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PlaceholderText = "Username";
             this.txtUsername.SelectedText = "";
-            this.txtUsername.Size = new System.Drawing.Size(340, 36);
+            this.txtUsername.Size = new System.Drawing.Size(453, 44);
             this.txtUsername.TabIndex = 0;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.MediumLogo;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(507, 22);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(676, 27);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(300, 124);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(400, 153);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 19;
             this.guna2PictureBox1.TabStop = false;
@@ -290,9 +305,10 @@
             this.picSignIn.BorderRadius = 10;
             this.picSignIn.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.SignIn_background_none;
             this.picSignIn.ImageRotate = 0F;
-            this.picSignIn.Location = new System.Drawing.Point(-6, -2);
+            this.picSignIn.Location = new System.Drawing.Point(-8, -2);
+            this.picSignIn.Margin = new System.Windows.Forms.Padding(4);
             this.picSignIn.Name = "picSignIn";
-            this.picSignIn.Size = new System.Drawing.Size(451, 456);
+            this.picSignIn.Size = new System.Drawing.Size(601, 561);
             this.picSignIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSignIn.TabIndex = 18;
             this.picSignIn.TabStop = false;
@@ -301,7 +317,7 @@
             // 
             this.txtPassword.Animated = true;
             this.txtPassword.AutoRoundedCorners = true;
-            this.txtPassword.BorderRadius = 17;
+            this.txtPassword.BorderRadius = 21;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultText = "";
             this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -315,20 +331,21 @@
             this.txtPassword.IconLeft = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.lock_icon;
             this.txtPassword.IconLeftOffset = new System.Drawing.Point(5, 0);
             this.txtPassword.IconLeftSize = new System.Drawing.Size(28, 28);
-            this.txtPassword.Location = new System.Drawing.Point(465, 225);
+            this.txtPassword.Location = new System.Drawing.Point(620, 277);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(340, 36);
+            this.txtPassword.Size = new System.Drawing.Size(453, 44);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 450);
+            this.ClientSize = new System.Drawing.Size(1133, 554);
             this.Controls.Add(this.lblWrongAccount);
             this.Controls.Add(this.btnTogglePassword);
             this.Controls.Add(this.label3);
@@ -347,6 +364,7 @@
             this.Controls.Add(this.txtPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hãy đăng nhập để tiếp tục";

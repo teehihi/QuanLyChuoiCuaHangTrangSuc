@@ -36,13 +36,14 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            UIHelper.SwitchForm(this, new frmCustomer());
+
+            RequestFormChange?.Invoke("frmCustomer");
         }
 
         private void btnSuppiler_Click(object sender, EventArgs e)
         {
-            
-            UIHelper.SwitchForm(this, new frmSupplier());
+            RequestFormChange?.Invoke("frmSupplier");
+
         }
         private void btnProduct_Click(object sender, EventArgs e)
         {
@@ -53,12 +54,13 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void btnInvoices_Click(object sender, EventArgs e)
         {
-            UIHelper.SwitchForm(this, new frmInvoices());
+            RequestFormChange?.Invoke("frmInvoices");
         }
 
         private void btnStonk_Click(object sender, EventArgs e)
         {
-            UIHelper.SwitchForm(this, new frmThongKe());
+           
+            RequestFormChange?.Invoke("frmThongKe");
         }
     }
 }

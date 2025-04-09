@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation10 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduct));
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panelTop = new Guna.UI2.WinForms.Guna2Panel();
@@ -40,12 +40,12 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelLeft = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panelMid = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblProduct = new System.Windows.Forms.Label();
             this.flpProduct = new System.Windows.Forms.FlowLayoutPanel();
             this.panelProduct = new Guna.UI2.WinForms.Guna2Panel();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblNameSP = new System.Windows.Forms.Label();
             this.picProduct = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblProduct = new System.Windows.Forms.Label();
             this.panelRight = new Guna.UI2.WinForms.Guna2Panel();
             this.cbLoaiSP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtBranchId = new Guna.UI2.WinForms.Guna2TextBox();
@@ -196,6 +196,18 @@
             this.panelMid.Size = new System.Drawing.Size(1264, 681);
             this.panelMid.TabIndex = 15;
             // 
+            // lblProduct
+            // 
+            this.lblProduct.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblProduct, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblProduct.Font = new System.Drawing.Font("Segoe UI", 13.25F, System.Drawing.FontStyle.Bold);
+            this.lblProduct.ForeColor = System.Drawing.Color.White;
+            this.lblProduct.Location = new System.Drawing.Point(86, 251);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(185, 25);
+            this.lblProduct.TabIndex = 21;
+            this.lblProduct.Text = "Danh mục sản phẩm";
+            // 
             // flpProduct
             // 
             this.flpProduct.Controls.Add(this.panelProduct);
@@ -259,18 +271,6 @@
             this.picProduct.TabIndex = 0;
             this.picProduct.TabStop = false;
             // 
-            // lblProduct
-            // 
-            this.lblProduct.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.lblProduct, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblProduct.Font = new System.Drawing.Font("Segoe UI", 13.25F, System.Drawing.FontStyle.Bold);
-            this.lblProduct.ForeColor = System.Drawing.Color.White;
-            this.lblProduct.Location = new System.Drawing.Point(86, 251);
-            this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(185, 25);
-            this.lblProduct.TabIndex = 21;
-            this.lblProduct.Text = "Danh mục sản phẩm";
-            // 
             // panelRight
             // 
             this.panelRight.BorderThickness = 1;
@@ -325,7 +325,7 @@
             "Bông tai",
             "Lắc tay",
             "Mặt dây chuyền"});
-            this.cbLoaiSP.Location = new System.Drawing.Point(92, 367);
+            this.cbLoaiSP.Location = new System.Drawing.Point(92, 363);
             this.cbLoaiSP.Name = "cbLoaiSP";
             this.cbLoaiSP.Size = new System.Drawing.Size(183, 36);
             this.cbLoaiSP.TabIndex = 23;
@@ -346,7 +346,7 @@
             this.txtBranchId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtBranchId.ForeColor = System.Drawing.Color.Black;
             this.txtBranchId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBranchId.Location = new System.Drawing.Point(233, 63);
+            this.txtBranchId.Location = new System.Drawing.Point(233, 61);
             this.txtBranchId.Name = "txtBranchId";
             this.txtBranchId.PlaceholderText = "";
             this.txtBranchId.SelectedText = "";
@@ -359,7 +359,7 @@
             this.guna2Transition1.SetDecoration(this.label8, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(153, 71);
+            this.label8.Location = new System.Drawing.Point(153, 69);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 20);
             this.label8.TabIndex = 43;
@@ -371,7 +371,7 @@
             this.panelThemSuaXoa.Controls.Add(this.btnXoa);
             this.panelThemSuaXoa.Controls.Add(this.btnThem);
             this.guna2Transition1.SetDecoration(this.panelThemSuaXoa, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.panelThemSuaXoa.Location = new System.Drawing.Point(3, 520);
+            this.panelThemSuaXoa.Location = new System.Drawing.Point(3, 511);
             this.panelThemSuaXoa.Name = "panelThemSuaXoa";
             this.panelThemSuaXoa.Size = new System.Drawing.Size(285, 122);
             this.panelThemSuaXoa.TabIndex = 23;
@@ -507,7 +507,7 @@
             this.btnChoosePic.FillColor = System.Drawing.Color.White;
             this.btnChoosePic.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnChoosePic.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnChoosePic.Location = new System.Drawing.Point(134, 452);
+            this.btnChoosePic.Location = new System.Drawing.Point(134, 443);
             this.btnChoosePic.Name = "btnChoosePic";
             this.btnChoosePic.Size = new System.Drawing.Size(137, 45);
             this.btnChoosePic.TabIndex = 42;
@@ -521,7 +521,7 @@
             this.guna2Transition1.SetDecoration(this.label9, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(16, 376);
+            this.label9.Location = new System.Drawing.Point(16, 372);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 20);
             this.label9.TabIndex = 40;
@@ -533,7 +533,7 @@
             this.pictureBoxProduct.BorderRadius = 15;
             this.guna2Transition1.SetDecoration(this.pictureBoxProduct, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pictureBoxProduct.ImageRotate = 0F;
-            this.pictureBoxProduct.Location = new System.Drawing.Point(18, 417);
+            this.pictureBoxProduct.Location = new System.Drawing.Point(18, 408);
             this.pictureBoxProduct.Name = "pictureBoxProduct";
             this.pictureBoxProduct.Size = new System.Drawing.Size(100, 100);
             this.pictureBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -557,7 +557,7 @@
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtDescription.ForeColor = System.Drawing.Color.Black;
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescription.Location = new System.Drawing.Point(92, 325);
+            this.txtDescription.Location = new System.Drawing.Point(92, 321);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PlaceholderText = "";
             this.txtDescription.SelectedText = "";
@@ -570,7 +570,7 @@
             this.guna2Transition1.SetDecoration(this.label7, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(14, 333);
+            this.label7.Location = new System.Drawing.Point(14, 329);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 20);
             this.label7.TabIndex = 36;
@@ -592,7 +592,7 @@
             this.txtWeight.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtWeight.ForeColor = System.Drawing.Color.Black;
             this.txtWeight.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtWeight.Location = new System.Drawing.Point(92, 283);
+            this.txtWeight.Location = new System.Drawing.Point(92, 279);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.PlaceholderText = "";
             this.txtWeight.SelectedText = "";
@@ -605,7 +605,7 @@
             this.guna2Transition1.SetDecoration(this.label6, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(14, 290);
+            this.label6.Location = new System.Drawing.Point(14, 286);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 20);
             this.label6.TabIndex = 34;
@@ -627,7 +627,7 @@
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtPrice.ForeColor = System.Drawing.Color.Black;
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPrice.Location = new System.Drawing.Point(92, 241);
+            this.txtPrice.Location = new System.Drawing.Point(92, 237);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PlaceholderText = "";
             this.txtPrice.SelectedText = "";
@@ -642,7 +642,7 @@
             this.guna2Transition1.SetDecoration(this.label5, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(14, 247);
+            this.label5.Location = new System.Drawing.Point(14, 243);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 20);
             this.label5.TabIndex = 32;
@@ -664,7 +664,7 @@
             this.txtStockQuantity.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtStockQuantity.ForeColor = System.Drawing.Color.Black;
             this.txtStockQuantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtStockQuantity.Location = new System.Drawing.Point(92, 196);
+            this.txtStockQuantity.Location = new System.Drawing.Point(92, 192);
             this.txtStockQuantity.Name = "txtStockQuantity";
             this.txtStockQuantity.PlaceholderText = "";
             this.txtStockQuantity.SelectedText = "";
@@ -677,7 +677,7 @@
             this.guna2Transition1.SetDecoration(this.label4, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(16, 203);
+            this.label4.Location = new System.Drawing.Point(16, 199);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 20);
             this.label4.TabIndex = 30;
@@ -699,7 +699,7 @@
             this.txtMaterial.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtMaterial.ForeColor = System.Drawing.Color.Black;
             this.txtMaterial.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaterial.Location = new System.Drawing.Point(94, 152);
+            this.txtMaterial.Location = new System.Drawing.Point(94, 148);
             this.txtMaterial.Name = "txtMaterial";
             this.txtMaterial.PlaceholderText = "";
             this.txtMaterial.SelectedText = "";
@@ -712,7 +712,7 @@
             this.guna2Transition1.SetDecoration(this.label3, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 158);
+            this.label3.Location = new System.Drawing.Point(16, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 20);
             this.label3.TabIndex = 28;
@@ -734,7 +734,7 @@
             this.txtProductName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtProductName.ForeColor = System.Drawing.Color.Black;
             this.txtProductName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtProductName.Location = new System.Drawing.Point(94, 107);
+            this.txtProductName.Location = new System.Drawing.Point(94, 103);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.PlaceholderText = "";
             this.txtProductName.SelectedText = "";
@@ -747,7 +747,7 @@
             this.guna2Transition1.SetDecoration(this.label2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(16, 114);
+            this.label2.Location = new System.Drawing.Point(16, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 26;
@@ -769,7 +769,7 @@
             this.txtProductID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtProductID.ForeColor = System.Drawing.Color.Black;
             this.txtProductID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtProductID.Location = new System.Drawing.Point(96, 63);
+            this.txtProductID.Location = new System.Drawing.Point(96, 61);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.PlaceholderText = "";
             this.txtProductID.SelectedText = "";
@@ -782,7 +782,7 @@
             this.guna2Transition1.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 71);
+            this.label1.Location = new System.Drawing.Point(16, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.TabIndex = 24;
@@ -794,7 +794,7 @@
             this.guna2Transition1.SetDecoration(this.lblInfor, Guna.UI2.AnimatorNS.DecorationType.None);
             this.lblInfor.Font = new System.Drawing.Font("Segoe UI", 13.25F, System.Drawing.FontStyle.Bold);
             this.lblInfor.ForeColor = System.Drawing.Color.Gold;
-            this.lblInfor.Location = new System.Drawing.Point(15, 32);
+            this.lblInfor.Location = new System.Drawing.Point(15, 31);
             this.lblInfor.Name = "lblInfor";
             this.lblInfor.Size = new System.Drawing.Size(182, 25);
             this.lblInfor.TabIndex = 22;
@@ -986,22 +986,22 @@
             // guna2Transition1
             // 
             this.guna2Transition1.Cursor = null;
-            animation10.AnimateOnlyDifferences = true;
-            animation10.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.BlindCoeff")));
-            animation10.LeafCoeff = 0F;
-            animation10.MaxTime = 1F;
-            animation10.MinTime = 0F;
-            animation10.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicCoeff")));
-            animation10.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation10.MosaicShift")));
-            animation10.MosaicSize = 0;
-            animation10.Padding = new System.Windows.Forms.Padding(0);
-            animation10.RotateCoeff = 0F;
-            animation10.RotateLimit = 0F;
-            animation10.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.ScaleCoeff")));
-            animation10.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation10.SlideCoeff")));
-            animation10.TimeCoeff = 0F;
-            animation10.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation10;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation2;
             // 
             // frmProduct
             // 

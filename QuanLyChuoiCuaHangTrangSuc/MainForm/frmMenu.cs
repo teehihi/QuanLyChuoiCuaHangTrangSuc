@@ -8,8 +8,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
-
-
+using QuanLyChuoiCuaHangTrangSuc.SubForm.ChatForm;
 namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 {
     public partial class frmMenu : Form
@@ -33,7 +32,6 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
                          btnNotification, btnSetting, topSeph);
             UIHelper.SetSelectedButton(btnHome);
 
-            
             
         }
 
@@ -143,24 +141,30 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 
             Form childForm = openForms[formName];
 
-            // Ẩn Form hiện tại (nếu có)
-            if (panelMid.Controls.Count > 0)
+            // Ẩn các Form hiện có trong panelMid
+            foreach (Control control in panelMid.Controls)
             {
-                Form currentForm = (Form)panelMid.Controls[0];
-                currentForm.Hide();
+                if (control is Form form)
+                {
+                    form.Hide();
+                }
             }
 
             // Thêm Form con vào Panel nếu chưa có
             if (!panelMid.Controls.Contains(childForm))
             {
-                panelMid.Controls.Clear();
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
                 panelMid.Controls.Add(childForm);
             }
 
             panelMid.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            btnChat.BringToFront();
         }
+
 
         private void picMenu_Click(object sender, EventArgs e)
         {
@@ -219,5 +223,19 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
         {
             UIHelper.HandleLogout(this);
         }
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            frmChat chatForm = new frmChat();
+            chatForm.TopMost = true;
+            chatForm.StartPosition = FormStartPosition.Manual;
+            chatForm.Location = new Point(this.Right - 360, this.Bottom - 450); // điều chỉnh vị trí cho phù hợp
+            chatForm.Show();
+
+        }
+
+
+
+
     }
 }

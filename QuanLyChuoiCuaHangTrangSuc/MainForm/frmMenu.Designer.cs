@@ -47,15 +47,17 @@
             this.btnProduct = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.lblAdmin = new System.Windows.Forms.Label();
-            this.picMenu = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblLogOut = new System.Windows.Forms.LinkLabel();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.panelMid = new Guna.UI2.WinForms.Guna2Panel();
+            this.picMenu = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnChat = new Guna.UI2.WinForms.Guna2Button();
             this.panelTop.SuspendLayout();
             this.panelLeft.SuspendLayout();
+            this.panelMid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -380,21 +382,6 @@
             this.lblAdmin.Text = "Admin tools";
             this.lblAdmin.Visible = false;
             // 
-            // picMenu
-            // 
-            this.picMenu.BackColor = System.Drawing.Color.Transparent;
-            this.picMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picMenu.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.menu_icon;
-            this.picMenu.ImageRotate = 0F;
-            this.picMenu.Location = new System.Drawing.Point(32, 33);
-            this.picMenu.Name = "picMenu";
-            this.picMenu.Size = new System.Drawing.Size(30, 30);
-            this.picMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMenu.TabIndex = 0;
-            this.picMenu.TabStop = false;
-            this.picMenu.UseTransparentBackground = true;
-            this.picMenu.Click += new System.EventHandler(this.picMenu_Click);
-            // 
             // lblLogOut
             // 
             this.lblLogOut.ActiveLinkColor = System.Drawing.Color.White;
@@ -411,20 +398,6 @@
             this.lblLogOut.Text = "Đăng xuất";
             this.lblLogOut.VisitedLinkColor = System.Drawing.Color.White;
             this.lblLogOut.Click += new System.EventHandler(this.lblLogOut_Click);
-            // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picLogo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picLogo.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.MediumLogo;
-            this.picLogo.Location = new System.Drawing.Point(45, 80);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(254, 101);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 2;
-            this.picLogo.TabStop = false;
-            this.picLogo.Visible = false;
             // 
             // btnHome
             // 
@@ -466,11 +439,64 @@
             // 
             // panelMid
             // 
+            this.panelMid.Controls.Add(this.btnChat);
             this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMid.Location = new System.Drawing.Point(0, 0);
             this.panelMid.Name = "panelMid";
             this.panelMid.Size = new System.Drawing.Size(1248, 681);
             this.panelMid.TabIndex = 13;
+            // 
+            // picMenu
+            // 
+            this.picMenu.BackColor = System.Drawing.Color.Transparent;
+            this.picMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picMenu.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.menu_icon;
+            this.picMenu.ImageRotate = 0F;
+            this.picMenu.Location = new System.Drawing.Point(32, 33);
+            this.picMenu.Name = "picMenu";
+            this.picMenu.Size = new System.Drawing.Size(30, 30);
+            this.picMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMenu.TabIndex = 0;
+            this.picMenu.TabStop = false;
+            this.picMenu.UseTransparentBackground = true;
+            this.picMenu.Click += new System.EventHandler(this.picMenu_Click);
+            // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picLogo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.picLogo.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.MediumLogo;
+            this.picLogo.Location = new System.Drawing.Point(45, 80);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(254, 101);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 2;
+            this.picLogo.TabStop = false;
+            this.picLogo.Visible = false;
+            // 
+            // btnChat
+            // 
+            this.btnChat.Animated = true;
+            this.btnChat.AutoRoundedCorners = true;
+            this.btnChat.BackColor = System.Drawing.Color.Transparent;
+            this.btnChat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(237)))));
+            this.btnChat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChat.ForeColor = System.Drawing.Color.White;
+            this.btnChat.HoverState.BorderColor = System.Drawing.Color.Black;
+            this.btnChat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(102)))), ((int)(((byte)(241)))));
+            this.btnChat.Image = ((System.Drawing.Image)(resources.GetObject("btnChat.Image")));
+            this.btnChat.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnChat.Location = new System.Drawing.Point(1157, 600);
+            this.btnChat.Name = "btnChat";
+            this.btnChat.Size = new System.Drawing.Size(60, 60);
+            this.btnChat.TabIndex = 3;
+            this.btnChat.UseTransparentBackground = true;
+            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // frmMenu
             // 
@@ -491,6 +517,7 @@
             this.panelTop.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
+            this.panelMid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
@@ -522,5 +549,6 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2Panel panelMid;
+        private Guna.UI2.WinForms.Guna2Button btnChat;
     }
 }

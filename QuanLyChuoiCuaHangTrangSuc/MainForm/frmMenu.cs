@@ -23,7 +23,10 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
         public frmMenu()
         {
             InitializeComponent();
-            
+            this.ShowInTaskbar = true;
+            this.ShowIcon = true;
+
+
 
 
             // Khởi tạo giao diện và form đầu tiên

@@ -340,5 +340,8 @@
   <ItemGroup>
     <None Include="Resources\avtAI1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fvicon1.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

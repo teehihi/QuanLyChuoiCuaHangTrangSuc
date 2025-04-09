@@ -30,30 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChat));
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblName = new System.Windows.Forms.Label();
             this.panelChatBottom = new Guna.UI2.WinForms.Guna2Panel();
             this.chatPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.txtMessage = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.panelChatBottom.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2AnimateWindow1
-            // 
-            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_ACTIVATE;
-            this.guna2AnimateWindow1.Interval = 100;
-            this.guna2AnimateWindow1.TargetForm = this;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 15;
-            this.guna2Elipse1.TargetControl = this;
             // 
             // btnClose
             // 
@@ -69,32 +56,27 @@
             this.btnClose.Size = new System.Drawing.Size(25, 25);
             this.btnClose.TabIndex = 4;
             // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.Animated = true;
-            this.btnMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FillColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.ForeColor = System.Drawing.Color.Black;
-            this.btnMinimize.IconColor = System.Drawing.Color.Black;
-            this.btnMinimize.Location = new System.Drawing.Point(263, 4);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(25, 25);
-            this.btnMinimize.TabIndex = 5;
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel1.Controls.Add(this.btnReload);
-            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Controls.Add(this.lblName);
             this.guna2Panel1.Controls.Add(this.btnClose);
-            this.guna2Panel1.Controls.Add(this.btnMinimize);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(350, 34);
             this.guna2Panel1.TabIndex = 6;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblName.Location = new System.Drawing.Point(5, 7);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(159, 20);
+            this.lblName.TabIndex = 6;
+            this.lblName.Text = "TeeNStyle Support AI";
             // 
             // panelChatBottom
             // 
@@ -115,6 +97,14 @@
             this.chatPanel.Padding = new System.Windows.Forms.Padding(10);
             this.chatPanel.Size = new System.Drawing.Size(350, 360);
             this.chatPanel.TabIndex = 10;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.AnimateWindow = true;
+            this.guna2BorderlessForm1.BorderRadius = 10;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // txtMessage
             // 
@@ -140,19 +130,9 @@
             this.txtMessage.PlaceholderText = "Nhập tin nhắn...";
             this.txtMessage.SelectedText = "";
             this.txtMessage.Size = new System.Drawing.Size(332, 43);
-            this.txtMessage.TabIndex = 7;
+            this.txtMessage.TabIndex = 1;
             this.txtMessage.IconRightClick += new System.EventHandler(this.txtMessage_IconRightClick);
             this.txtMessage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMessage_KeyDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(5, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "TeeNStyle Support AI";
             // 
             // btnReload
             // 
@@ -177,13 +157,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 450);
+            this.ControlBox = false;
             this.Controls.Add(this.chatPanel);
             this.Controls.Add(this.panelChatBottom);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChat";
-            this.Text = "frmChat";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmChat_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -193,16 +176,13 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2ControlBox btnClose;
-        private Guna.UI2.WinForms.Guna2ControlBox btnMinimize;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2TextBox txtMessage;
         private Guna.UI2.WinForms.Guna2Panel panelChatBottom;
         private Guna.UI2.WinForms.Guna2Panel chatPanel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblName;
         private Guna.UI2.WinForms.Guna2Button btnReload;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

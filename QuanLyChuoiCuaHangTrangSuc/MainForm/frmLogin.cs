@@ -19,13 +19,19 @@ namespace QuanLyChuoiCuaHangTrangSuc
         private bool isPasswordVisible = false;
         public frmLogin()
         {
+
             InitializeComponent();
+
         }
 
         
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            this.ShowInTaskbar = true;
+            this.ShowIcon = true;
+            this.Icon = Properties.Resources.fvicon;
+
 
             txtUsername.Focus();
             // Đảm bảo txtPassword ban đầu là ẩn

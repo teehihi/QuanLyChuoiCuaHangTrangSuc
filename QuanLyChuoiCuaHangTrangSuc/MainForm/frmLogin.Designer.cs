@@ -39,9 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.lblWrongAccount = new System.Windows.Forms.Label();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnTogglePassword = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnFBSign = new Guna.UI2.WinForms.Guna2Button();
             this.btnGGSign = new Guna.UI2.WinForms.Guna2Button();
@@ -49,6 +46,7 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picSignIn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.btnTogglePassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSignIn)).BeginInit();
@@ -154,7 +152,7 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.Red;
             this.btnClose.IndicateFocus = true;
-            this.btnClose.Location = new System.Drawing.Point(810, -3);
+            this.btnClose.Location = new System.Drawing.Point(811, -5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(46, 40);
             this.btnClose.TabIndex = 17;
@@ -172,20 +170,6 @@
             this.lblWrongAccount.TabIndex = 35;
             this.lblWrongAccount.Text = "Tên đăng nhập hoặc mật khẩu không đúng!";
             this.lblWrongAccount.Visible = false;
-            // 
-            // guna2AnimateWindow1
-            // 
-            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_SLIDE;
-            this.guna2AnimateWindow1.Interval = 100;
-            this.guna2AnimateWindow1.TargetForm = this;
-            // 
-            // guna2ShadowForm1
-            // 
-            this.guna2ShadowForm1.TargetForm = this;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.TargetControl = this;
             // 
             // btnTogglePassword
             // 
@@ -324,6 +308,14 @@
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.AnimateWindow = true;
+            this.guna2BorderlessForm1.BorderRadius = 15;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,9 +368,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox picSignIn;
         private Guna.UI2.WinForms.Guna2PictureBox btnTogglePassword;
         private System.Windows.Forms.Label lblWrongAccount;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }
 

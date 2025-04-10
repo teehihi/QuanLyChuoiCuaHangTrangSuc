@@ -168,7 +168,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
                                  $"&redirect_uri={redirectUri}" +
                                  $"&client_id={clientId}";
 
-                d// 1. Mở trình duyệt bằng tiến trình riêng
+                // 1. Mở trình duyệt bằng tiến trình riêng
                 var browserProcess = new System.Diagnostics.Process();
                 browserProcess.StartInfo.FileName = @"C:\Program Files\Google\Chrome\Application\chrome.exe";
                 browserProcess.StartInfo.Arguments = $"--new-window \"{authUrl}\"";

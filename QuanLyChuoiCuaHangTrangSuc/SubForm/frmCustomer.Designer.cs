@@ -160,7 +160,6 @@
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(300, 681);
             this.panelRight.TabIndex = 5;
-            this.panelRight.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRight_Paint);
             // 
             // txtCustomerType
             // 
@@ -198,6 +197,7 @@
             this.txtCustomerPhone.ForeColor = System.Drawing.Color.Black;
             this.txtCustomerPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCustomerPhone.Location = new System.Drawing.Point(26, 307);
+            this.txtCustomerPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustomerPhone.Name = "txtCustomerPhone";
             this.txtCustomerPhone.PlaceholderText = "";
             this.txtCustomerPhone.SelectedText = "";
@@ -331,7 +331,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(25, 284);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 20);
+            this.label9.Size = new System.Drawing.Size(129, 25);
             this.label9.TabIndex = 76;
             this.label9.Text = "Số điện thoại";
             // 
@@ -351,6 +351,7 @@
             this.txtCustomerAddress.ForeColor = System.Drawing.Color.Black;
             this.txtCustomerAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCustomerAddress.Location = new System.Drawing.Point(26, 393);
+            this.txtCustomerAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustomerAddress.Name = "txtCustomerAddress";
             this.txtCustomerAddress.PlaceholderText = "";
             this.txtCustomerAddress.SelectedText = "";
@@ -364,7 +365,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(22, 355);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 20);
+            this.label6.Size = new System.Drawing.Size(74, 25);
             this.label6.TabIndex = 75;
             this.label6.Text = "Địa Chỉ";
             // 
@@ -375,7 +376,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(22, 198);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 20);
+            this.label5.Size = new System.Drawing.Size(161, 25);
             this.label5.TabIndex = 74;
             this.label5.Text = "Loại Khách Hàng";
             // 
@@ -395,6 +396,7 @@
             this.txtCustomerName.ForeColor = System.Drawing.Color.Black;
             this.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCustomerName.Location = new System.Drawing.Point(23, 143);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.PlaceholderText = "";
             this.txtCustomerName.SelectedText = "";
@@ -408,7 +410,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(19, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 20);
+            this.label2.Size = new System.Drawing.Size(155, 25);
             this.label2.TabIndex = 73;
             this.label2.Text = "Tên Khách Hàng";
             // 
@@ -428,6 +430,7 @@
             this.txtCustomerID.ForeColor = System.Drawing.Color.Black;
             this.txtCustomerID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCustomerID.Location = new System.Drawing.Point(26, 75);
+            this.txtCustomerID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.PlaceholderText = "";
             this.txtCustomerID.SelectedText = "";
@@ -441,7 +444,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(22, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 20);
+            this.label1.Size = new System.Drawing.Size(148, 25);
             this.label1.TabIndex = 71;
             this.label1.Text = "Mã Khách hàng";
             // 
@@ -453,7 +456,7 @@
             this.lblInfor.ForeColor = System.Drawing.Color.Gold;
             this.lblInfor.Location = new System.Drawing.Point(18, 26);
             this.lblInfor.Name = "lblInfor";
-            this.lblInfor.Size = new System.Drawing.Size(199, 25);
+            this.lblInfor.Size = new System.Drawing.Size(249, 31);
             this.lblInfor.TabIndex = 69;
             this.lblInfor.Text = "Thông tin khách hàng";
             // 
@@ -485,7 +488,6 @@
             this.panelMid.Name = "panelMid";
             this.panelMid.Size = new System.Drawing.Size(1264, 681);
             this.panelMid.TabIndex = 12;
-            //this.panelMid.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMid_Paint);
             // 
             // guna2txtsearch
             // 
@@ -504,6 +506,7 @@
             this.guna2txtsearch.IconRight = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icons8_search_50;
             this.guna2txtsearch.IconRightSize = new System.Drawing.Size(25, 25);
             this.guna2txtsearch.Location = new System.Drawing.Point(645, 70);
+            this.guna2txtsearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2txtsearch.Name = "guna2txtsearch";
             this.guna2txtsearch.PlaceholderText = "Nhập tên khách hàng, số điện thoại, địa chỉ, ...";
             this.guna2txtsearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -590,7 +593,7 @@
             // 
             // frmCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);

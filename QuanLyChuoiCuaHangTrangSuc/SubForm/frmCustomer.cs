@@ -240,22 +240,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
             LoadData();
         }
 
-        private void panelThemSuaXoa_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void panelRight_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnThem.Enabled = true;

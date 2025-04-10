@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,10 +20,37 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm.ChatForm
         public frmChat()
         {
             InitializeComponent();
+            txtMessage.Focus(); // Đặt con trỏ vào ô nhập tin nhắn
+
+
         }
 
         private void frmChat_Load(object sender, EventArgs e)
         {
+            var apiKey = "AIzaSyDHbhQT-lJ2kafZAdmAiWRDHVmz7reB1GQ";
+            var url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={apiKey}";
+            var today = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            var requestData = new
+            {
+                contents = new[]
+                {
+
+
+                    new
+                    {
+                        parts = new[]
+                        {
+
+                            new { text = "Bạn là một trợ lý AI thân thiện và thông minh, trả lời ngắn gọn, chính xác, không dài dòng. " +
+                            "Hãy luôn bám sát mạch câu chuyện và thông tin đã được nêu trước đó trong cuộc trò chuyện. Không suy diễn hoặc mở rộng quá mức trừ khi được yêu cầu. Trả lời bằng tiếng Việt, không vượt quá 500 từ. " +
+                            $"Bối cảnh: Các câu hỏi đến từ Việt Nam, và ngày hiện tại là {today}. " +
+                            "Quan trọng: Hãy luôn nhớ nội dung các tin nhắn trước để trả lời hợp lý theo mạch. Chỉ reset khi được yêu cầu rõ ràng như bắt đầu câu chuyện mới hoặc reload. " +
+                            "Không cần trả lời lại lời nhắc này. Hãy trả lời từ lời nhắc tiếp theo." }
+                        }
+                    }
+                }
+            };
+
             AddChatBubble("Chào bạn, tôi là trợ lý của TeeNStyle. Tôi có thể giúp gì cho bạn?", false);
             txtMessage.Focus(); // Đặt con trỏ vào ô nhập tin nhắn
         }
@@ -114,9 +142,8 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm.ChatForm
                     {
                         parts = new[]
                         {
-                           
-                            new { text = "Bạn là một trợ lý thân thiện, trả lời ngắn gọn, chính xác. Trả lời phù hợp không quá 500 từ dựa vào lời nhắc: " + userInput  + 
-                            $"Ghi nhớ rằng những câu hỏi sẽ được hỏi từ Việt Nam và ngày tháng hiện tại là {today}" }
+
+                            new { text = userInput }
                         }
                     }
                 }
@@ -167,6 +194,18 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm.ChatForm
                 txtMessage_IconRightClick(sender, e);
                 e.SuppressKeyPress = true; // Chặn tiếng beep hoặc hành động mặc định
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            txtMessage.Text = btnNew.Text;
+            txtMessage.Focus(); // Đặt con trỏ vào ô nhập tin nhắn
+        }
+
+        private void btnSupport_Click(object sender, EventArgs e)
+        {
+            txtMessage.Text = btnSupport.Text;
+            txtMessage.Focus(); // Đặt con trỏ vào ô nhập tin nhắn
         }
     }
 }

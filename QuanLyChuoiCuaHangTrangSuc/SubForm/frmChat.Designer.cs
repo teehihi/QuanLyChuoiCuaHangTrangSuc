@@ -32,14 +32,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChat));
             this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.lblName = new System.Windows.Forms.Label();
             this.panelChatBottom = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtMessage = new Guna.UI2.WinForms.Guna2TextBox();
             this.chatPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.txtMessage = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnReload = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnSupport = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.panelChatBottom.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -68,6 +72,24 @@
             this.guna2Panel1.Size = new System.Drawing.Size(350, 34);
             this.guna2Panel1.TabIndex = 6;
             // 
+            // btnReload
+            // 
+            this.btnReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReload.FillColor = System.Drawing.Color.Transparent;
+            this.btnReload.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReload.ForeColor = System.Drawing.Color.White;
+            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
+            this.btnReload.ImageOffset = new System.Drawing.Point(1, 0);
+            this.btnReload.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnReload.Location = new System.Drawing.Point(290, 4);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(25, 25);
+            this.btnReload.TabIndex = 7;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
@@ -86,25 +108,6 @@
             this.panelChatBottom.Name = "panelChatBottom";
             this.panelChatBottom.Size = new System.Drawing.Size(350, 56);
             this.panelChatBottom.TabIndex = 9;
-            // 
-            // chatPanel
-            // 
-            this.chatPanel.AutoScroll = true;
-            this.chatPanel.BackColor = System.Drawing.Color.White;
-            this.chatPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chatPanel.Location = new System.Drawing.Point(0, 34);
-            this.chatPanel.Name = "chatPanel";
-            this.chatPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.chatPanel.Size = new System.Drawing.Size(350, 360);
-            this.chatPanel.TabIndex = 10;
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.AnimateWindow = true;
-            this.guna2BorderlessForm1.BorderRadius = 10;
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // txtMessage
             // 
@@ -134,23 +137,72 @@
             this.txtMessage.IconRightClick += new System.EventHandler(this.txtMessage_IconRightClick);
             this.txtMessage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMessage_KeyDown);
             // 
-            // btnReload
+            // chatPanel
             // 
-            this.btnReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReload.FillColor = System.Drawing.Color.Transparent;
-            this.btnReload.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnReload.ForeColor = System.Drawing.Color.White;
-            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
-            this.btnReload.ImageOffset = new System.Drawing.Point(1, 0);
-            this.btnReload.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnReload.Location = new System.Drawing.Point(290, 4);
-            this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(25, 25);
-            this.btnReload.TabIndex = 7;
-            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            this.chatPanel.AutoScroll = true;
+            this.chatPanel.BackColor = System.Drawing.Color.White;
+            this.chatPanel.Location = new System.Drawing.Point(0, 34);
+            this.chatPanel.Name = "chatPanel";
+            this.chatPanel.Padding = new System.Windows.Forms.Padding(10);
+            this.chatPanel.Size = new System.Drawing.Size(350, 330);
+            this.chatPanel.TabIndex = 10;
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.AnimateWindow = true;
+            this.guna2BorderlessForm1.BorderRadius = 10;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.Controls.Add(this.btnSupport);
+            this.guna2Panel2.Controls.Add(this.btnNew);
+            this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 357);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(350, 37);
+            this.guna2Panel2.TabIndex = 0;
+            // 
+            // btnSupport
+            // 
+            this.btnSupport.Animated = true;
+            this.btnSupport.BorderRadius = 15;
+            this.btnSupport.BorderThickness = 1;
+            this.btnSupport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSupport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSupport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSupport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSupport.FillColor = System.Drawing.Color.Transparent;
+            this.btnSupport.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.btnSupport.ForeColor = System.Drawing.Color.Black;
+            this.btnSupport.Location = new System.Drawing.Point(179, 3);
+            this.btnSupport.Name = "btnSupport";
+            this.btnSupport.Size = new System.Drawing.Size(158, 28);
+            this.btnSupport.TabIndex = 1;
+            this.btnSupport.Text = "Tôi cần hỗ trợ";
+            this.btnSupport.Click += new System.EventHandler(this.btnSupport_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Animated = true;
+            this.btnNew.BorderRadius = 15;
+            this.btnNew.BorderThickness = 1;
+            this.btnNew.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNew.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNew.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNew.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNew.FillColor = System.Drawing.Color.Transparent;
+            this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.btnNew.ForeColor = System.Drawing.Color.Black;
+            this.btnNew.Location = new System.Drawing.Point(6, 3);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(158, 28);
+            this.btnNew.TabIndex = 0;
+            this.btnNew.Text = "Cuộc trò chuyện mới";
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // frmChat
             // 
@@ -158,6 +210,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.chatPanel);
             this.Controls.Add(this.panelChatBottom);
             this.Controls.Add(this.guna2Panel1);
@@ -171,6 +224,7 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.panelChatBottom.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -184,5 +238,8 @@
         private System.Windows.Forms.Label lblName;
         private Guna.UI2.WinForms.Guna2Button btnReload;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Button btnSupport;
+        private Guna.UI2.WinForms.Guna2Button btnNew;
     }
 }

@@ -231,6 +231,7 @@
             this.btnGGSign.TabIndex = 30;
             this.btnGGSign.Text = "Sign in with Google";
             this.btnGGSign.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnGGSign.Click += new System.EventHandler(this.btnGGSign_Click);
             // 
             // txtUsername
             // 

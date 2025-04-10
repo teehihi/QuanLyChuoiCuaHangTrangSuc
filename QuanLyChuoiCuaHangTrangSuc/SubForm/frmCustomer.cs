@@ -20,7 +20,8 @@ namespace QuanLyChuoiCuaHangTrangSuc
         {
             InitializeComponent();
             dbCustomer = new DBCustomer();
-            
+            panelThemSuaXoa.Visible = true;
+            panelLuuHuy.Visible = false;
 
 
         }
@@ -39,11 +40,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
                 
                 txtCustomerType.Enabled = false;
                 dgvCustomer.Font = new Font("Segoe UI", 13); 
-                btnThem.Enabled = false;
-                btnSua.Enabled = false;
-                btnXoa.Enabled = false;
-                btnLuu.Enabled = false;
-                btnHuy.Enabled = false;
+                
 
 
         }
@@ -88,25 +85,6 @@ namespace QuanLyChuoiCuaHangTrangSuc
         }
 
 
-        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblInfor_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void dgvCustomer_SelectionChanged(object sender, EventArgs e)
         {
@@ -127,8 +105,8 @@ namespace QuanLyChuoiCuaHangTrangSuc
             EnableInput();
             isAdding = true;
             txtCustomerType.SelectedIndex = 0;
-            btnLuu.Enabled = true;
-            btnHuy.Enabled = true;
+            panelLuuHuy.Visible = true;
+            panelThemSuaXoa.Visible = false;
 
 
         }
@@ -144,8 +122,8 @@ namespace QuanLyChuoiCuaHangTrangSuc
             EnableInput();
            
             isAdding = false;
-            btnLuu.Enabled = true;
-            btnHuy.Enabled = true;
+            panelLuuHuy.Visible = true;
+            panelThemSuaXoa.Visible = false;
 
         }
         private void btnLuu_Click(object sender, EventArgs e)
@@ -199,6 +177,8 @@ namespace QuanLyChuoiCuaHangTrangSuc
             LoadData();
             DisableInput();
             ClearFields();
+            panelLuuHuy.Visible = false;
+            panelThemSuaXoa.Visible = true;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -238,12 +218,14 @@ namespace QuanLyChuoiCuaHangTrangSuc
         private void btnHuy_Click(object sender, EventArgs e)
         {
             LoadData();
+            panelThemSuaXoa.Visible = true;
+            panelLuuHuy.Visible = false;
         }
 
         
         private void dgvCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnThem.Enabled = true;
+            
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
         }

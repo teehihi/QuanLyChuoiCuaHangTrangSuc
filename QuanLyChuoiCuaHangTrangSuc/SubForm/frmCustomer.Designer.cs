@@ -208,7 +208,7 @@
             // 
             this.panelLuuHuy.Controls.Add(this.btnLuu);
             this.panelLuuHuy.Controls.Add(this.btnHuy);
-            this.panelLuuHuy.Location = new System.Drawing.Point(4, 571);
+            this.panelLuuHuy.Location = new System.Drawing.Point(7, 447);
             this.panelLuuHuy.Name = "panelLuuHuy";
             this.panelLuuHuy.Size = new System.Drawing.Size(290, 57);
             this.panelLuuHuy.TabIndex = 53;
@@ -245,7 +245,7 @@
             this.btnHuy.FillColor = System.Drawing.Color.White;
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnHuy.ForeColor = System.Drawing.Color.Gold;
-            this.btnHuy.Location = new System.Drawing.Point(156, 5);
+            this.btnHuy.Location = new System.Drawing.Point(156, 0);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(131, 45);
             this.btnHuy.TabIndex = 44;
@@ -293,12 +293,13 @@
             this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoa.FillColor = System.Drawing.Color.White;
+            this.btnXoa.Enabled = false;
+            this.btnXoa.FillColor = System.Drawing.Color.Red;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.btnXoa.ForeColor = System.Drawing.Color.Red;
-            this.btnXoa.Location = new System.Drawing.Point(80, 61);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(5, 61);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(110, 45);
+            this.btnXoa.Size = new System.Drawing.Size(275, 45);
             this.btnXoa.TabIndex = 47;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseTransparentBackground = true;
@@ -331,7 +332,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(25, 284);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(129, 25);
+            this.label9.Size = new System.Drawing.Size(100, 20);
             this.label9.TabIndex = 76;
             this.label9.Text = "Số điện thoại";
             // 
@@ -365,7 +366,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(22, 355);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 25);
+            this.label6.Size = new System.Drawing.Size(58, 20);
             this.label6.TabIndex = 75;
             this.label6.Text = "Địa Chỉ";
             // 
@@ -376,7 +377,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(22, 198);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 25);
+            this.label5.Size = new System.Drawing.Size(126, 20);
             this.label5.TabIndex = 74;
             this.label5.Text = "Loại Khách Hàng";
             // 
@@ -410,7 +411,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(19, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 25);
+            this.label2.Size = new System.Drawing.Size(122, 20);
             this.label2.TabIndex = 73;
             this.label2.Text = "Tên Khách Hàng";
             // 
@@ -444,7 +445,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(22, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 25);
+            this.label1.Size = new System.Drawing.Size(117, 20);
             this.label1.TabIndex = 71;
             this.label1.Text = "Mã Khách hàng";
             // 
@@ -456,7 +457,7 @@
             this.lblInfor.ForeColor = System.Drawing.Color.Gold;
             this.lblInfor.Location = new System.Drawing.Point(18, 26);
             this.lblInfor.Name = "lblInfor";
-            this.lblInfor.Size = new System.Drawing.Size(249, 31);
+            this.lblInfor.Size = new System.Drawing.Size(199, 25);
             this.lblInfor.TabIndex = 69;
             this.lblInfor.Text = "Thông tin khách hàng";
             // 
@@ -515,7 +516,6 @@
             this.guna2txtsearch.TabIndex = 1;
             this.guna2txtsearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.guna2txtsearch.IconRightClick += new System.EventHandler(this.guna2txtsearch_IconRightClick);
-            this.guna2txtsearch.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // dgvCustomer
             // 
@@ -544,7 +544,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCustomer.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCustomer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCustomer.Location = new System.Drawing.Point(131, 164);
+            this.dgvCustomer.Location = new System.Drawing.Point(102, 164);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.ReadOnly = true;
             this.dgvCustomer.RowHeadersVisible = false;
@@ -574,7 +574,6 @@
             this.dgvCustomer.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCustomer.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellClick);
-            this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
             this.dgvCustomer.SelectionChanged += new System.EventHandler(this.dgvCustomer_SelectionChanged);
             // 
             // stepSampleDataSet
@@ -593,7 +592,7 @@
             // 
             // frmCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);

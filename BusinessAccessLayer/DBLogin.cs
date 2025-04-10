@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAcessLayer;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace BusinessAccessLayer
         {
             string loginName = email; // giữ nguyên
             string userName = "Nhan_Vien_" + GetPrefixBeforeAt(email);
-
+            ConnectionHelper.CurrentUserName = GetPrefixBeforeAt(email);
             using (SqlConnection conn = new SqlConnection(
                 $"Server={server};Database=master;User Id={saUser};Password={saPassword};"))
             {
@@ -59,6 +60,8 @@ namespace BusinessAccessLayer
 
         private void CreateUserAndGrant(SqlConnection conn, string loginName, string userName)
         {
+            ConnectionHelper.IsManager = false;
+
             string sql = $@"
                 USE [{targetDb}];
 

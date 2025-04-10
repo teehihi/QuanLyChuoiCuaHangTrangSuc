@@ -19,7 +19,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
         public frmHome()
         {
             InitializeComponent();
-            lblHello.Text = $"Xin chào, {ConnectionHelper.CurrentUserName}!";
+            lblHello.Text = $"Xin chào, {GetPrefixBeforeAt(ConnectionHelper.CurrentUserName)}!";
         }
 
         private void frmHome_Load(object sender, EventArgs e)
@@ -59,6 +59,18 @@ namespace QuanLyChuoiCuaHangTrangSuc
         private void btnStonk_Click(object sender, EventArgs e)
         {
             RequestFormChange?.Invoke("frmThongKe");
+        }
+
+        private string GetPrefixBeforeAt(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                return email;
+
+            int atIndex = email.IndexOf('@');
+            if (atIndex >= 0)
+                return email.Substring(0, atIndex);
+
+            return email;
         }
     }
 }

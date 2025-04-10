@@ -73,6 +73,36 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bgCustomer1 {
+            get {
+                object obj = ResourceManager.GetObject("bgCustomer1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bgText {
+            get {
+                object obj = ResourceManager.GetObject("bgText", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bgText1 {
+            get {
+                object obj = ResourceManager.GetObject("bgText1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_closed {
             get {
                 object obj = ResourceManager.GetObject("eye_closed", resourceCulture);
@@ -466,6 +496,16 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         internal static System.Drawing.Bitmap menu_icon_closed {
             get {
                 object obj = ResourceManager.GetObject("menu_icon_closed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picCloud2 {
+            get {
+                object obj = ResourceManager.GetObject("picCloud2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

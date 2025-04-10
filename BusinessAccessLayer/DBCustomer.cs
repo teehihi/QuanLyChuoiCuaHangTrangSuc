@@ -30,7 +30,7 @@ namespace BusinessAccessLayer
 
             string query = "sp_TimKhachHangTheoTen";
             return dal.ExecuteQueryDataSet(query, CommandType.StoredProcedure,
-                new SqlParameter[] { new SqlParameter("@Ten", ten) });
+                new SqlParameter[] { new SqlParameter("@Name", ten) });
         }
         public DataSet TimKhachHangTheoDiaChi(string diaChi)
         {
@@ -48,10 +48,10 @@ namespace BusinessAccessLayer
         {
             return dal.ExecuteNonQuery("sp_AddCustomer", new SqlParameter[]
             {
-        new SqlParameter("@FullName", fullName),
-        new SqlParameter("@CustomerType", customerType),
-        new SqlParameter("@Address", address),
-        new SqlParameter("@Phone", phone)
+                new SqlParameter("@FullName", fullName),
+                new SqlParameter("@CustomerType", customerType),
+                new SqlParameter("@Address", address),
+                new SqlParameter("@Phone", phone)
             }) > 0;
         }
 
@@ -60,11 +60,11 @@ namespace BusinessAccessLayer
         {
             return dal.ExecuteNonQuery("sp_UpdateCustomer", new SqlParameter[]
             {
-        new SqlParameter("@CustomerID", customerId),
-        new SqlParameter("@FullName", fullName),
-        new SqlParameter("@CustomerType", customerType),
-        new SqlParameter("@Address", address),
-        new SqlParameter("@Phone", phone)
+                new SqlParameter("@CustomerID", customerId),
+                new SqlParameter("@FullName", fullName),
+                new SqlParameter("@CustomerType", customerType),
+                new SqlParameter("@Address", address),
+                new SqlParameter("@Phone", phone)
             }) > 0;
         }
 
@@ -73,7 +73,7 @@ namespace BusinessAccessLayer
         {
             return dal.ExecuteNonQuery("sp_DeleteCustomer", new SqlParameter[]
             {
-        new SqlParameter("@CustomerID", customerId)
+                new SqlParameter("@CustomerID", customerId)
             }) > 0;
         }
         //Gộp cả 3 loại tìm 

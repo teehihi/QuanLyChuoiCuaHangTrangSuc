@@ -150,6 +150,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
@@ -264,6 +265,18 @@
     <None Include="Resources\iconSendM.png" />
     <None Include="Resources\avtAI1.png" />
     <None Include="Resources\fvicon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgCustomer1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgText1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picCloud2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

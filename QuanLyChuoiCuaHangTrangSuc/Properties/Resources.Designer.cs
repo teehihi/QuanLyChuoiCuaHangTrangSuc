@@ -63,6 +63,16 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap avtAI {
+            get {
+                object obj = ResourceManager.GetObject("avtAI", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_closed {
             get {
                 object obj = ResourceManager.GetObject("eye_closed", resourceCulture);
@@ -87,6 +97,16 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
             get {
                 object obj = ResourceManager.GetObject("fbLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon fvicon {
+            get {
+                object obj = ResourceManager.GetObject("fvicon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -316,6 +336,9 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         internal static System.Drawing.Bitmap icons8_search_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-search-50", resourceCulture);
+        internal static System.Drawing.Bitmap iconSendM {
+            get {
+                object obj = ResourceManager.GetObject("iconSendM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -456,6 +479,16 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         internal static System.Drawing.Bitmap picKhachHang {
             get {
                 object obj = ResourceManager.GetObject("picKhachHang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picKnowMore {
+            get {
+                object obj = ResourceManager.GetObject("picKnowMore", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

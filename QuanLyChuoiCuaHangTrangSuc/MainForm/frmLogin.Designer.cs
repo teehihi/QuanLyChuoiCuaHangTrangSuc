@@ -152,7 +152,8 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.Red;
             this.btnClose.IndicateFocus = true;
-            this.btnClose.Location = new System.Drawing.Point(811, -5);
+            this.btnClose.Location = new System.Drawing.Point(808, -4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(46, 40);
             this.btnClose.TabIndex = 17;
@@ -252,6 +253,7 @@
             this.txtUsername.IconLeftOffset = new System.Drawing.Point(5, 0);
             this.txtUsername.IconLeftSize = new System.Drawing.Size(25, 25);
             this.txtUsername.Location = new System.Drawing.Point(466, 164);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PlaceholderText = "Username";
             this.txtUsername.SelectedText = "";
@@ -301,6 +303,7 @@
             this.txtPassword.IconLeftOffset = new System.Drawing.Point(5, 0);
             this.txtPassword.IconLeftSize = new System.Drawing.Size(28, 28);
             this.txtPassword.Location = new System.Drawing.Point(465, 225);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";

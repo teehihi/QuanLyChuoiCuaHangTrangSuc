@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAcessLayer;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -60,7 +61,7 @@ namespace BusinessAccessLayer
         private void CreateUserAndGrant(SqlConnection conn, string loginName, string userName)
         {
             ConnectionHelper.IsManager = false;
-            
+
             string sql = $@"
                 USE [{targetDb}];
 

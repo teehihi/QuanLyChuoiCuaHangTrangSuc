@@ -406,6 +406,10 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         }
 
+        private void panelRight_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

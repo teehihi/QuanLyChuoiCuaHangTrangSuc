@@ -80,6 +80,11 @@
     <Compile Include="MainForm\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="StepSampleDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StepSampleDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SubForm\frmChat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,173 +192,77 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StepSampleDataSet.xsc">
+      <DependentUpon>StepSampleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StepSampleDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StepSampleDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StepSampleDataSet.xss">
+      <DependentUpon>StepSampleDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fbLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\GoogleLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\lock_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\MediumLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\SignIn_background_none.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\user_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\eye_closed.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\eye_opend.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icn_Customer.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icn_home.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icnOrder.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icnThongKe.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icon_Product.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\menu_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\menu_icon_closed.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\picHoaDon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\picKhachHang.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\picSanPham.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\picThongKe.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\user_iconW.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icn_homeNOHOVER.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icn_homeNOHOVER1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icn_CustomerNOHOVER.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icnOrderNOHOVER.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icnThongKeNOHOVER.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icon_ProductNOHOVER.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconSetting.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconSettingNOHOVER.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconThongBao.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconThongBaoNOHOVER.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\picProduct.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconSupplierNOHOVER.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconSupplier.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\picTHONGKEbig.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconRight-chevron.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\picSupplier.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\picProduct1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\fvicon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconTraiTim.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconTraiTimFill.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconBongTai.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconBongTaiFILL.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconBracelet.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconBraceletFILL.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconNecklace.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconNecklaceFILL.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconNhan.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconNhanFILL.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconPendant.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconPendantFILL.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Resources\icons8-search-50.png" />
     <None Include="Resources\picKnowMore.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconSend.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\iconSendM.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\avtAI1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\fvicon1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

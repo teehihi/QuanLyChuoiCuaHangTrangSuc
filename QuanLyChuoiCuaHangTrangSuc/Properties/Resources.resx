@@ -124,6 +124,9 @@
   <data name="icon_Product" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_Product.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="picTHONGKEbig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picTHONGKEbig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="menu_icon_closed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu_icon_closed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,8 +145,8 @@
   <data name="iconSupplierNOHOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconSupplierNOHOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icnOrderNOHOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icnOrderNOHOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconNecklaceFILL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconNecklaceFILL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user_iconW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_iconW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,9 +178,6 @@
   <data name="picKhachHang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picKhachHang.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fbLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fbLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="GoogleLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GoogleLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -189,12 +189,22 @@
   </data>
   <data name="iconNecklaceFILL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconNecklaceFILL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconSetting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconSetting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconPendantFILL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconPendantFILL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconBongTaiFILL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconBongTaiFILL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="picTHONGKEbig" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picTHONGKEbig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconThongBao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconThongBao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconBongTai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconBongTai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconThongBaoNOHOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconThongBaoNOHOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,14 +212,23 @@
   <data name="iconNhan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconNhan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icnOrderNOHOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icnOrderNOHOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="picHoaDon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picHoaDon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="picKnowMore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picKnowMore.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconTraiTimFill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconTraiTimFill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconSupplier" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconSupplier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fbLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fbLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconNhanFILL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconNhanFILL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconThongBao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconThongBao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -240,6 +259,14 @@
   </data>
   <data name="iconSetting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconSetting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icnThongKe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icnThongKe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconSendM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconSendM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconBracelet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconBracelet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconBracelet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconBracelet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -255,5 +282,13 @@
   </data>
   <data name="icons8-search-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-search-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconSupplier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconSupplier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avtAI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avtAI1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fvicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fvicon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

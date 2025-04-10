@@ -26,9 +26,16 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void frmProduct_Load(object sender, EventArgs e)
         {
-            UIHelper.InitializeUI(panelLeft, btnHome, btnCustomer, btnInvoices,
-                         btnProduct, btnStonk, btnSuppiler, sephLine,
-                         btnNotification, btnSetting, topSeph);
+
+            if (!ConnectionHelper.IsManager)
+            {
+                btnThem.Visible = false;
+                btnSua.Visible = false;
+                btnXoa.Visible = false;
+                btnChoosePic.Visible = false;
+            }
+
+
             pictureBoxProduct.Image = Properties.Resources.picProduct1;
             LoadLoaiTrangSuc();
             panelLuuHuy.Visible = false;
@@ -36,46 +43,6 @@ namespace QuanLyChuoiCuaHangTrangSuc
             cbLoaiSP.Enabled = false;
 
         }
-        private void picMenu_Click(object sender, EventArgs e)
-        {
-            UIHelper.TogglePannelVisibility(panelLeft, lblAdmin, picLogo, picMenu, btnHome, btnCustomer,
-                btnProduct, btnInvoices, btnStonk, sephLine, btnNotification, btnSetting, topSeph, btnSuppiler);
-
-        }
-
-        private void lblLogOut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            UIHelper.HandleLogout(this);
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            UIHelper.SwitchForm(this, new frmHome());
-        }
-
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            UIHelper.SwitchForm(this, new frmCustomer());
-        }
-        private void btnSuppiler_Click(object sender, EventArgs e)
-        {
-            UIHelper.SwitchForm(this, new frmSupplier());
-        }
-
-        private void btnProduct_Click(object sender, EventArgs e)
-        {
-            UIHelper.SwitchForm(this, new frmProduct());
-        }
-
-        private void btnInvoices_Click(object sender, EventArgs e)
-        {
-            UIHelper.SwitchForm(this, new frmInvoices());
-        }
-        private void btnStonk_Click(object sender, EventArgs e)
-        {
-            UIHelper.SwitchForm(this, new frmThongKe());
-        }
-
         private void LoadProducts(string loai)
         {
             DataTable dt = dbProduct.LayTrangSucTheoLoai(loai).Tables[0];
@@ -113,7 +80,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
                 {
                     pictureBox.Image = Properties.Resources.picProduct1; // Ảnh mặc định
                 }
- 
+
 
                 // Hiển thị tên sản phẩm
                 Label lblName = new Label();
@@ -134,7 +101,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
                 lblPrice.BackColor = Color.Transparent;
                 lblPrice.Size = new Size(140, 20);
 
-                
+
                 // Set vị trí
                 pictureBox.Location = new Point(10, 10);
                 lblName.Location = new Point(10, 120);
@@ -167,8 +134,8 @@ namespace QuanLyChuoiCuaHangTrangSuc
         private void LoadLoaiTrangSuc()
         {
             btnAll.Click += (s, e) => { UIHelper.SetSelectedButton(btnAll); LoadProducts(""); };
-            btnRing.Click += (s, e) => { UIHelper.SetSelectedButton(btnRing);  LoadProducts("Nhẫn"); } ;
-            btnNecklace.Click += (s, e) => {UIHelper.SetSelectedButton(btnNecklace); LoadProducts("Dây chuyền");};
+            btnRing.Click += (s, e) => { UIHelper.SetSelectedButton(btnRing); LoadProducts("Nhẫn"); };
+            btnNecklace.Click += (s, e) => { UIHelper.SetSelectedButton(btnNecklace); LoadProducts("Dây chuyền"); };
             btnEarrings.Click += (s, e) => { UIHelper.SetSelectedButton(btnEarrings); LoadProducts("Bông tai"); };
             btnBracelet.Click += (s, e) => { UIHelper.SetSelectedButton(btnBracelet); LoadProducts("Lắc tay"); };
             btnPendant.Click += (s, e) => { UIHelper.SetSelectedButton(btnPendant); LoadProducts("Mặt dây chuyền"); };
@@ -205,7 +172,6 @@ namespace QuanLyChuoiCuaHangTrangSuc
                 return;
             }
 
-
             // Gán dữ liệu vào TextBox
             txtProductID.Text = row["ProductID"].ToString();
             txtProductName.Text = row["Name"].ToString();
@@ -214,7 +180,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
             txtPrice.Text = string.Format("{0:N0} VNĐ", Convert.ToDecimal(row["Price"]));
             txtWeight.Text = row["Weight"].ToString();
             txtDescription.Text = row["Description"].ToString();
-            
+
             string groupName = dbProduct.LayGroupNameTuGroupID(Convert.ToInt32(row["GroupID"]));
 
             // Kiểm tra xem combobox có chứa groupName đó hay không
@@ -281,14 +247,14 @@ namespace QuanLyChuoiCuaHangTrangSuc
             panelLuuHuy.Visible = true;
             panelThemSuaXoa.Visible = false;
             txtBranchId.Focus();
-            
+
 
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             EnableInput();
-            flpProduct.Enabled = false ;
+            flpProduct.Enabled = false;
             panelThemSuaXoa.Visible = false;
             panelLuuHuy.Visible = true;
             txtBranchId.Focus();
@@ -297,18 +263,18 @@ namespace QuanLyChuoiCuaHangTrangSuc
         private void btnHuy_Click(object sender, EventArgs e)
         {
             ClearFields();
-            panelLuuHuy.Enabled = true ;
-            panelLuuHuy.Visible=false;
+            panelLuuHuy.Enabled = true;
+            panelLuuHuy.Visible = false;
             panelThemSuaXoa.Visible = true;
             DisableInput();
-            flpProduct.Enabled=true ;
+            flpProduct.Enabled = true;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
 
             panelThemSuaXoa.Visible = true;
-            panelLuuHuy.Visible=false;
+            panelLuuHuy.Visible = false;
             flpProduct.Enabled = true;
 
             string name = txtProductName.Text;
@@ -356,7 +322,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
         }
 
 
-        
+
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -392,7 +358,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
         {
             txtProductID.Text = string.Empty;
             txtProductName.Text = "";
-            txtMaterial.Text ="";
+            txtMaterial.Text = "";
             txtStockQuantity.Text = "";
             txtPrice.Text = "";
             txtWeight.Text = "";

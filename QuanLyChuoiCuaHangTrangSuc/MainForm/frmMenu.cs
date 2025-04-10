@@ -1,9 +1,14 @@
 ﻿
+using DataAcessLayer;
+using Guna.UI2.WinForms;
+using QuanLyChuoiCuaHangTrangSuc.SubForm.NhanVien;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Drawing;
+using QuanLyChuoiCuaHangTrangSuc.SubForm.ChatForm;
 namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 {
     public partial class frmMenu : Form
@@ -18,7 +23,10 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
         public frmMenu()
         {
             InitializeComponent();
-            
+            this.ShowInTaskbar = true;
+            this.ShowIcon = true;
+
+
 
 
             // Khởi tạo giao diện và form đầu tiên
@@ -28,21 +36,31 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
             UIHelper.SetSelectedButton(btnHome);
 
             
-            
         }
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
             // Load trước các Form con
             LoadAllChildForms();
-            // Mở mặc định trang Home
-            OpenChildForm("frmHome");
 
-            //// Khi `frmHome` muốn mở form khác, nó sẽ gọi sự kiện này
-            //if (openForms["frmHome"] is frmHome homeForm)
-            //{
-            //    homeForm.RequestFormChange += (formName) => OnChildFormRequested?.Invoke(formName);
-            //}
+            if (ConnectionHelper.IsManager)
+            {
+                OpenChildForm("frmHome"); // Giao diện Quản lý
+            }
+            else
+            {
+                OpenChildForm("frmHomeNV"); // Giao diện Nhân viên
+                btnSuppiler.Visible = false; // Ẩn nút nhà cung cấp
+                // Di chuyển các nút lên 50px
+                btnStonk.Location = new Point(btnStonk.Location.X, btnStonk.Location.Y - 50);
+                btnProduct.Location = new Point(btnProduct.Location.X, btnProduct.Location.Y - 50);
+                btnInvoices.Location = new Point(btnInvoices.Location.X, btnInvoices.Location.Y - 50);
+                lblAdmin.Text = "Employee Tools"; // Đổi tên admin thành Employee
+
+            }
+
+
+
 
             // Kết nối sự kiện từ frmHome
             if (openForms["frmHome"] is frmHome homeForm)
@@ -50,10 +68,18 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
                 homeForm.RequestFormChange += (formName) =>
                 {
                     OpenChildForm(formName);
-                    // Cập nhật nút được chọn khi mở form mới
                     UpdateSelectedButton(formName);
                 };
             }
+            if (openForms["frmHomeNV"] is frmHomeNV homeNVForm)
+            {
+                homeNVForm.RequestFormChange += (formName) =>
+                {
+                    OpenChildForm(formName);
+                    UpdateSelectedButton(formName);
+                };
+            }
+
 
         }
 
@@ -63,6 +89,9 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
             // Gọi UIHelper.SetSelectedButton với nút tương ứng
             switch (formName)
             {
+                case "frmHomeNV":
+                    UIHelper.SetSelectedButton(btnHome);
+                    break;
                 case "frmHome":
                     UIHelper.SetSelectedButton(btnHome);
                     break;
@@ -91,6 +120,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
         {
             // Tạo sẵn các Form để tránh delay khi mở
             openForms["frmHome"] = new frmHome();
+            openForms["frmHomeNV"] = new frmHomeNV();
             openForms["frmCustomer"] = new frmCustomer();
             openForms["frmProduct"] = new frmProduct();
             openForms["frmSupplier"] = new frmSupplier();
@@ -114,24 +144,30 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 
             Form childForm = openForms[formName];
 
-            // Ẩn Form hiện tại (nếu có)
-            if (panelMid.Controls.Count > 0)
+            // Ẩn các Form hiện có trong panelMid
+            foreach (Control control in panelMid.Controls)
             {
-                Form currentForm = (Form)panelMid.Controls[0];
-                currentForm.Hide();
+                if (control is Form form)
+                {
+                    form.Hide();
+                }
             }
 
             // Thêm Form con vào Panel nếu chưa có
             if (!panelMid.Controls.Contains(childForm))
             {
-                panelMid.Controls.Clear();
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
                 panelMid.Controls.Add(childForm);
             }
 
             panelMid.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            btnChat.BringToFront();
         }
+
 
         private void picMenu_Click(object sender, EventArgs e)
         {
@@ -141,7 +177,18 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            OpenChildForm("frmHome");
+
+            if (ConnectionHelper.IsManager)
+            {
+                OpenChildForm("frmHome"); // Giao diện Quản lý
+            }
+            else
+            {
+                OpenChildForm("frmHomeNV"); // Giao diện Nhân viên
+                
+
+            }
+
             UIHelper.SetSelectedButton(btnHome);
         }
 
@@ -179,5 +226,19 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
         {
             UIHelper.HandleLogout(this);
         }
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            frmChat chatForm = new frmChat();
+            chatForm.TopMost = true;
+            chatForm.StartPosition = FormStartPosition.Manual;
+            chatForm.Location = new Point(this.Right - 360, this.Bottom - 450); // điều chỉnh vị trí cho phù hợp
+            chatForm.Show();
+
+        }
+
+
+
+
     }
 }

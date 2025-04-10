@@ -30,14 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
-            this.panelLeft = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.lblLogOut = new System.Windows.Forms.LinkLabel();
             this.lblHello = new System.Windows.Forms.Label();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnMaximize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.panelTop = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelWelcomeText = new System.Windows.Forms.Panel();
@@ -62,7 +59,8 @@
             this.btnMainSupplier = new Guna.UI2.WinForms.Guna2Button();
             this.panelMid = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.panelLeft.SuspendLayout();
+            this.lblLogOut = new System.Windows.Forms.LinkLabel();
+            this.panelLeft = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panelTop.SuspendLayout();
             this.panelWelcomeText.SuspendLayout();
             this.panelInfo.SuspendLayout();
@@ -76,37 +74,8 @@
             this.panelSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSupplier)).BeginInit();
             this.panelMid.SuspendLayout();
+            this.panelLeft.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelLeft
-            // 
-            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.panelLeft.BorderRadius = 20;
-            this.panelLeft.Controls.Add(this.lblLogOut);
-            this.panelLeft.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(123)))), ((int)(((byte)(129)))));
-            this.panelLeft.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 1, 0);
-            this.panelLeft.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
-            this.panelLeft.Location = new System.Drawing.Point(-20, 0);
-            this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(75, 700);
-            this.panelLeft.TabIndex = 0;
-            // 
-            // lblLogOut
-            // 
-            this.lblLogOut.ActiveLinkColor = System.Drawing.Color.White;
-            this.lblLogOut.AutoSize = true;
-            this.lblLogOut.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblLogOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogOut.LinkColor = System.Drawing.Color.White;
-            this.lblLogOut.Location = new System.Drawing.Point(124, 659);
-            this.lblLogOut.Name = "lblLogOut";
-            this.lblLogOut.Size = new System.Drawing.Size(61, 13);
-            this.lblLogOut.TabIndex = 2;
-            this.lblLogOut.TabStop = true;
-            this.lblLogOut.Text = "Đăng xuất";
-            this.lblLogOut.VisitedLinkColor = System.Drawing.Color.White;
-            this.lblLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogOut_LinkClicked);
             // 
             // lblHello
             // 
@@ -163,10 +132,6 @@
             this.btnMaximize.Size = new System.Drawing.Size(25, 25);
             this.btnMaximize.TabIndex = 4;
             // 
-            // guna2ShadowForm1
-            // 
-            this.guna2ShadowForm1.TargetForm = this;
-            // 
             // panelTop
             // 
             this.panelTop.Controls.Add(this.btnMaximize);
@@ -213,9 +178,9 @@
             this.panelRight.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(123)))), ((int)(((byte)(129)))));
             this.panelRight.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelRight.Location = new System.Drawing.Point(973, 0);
+            this.panelRight.Location = new System.Drawing.Point(983, 0);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(291, 681);
+            this.panelRight.Size = new System.Drawing.Size(281, 681);
             this.panelRight.TabIndex = 8;
             // 
             // panelInfo
@@ -524,6 +489,36 @@
             this.guna2DragControl1.TargetControl = this.panelTop;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
+            // lblLogOut
+            // 
+            this.lblLogOut.ActiveLinkColor = System.Drawing.Color.White;
+            this.lblLogOut.AutoSize = true;
+            this.lblLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLogOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogOut.LinkColor = System.Drawing.Color.White;
+            this.lblLogOut.Location = new System.Drawing.Point(124, 659);
+            this.lblLogOut.Name = "lblLogOut";
+            this.lblLogOut.Size = new System.Drawing.Size(61, 13);
+            this.lblLogOut.TabIndex = 2;
+            this.lblLogOut.TabStop = true;
+            this.lblLogOut.Text = "Đăng xuất";
+            this.lblLogOut.VisitedLinkColor = System.Drawing.Color.White;
+            this.lblLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogOut_LinkClicked);
+            // 
+            // panelLeft
+            // 
+            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
+            this.panelLeft.BorderRadius = 20;
+            this.panelLeft.Controls.Add(this.lblLogOut);
+            this.panelLeft.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(123)))), ((int)(((byte)(129)))));
+            this.panelLeft.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 1, 0);
+            this.panelLeft.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
+            this.panelLeft.Location = new System.Drawing.Point(-20, 0);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(75, 700);
+            this.panelLeft.TabIndex = 0;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -541,8 +536,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";
             this.Load += new System.EventHandler(this.frmHome_Load);
-            this.panelLeft.ResumeLayout(false);
-            this.panelLeft.PerformLayout();
             this.panelTop.ResumeLayout(false);
             this.panelWelcomeText.ResumeLayout(false);
             this.panelWelcomeText.PerformLayout();
@@ -558,20 +551,18 @@
             this.panelSupplier.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picSupplier)).EndInit();
             this.panelMid.ResumeLayout(false);
+            this.panelLeft.ResumeLayout(false);
+            this.panelLeft.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2GradientPanel panelLeft;
-        private System.Windows.Forms.LinkLabel lblLogOut;
         private System.Windows.Forms.Label lblHello;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2ControlBox btnClose;
         private Guna.UI2.WinForms.Guna2ControlBox btnMaximize;
         private Guna.UI2.WinForms.Guna2ControlBox btnMinimize;
-        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2Panel panelTop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelWelcomeText;
@@ -596,5 +587,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox picThongKeBig;
         private Guna.UI2.WinForms.Guna2Panel panelRight;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2GradientPanel panelLeft;
+        private System.Windows.Forms.LinkLabel lblLogOut;
     }
 }

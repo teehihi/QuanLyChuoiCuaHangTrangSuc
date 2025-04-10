@@ -73,17 +73,6 @@ namespace QuanLyChuoiCuaHangTrangSuc
             return email;
         }
 
-        private string GetPrefixBeforeAt(string email)
-        {
-            if (string.IsNullOrEmpty(email))
-                return email;
-
-            int atIndex = email.IndexOf('@');
-            if (atIndex >= 0)
-                return email.Substring(0, atIndex);
-
-            return email;
-        }
 
     }
 }

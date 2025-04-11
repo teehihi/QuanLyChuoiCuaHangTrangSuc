@@ -178,7 +178,7 @@
             this.btnSupport.FillColor = System.Drawing.Color.Transparent;
             this.btnSupport.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.btnSupport.ForeColor = System.Drawing.Color.Black;
-            this.btnSupport.Location = new System.Drawing.Point(179, 3);
+            this.btnSupport.Location = new System.Drawing.Point(179, 5);
             this.btnSupport.Name = "btnSupport";
             this.btnSupport.Size = new System.Drawing.Size(158, 28);
             this.btnSupport.TabIndex = 1;
@@ -197,7 +197,7 @@
             this.btnNew.FillColor = System.Drawing.Color.Transparent;
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9.5F);
             this.btnNew.ForeColor = System.Drawing.Color.Black;
-            this.btnNew.Location = new System.Drawing.Point(6, 3);
+            this.btnNew.Location = new System.Drawing.Point(6, 5);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(158, 28);
             this.btnNew.TabIndex = 0;

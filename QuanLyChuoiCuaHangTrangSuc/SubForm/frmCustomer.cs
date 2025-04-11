@@ -9,12 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessAccessLayer;
 using Guna.UI2.WinForms;
+using QuanLyChuoiCuaHangTrangSuc.MainForm;
 
 namespace QuanLyChuoiCuaHangTrangSuc
 {
 
-    public partial class frmCustomer : Form
+    public partial class frmCustomer : Form, IReloadable
     {
+        public void ReloadData()
+        {
+            frmCustomer_Load(this, EventArgs.Empty);
+        }
         DBCustomer dbCustomer;
         private bool isAdding = false;
         public frmCustomer()
@@ -36,7 +41,9 @@ namespace QuanLyChuoiCuaHangTrangSuc
             cboThanhPho.Enabled = false;
             txtCustomerType.Enabled = false;
             dgvCustomer.Font = new Font("Segoe UI", 13); 
-            
+            ClearFields();
+            DisableInput();
+
         }
 
 

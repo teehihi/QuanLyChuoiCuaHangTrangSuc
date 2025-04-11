@@ -11,11 +11,16 @@ using System.Windows.Forms;
 using DataAcessLayer;
 using BusinessAccessLayer;
 using Guna.UI2.WinForms;
+using QuanLyChuoiCuaHangTrangSuc.MainForm;
 
 namespace QuanLyChuoiCuaHangTrangSuc
 {
-    public partial class frmProduct : Form
+    public partial class frmProduct : Form, IReloadable
     {
+        public void ReloadData()
+        {
+            frmProduct_Load(this, EventArgs.Empty); // Gọi lại sự kiện Load để làm mới dữ liệu    
+        }
         DBProduct dbProduct = new DBProduct();
         private byte[] imageData; // Biến lưu ảnh dưới dạng byte[]
 

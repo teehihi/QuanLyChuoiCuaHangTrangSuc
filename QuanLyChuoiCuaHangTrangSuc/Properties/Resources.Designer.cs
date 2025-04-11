@@ -233,6 +233,16 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icnTrash {
+            get {
+                object obj = ResourceManager.GetObject("icnTrash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_Product {
             get {
                 object obj = ResourceManager.GetObject("icon_Product", resourceCulture);
@@ -286,6 +296,16 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         internal static System.Drawing.Bitmap iconBraceletFILL {
             get {
                 object obj = ResourceManager.GetObject("iconBraceletFILL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconCheck {
+            get {
+                object obj = ResourceManager.GetObject("iconCheck", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

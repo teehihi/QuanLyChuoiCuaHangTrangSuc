@@ -45,6 +45,7 @@
             this.cbLoaiSP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblProduct = new System.Windows.Forms.Label();
             this.panelRight = new Guna.UI2.WinForms.Guna2Panel();
+            this.flpCart = new System.Windows.Forms.FlowLayoutPanel();
             this.panelThemSuaXoa = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
@@ -53,6 +54,9 @@
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.lblInfor = new System.Windows.Forms.Label();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2VScrollBar2 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.panelMid.SuspendLayout();
             this.flpProduct.SuspendLayout();
             this.panelProduct.SuspendLayout();
@@ -121,13 +125,11 @@
             this.guna2VScrollBar1.BorderRadius = 5;
             this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2VScrollBar1.InUpdate = false;
-            this.guna2VScrollBar1.LargeChange = 573;
+            this.guna2VScrollBar1.LargeChange = 10;
             this.guna2VScrollBar1.Location = new System.Drawing.Point(784, 108);
-            this.guna2VScrollBar1.Maximum = 578;
             this.guna2VScrollBar1.Name = "guna2VScrollBar1";
             this.guna2VScrollBar1.ScrollbarSize = 18;
             this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 573);
-            this.guna2VScrollBar1.SmallChange = 5;
             this.guna2VScrollBar1.TabIndex = 1;
             this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.SteelBlue;
             this.guna2VScrollBar1.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
@@ -228,6 +230,9 @@
             // panelRight
             // 
             this.panelRight.BorderThickness = 1;
+            this.panelRight.Controls.Add(this.guna2Separator1);
+            this.panelRight.Controls.Add(this.guna2VScrollBar2);
+            this.panelRight.Controls.Add(this.flpCart);
             this.panelRight.Controls.Add(this.panelThemSuaXoa);
             this.panelRight.Controls.Add(this.panelLuuHuy);
             this.panelRight.Controls.Add(this.lblInfor);
@@ -239,13 +244,23 @@
             this.panelRight.Size = new System.Drawing.Size(462, 681);
             this.panelRight.TabIndex = 16;
             // 
+            // flpCart
+            // 
+            this.flpCart.AutoScroll = true;
+            this.flpCart.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpCart.Location = new System.Drawing.Point(3, 111);
+            this.flpCart.Name = "flpCart";
+            this.flpCart.Size = new System.Drawing.Size(456, 348);
+            this.flpCart.TabIndex = 24;
+            this.flpCart.WrapContents = false;
+            // 
             // panelThemSuaXoa
             // 
             this.panelThemSuaXoa.AutoScroll = true;
             this.panelThemSuaXoa.Controls.Add(this.btnSua);
             this.panelThemSuaXoa.Controls.Add(this.btnXoa);
             this.panelThemSuaXoa.Controls.Add(this.btnThem);
-            this.panelThemSuaXoa.Location = new System.Drawing.Point(117, 392);
+            this.panelThemSuaXoa.Location = new System.Drawing.Point(46, 559);
             this.panelThemSuaXoa.Name = "panelThemSuaXoa";
             this.panelThemSuaXoa.Size = new System.Drawing.Size(285, 122);
             this.panelThemSuaXoa.TabIndex = 23;
@@ -367,6 +382,38 @@
             this.lblInfor.TabIndex = 22;
             this.lblInfor.Text = "Thông tin hóa đơn";
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // guna2VScrollBar2
+            // 
+            this.guna2VScrollBar2.AutoRoundedCorners = true;
+            this.guna2VScrollBar2.BindingContainer = this.flpCart;
+            this.guna2VScrollBar2.BorderRadius = 8;
+            this.guna2VScrollBar2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2VScrollBar2.InUpdate = false;
+            this.guna2VScrollBar2.LargeChange = 348;
+            this.guna2VScrollBar2.Location = new System.Drawing.Point(441, 111);
+            this.guna2VScrollBar2.Maximum = 578;
+            this.guna2VScrollBar2.Name = "guna2VScrollBar2";
+            this.guna2VScrollBar2.ScrollbarSize = 18;
+            this.guna2VScrollBar2.Size = new System.Drawing.Size(18, 348);
+            this.guna2VScrollBar2.SmallChange = 5;
+            this.guna2VScrollBar2.TabIndex = 26;
+            this.guna2VScrollBar2.ThumbColor = System.Drawing.Color.SteelBlue;
+            this.guna2VScrollBar2.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.FillColor = System.Drawing.Color.Silver;
+            this.guna2Separator1.Location = new System.Drawing.Point(4, 456);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(456, 10);
+            this.guna2Separator1.TabIndex = 27;
+            // 
             // frmInvoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,5 +467,9 @@
         private System.Windows.Forms.Label lblNameSP;
         private Guna.UI2.WinForms.Guna2PictureBox picProduct;
         private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private System.Windows.Forms.FlowLayoutPanel flpCart;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar2;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
     }
 }

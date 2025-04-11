@@ -278,5 +278,11 @@
   <ItemGroup>
     <None Include="Resources\picCloud2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconCheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icnTrash.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

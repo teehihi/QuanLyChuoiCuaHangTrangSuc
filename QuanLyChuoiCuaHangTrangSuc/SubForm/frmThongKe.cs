@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyChuoiCuaHangTrangSuc.MainForm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,8 +11,12 @@ using System.Windows.Forms;
 
 namespace QuanLyChuoiCuaHangTrangSuc
 {
-    public partial class frmThongKe : Form
+    public partial class frmThongKe : Form, IReloadable
     {
+        public void ReloadData()
+        {
+            frmThongKe_Load(this, EventArgs.Empty);
+        }
         public frmThongKe()
         {
             InitializeComponent();

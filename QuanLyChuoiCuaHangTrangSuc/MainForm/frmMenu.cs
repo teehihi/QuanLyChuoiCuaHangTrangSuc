@@ -9,8 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using QuanLyChuoiCuaHangTrangSuc.SubForm.ChatForm;
+using System.Linq;
 namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 {
+    public interface IReloadable
+    {
+        void ReloadData();
+    }
     public partial class frmMenu : Form
     {
 
@@ -171,6 +176,13 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
             btnChat.BringToFront();
         }
 
+        private void ReloadChildForm(string formName)
+        {
+            if (openForms.TryGetValue(formName, out Form form) && form is IReloadable reloadable)
+            {
+                reloadable.ReloadData();
+            }
+        }
 
         private void picMenu_Click(object sender, EventArgs e)
         {
@@ -208,7 +220,9 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
                 picMenu_Click(sender, e); // Đóng menu bên trái nếu đang mở
 
             }
+            
             OpenChildForm("frmCustomer");
+            ReloadChildForm("frmCustomer");
             UIHelper.SetSelectedButton(btnCustomer);
         }
 
@@ -220,7 +234,9 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
                 picMenu_Click(sender, e); // Đóng menu bên trái nếu đang mở
 
             }
+            
             OpenChildForm("frmSupplier");
+            ReloadChildForm("frmSupplier");
             UIHelper.SetSelectedButton(btnSuppiler);
         }
 
@@ -232,7 +248,9 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
                 picMenu_Click(sender, e); // Đóng menu bên trái nếu đang mở
 
             }
+            
             OpenChildForm("frmProduct");
+            ReloadChildForm("frmProduct");
             UIHelper.SetSelectedButton(btnProduct);
         }
 
@@ -244,7 +262,9 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
                 picMenu_Click(sender, e); // Đóng menu bên trái nếu đang mở
 
             }
+           
             OpenChildForm("frmInvoices");
+            ReloadChildForm("frmInvoices");
             UIHelper.SetSelectedButton(btnInvoices);
         }
 
@@ -256,6 +276,9 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
                 picMenu_Click(sender, e); // Đóng menu bên trái nếu đang mở
 
             }
+            
+            OpenChildForm("frmThongKe");
+            ReloadChildForm("frmThongKe");
             UIHelper.SetSelectedButton(btnStonk);
         }
 
@@ -276,6 +299,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 
         }
 
-        
+      
+
     }
 }

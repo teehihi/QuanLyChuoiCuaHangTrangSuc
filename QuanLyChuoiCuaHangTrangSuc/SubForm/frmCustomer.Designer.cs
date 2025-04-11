@@ -682,6 +682,7 @@
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconRight = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icons8_search_50;
+            this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.txtSearch.IconRightSize = new System.Drawing.Size(25, 25);
             this.txtSearch.Location = new System.Drawing.Point(538, 135);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

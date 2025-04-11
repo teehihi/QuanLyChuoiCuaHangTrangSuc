@@ -37,15 +37,18 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
+            this.Text = "Quản lý khách hàng - TeeNStyle";
             RequestFormChange?.Invoke("frmCustomer");
         }
 
         private void btnSuppiler_Click(object sender, EventArgs e)
         {
+            this.Text = "Quản lý nhà cung cấp - TeeNStyle";
             RequestFormChange?.Invoke("frmSupplier");
         }
         private void btnProduct_Click(object sender, EventArgs e)
         {
+            this.Text = "Quản lý sản phẩm - TeeNStyle";
             RequestFormChange?.Invoke("frmProduct");
 
             //UIHelper.SwitchForm(this, new frmProduct());
@@ -53,11 +56,13 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void btnInvoices_Click(object sender, EventArgs e)
         {
+            this.Text = "Quản lý hóa đơn - TeeNStyle";
             RequestFormChange?.Invoke("frmInvoices");
         }
 
         private void btnStonk_Click(object sender, EventArgs e)
         {
+            this.Text = "Thống kê doanh thu - TeeNStyle";
             RequestFormChange?.Invoke("frmThongKe");
         }
 

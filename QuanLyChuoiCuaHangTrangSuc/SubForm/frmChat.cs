@@ -18,6 +18,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm.ChatForm
 {
     public partial class frmChat : Form
     {
+        
         public frmChat()
         {
             InitializeComponent();
@@ -206,11 +207,13 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm.ChatForm
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            txtMessage.Text = btnNew.Text;
             txtMessage_IconRightClick(sender, e); // Gọi hàm gửi tin nhắn
         }
 
         private void btnSupport_Click(object sender, EventArgs e)
         {
+            txtMessage.Text = btnSupport.Text;
             txtMessage_IconRightClick(sender, e); // Gọi hàm gửi tin nhắn
         }
     }

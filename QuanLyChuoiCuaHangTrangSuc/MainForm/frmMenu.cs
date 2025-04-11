@@ -13,9 +13,10 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 {
     public partial class frmMenu : Form
     {
+
         // Dictionary lưu các Form đã tạo để dùng lại
         private Dictionary<string, Form> openForms = new Dictionary<string, Form>();
-
+        private frmChat chatForm;
 
         // Định nghĩa sự kiện để gọi từ frmHome
         public event Action<string> OnChildFormRequested;
@@ -25,6 +26,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
             InitializeComponent();
             this.ShowInTaskbar = true;
             this.ShowIcon = true;
+            
 
 
 
@@ -46,6 +48,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
             if (ConnectionHelper.IsManager)
             {
                 OpenChildForm("frmHome"); // Giao diện Quản lý
+               
             }
             else
             {
@@ -177,7 +180,12 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+            this.Text = "Trang chủ - TeeNStyle";
+            if (panelLeft.Width != 80)
+            {
+                picMenu_Click(sender, e); // Đóng menu bên trái nếu đang mở
 
+            }
             if (ConnectionHelper.IsManager)
             {
                 OpenChildForm("frmHome"); // Giao diện Quản lý
@@ -194,37 +202,68 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
+            this.Text = "Quản lý khách hàng - TeeNStyle";
+            if (panelLeft.Width != 80)
+            {
+                picMenu_Click(sender, e); // Đóng menu bên trái nếu đang mở
+
+            }
             OpenChildForm("frmCustomer");
             UIHelper.SetSelectedButton(btnCustomer);
         }
 
         private void btnSuppiler_Click(object sender, EventArgs e)
         {
+            this.Text = "Quản lý nhà cung cấp - TeeNStyle";
+            if (panelLeft.Width != 80)
+            {
+                picMenu_Click(sender, e); // Đóng menu bên trái nếu đang mở
+
+            }
             OpenChildForm("frmSupplier");
             UIHelper.SetSelectedButton(btnSuppiler);
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
+            this.Text = "Quản lý sản phẩm - TeeNStyle";
+            if (panelLeft.Width != 80)
+            {
+                picMenu_Click(sender, e); // Đóng menu bên trái nếu đang mở
+
+            }
             OpenChildForm("frmProduct");
             UIHelper.SetSelectedButton(btnProduct);
         }
 
         private void btnInvoices_Click(object sender, EventArgs e)
         {
+            this.Text = "Quản lý hóa đơn - TeeNStyle";
+            if (panelLeft.Width != 80)
+            {
+                picMenu_Click(sender, e); // Đóng menu bên trái nếu đang mở
+
+            }
             OpenChildForm("frmInvoices");
             UIHelper.SetSelectedButton(btnInvoices);
         }
 
         private void btnStonk_Click(object sender, EventArgs e)
         {
-            OpenChildForm("frmThongKe");
+            this.Text = "Thống kê doanh thu - TeeNStyle";
+            if (panelLeft.Width != 80)
+            {
+                picMenu_Click(sender, e); // Đóng menu bên trái nếu đang mở
+
+            }
             UIHelper.SetSelectedButton(btnStonk);
         }
 
         private void lblLogOut_Click(object sender, EventArgs e)
         {
+           
             UIHelper.HandleLogout(this);
+            
         }
 
         private void btnChat_Click(object sender, EventArgs e)
@@ -237,8 +276,6 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 
         }
 
-
-
-
+        
     }
 }

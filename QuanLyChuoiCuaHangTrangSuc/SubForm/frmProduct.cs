@@ -22,6 +22,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
         public frmProduct()
         {
             InitializeComponent();
+            this.Text = "Quản lý sản phẩm - TeeNStyle";
         }
 
         private void frmProduct_Load(object sender, EventArgs e)

@@ -15,6 +15,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
         public frmInvoices()
         {
             InitializeComponent();
+            this.Text = "Quản lý hóa đơn - TeeNStyle";
         }
 
 

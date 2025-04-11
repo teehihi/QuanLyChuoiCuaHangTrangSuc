@@ -15,6 +15,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
         public frmSupplier()
         {
             InitializeComponent();
+            this.Text = "Quản lý nhà cung cấp - TeeNStyle";
         }
 
         private void frmSupplier_Load(object sender, EventArgs e)

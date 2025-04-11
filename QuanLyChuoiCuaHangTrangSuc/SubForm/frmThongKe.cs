@@ -15,6 +15,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
         public frmThongKe()
         {
             InitializeComponent();
+            this.Text = "Thống kê doanh thu - TeeNStyle";
         }
 
         private void frmThongKe_Load(object sender, EventArgs e)

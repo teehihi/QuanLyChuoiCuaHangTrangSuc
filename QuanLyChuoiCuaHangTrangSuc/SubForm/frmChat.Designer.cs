@@ -144,7 +144,7 @@
             this.chatPanel.Location = new System.Drawing.Point(0, 34);
             this.chatPanel.Name = "chatPanel";
             this.chatPanel.Padding = new System.Windows.Forms.Padding(10);
-            this.chatPanel.Size = new System.Drawing.Size(350, 330);
+            this.chatPanel.Size = new System.Drawing.Size(350, 322);
             this.chatPanel.TabIndex = 10;
             // 
             // guna2BorderlessForm1

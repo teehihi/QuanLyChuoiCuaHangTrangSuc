@@ -513,7 +513,7 @@
             this.IsMdiContainer = true;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMenu";
+            this.Text = "TeeNStyle - Trang chủ";
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.panelTop.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);

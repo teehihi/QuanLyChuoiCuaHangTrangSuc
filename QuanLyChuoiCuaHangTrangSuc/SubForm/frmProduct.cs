@@ -406,11 +406,6 @@ namespace QuanLyChuoiCuaHangTrangSuc
             txtPrice.Text = txtPrice.Text.Replace(" VNĐ", "").Replace(",", "");
 
         }
-
-        private void panelRight_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
 

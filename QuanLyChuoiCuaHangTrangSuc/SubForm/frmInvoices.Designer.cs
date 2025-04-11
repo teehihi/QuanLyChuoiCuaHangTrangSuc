@@ -30,273 +30,37 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInvoices));
-            this.btnSuppiler = new Guna.UI2.WinForms.Guna2Button();
-            this.topSeph = new Guna.UI2.WinForms.Guna2Separator();
-            this.btnSetting = new Guna.UI2.WinForms.Guna2Button();
-            this.btnNotification = new Guna.UI2.WinForms.Guna2Button();
-            this.sephLine = new Guna.UI2.WinForms.Guna2Separator();
-            this.btnStonk = new Guna.UI2.WinForms.Guna2Button();
-            this.btnInvoices = new Guna.UI2.WinForms.Guna2Button();
-            this.btnProduct = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
-            this.lblAdmin = new System.Windows.Forms.Label();
-            this.lblLogOut = new System.Windows.Forms.LinkLabel();
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panelTop = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnMaximize = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.panelLeft = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.picMenu = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelMid = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelTop.SuspendLayout();
-            this.panelLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.flpProduct = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelProduct = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblNameSP = new System.Windows.Forms.Label();
+            this.picProduct = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.cbLoaiSP = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.lblProduct = new System.Windows.Forms.Label();
+            this.panelRight = new Guna.UI2.WinForms.Guna2Panel();
+            this.panelThemSuaXoa = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnSua = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
+            this.panelLuuHuy = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
+            this.lblInfor = new System.Windows.Forms.Label();
+            this.panelMid.SuspendLayout();
+            this.flpProduct.SuspendLayout();
+            this.panelProduct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
+            this.panelRight.SuspendLayout();
+            this.panelThemSuaXoa.SuspendLayout();
+            this.panelLuuHuy.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnSuppiler
-            // 
-            this.btnSuppiler.Animated = true;
-            this.btnSuppiler.BorderRadius = 10;
-            this.btnSuppiler.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSuppiler.CustomImages.HoveredImage = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconSupplier;
-            this.btnSuppiler.CustomImages.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconSupplierNOHOVER;
-            this.btnSuppiler.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSuppiler.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSuppiler.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSuppiler.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSuppiler.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSuppiler.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSuppiler.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.btnSuppiler.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuppiler.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnSuppiler.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(93)))), ((int)(((byte)(211)))));
-            this.btnSuppiler.HoverState.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnSuppiler.HoverState.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSuppiler.Location = new System.Drawing.Point(25, 320);
-            this.btnSuppiler.Name = "btnSuppiler";
-            this.btnSuppiler.Size = new System.Drawing.Size(285, 45);
-            this.btnSuppiler.TabIndex = 12;
-            this.btnSuppiler.Text = "Quản lý nhà cung cấp";
-            this.btnSuppiler.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSuppiler.TextOffset = new System.Drawing.Point(40, 0);
-            this.btnSuppiler.Click += new System.EventHandler(this.btnSuppiler_Click);
-            // 
-            // topSeph
-            // 
-            this.topSeph.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(123)))), ((int)(((byte)(129)))));
-            this.topSeph.Location = new System.Drawing.Point(21, 66);
-            this.topSeph.Name = "topSeph";
-            this.topSeph.Size = new System.Drawing.Size(298, 10);
-            this.topSeph.TabIndex = 11;
-            // 
-            // btnSetting
-            // 
-            this.btnSetting.Animated = true;
-            this.btnSetting.BorderRadius = 10;
-            this.btnSetting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSetting.CustomImages.HoveredImage = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconSetting;
-            this.btnSetting.CustomImages.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconSettingNOHOVER;
-            this.btnSetting.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSetting.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSetting.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSetting.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSetting.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSetting.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSetting.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.btnSetting.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSetting.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnSetting.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(93)))), ((int)(((byte)(211)))));
-            this.btnSetting.HoverState.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnSetting.HoverState.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSetting.Location = new System.Drawing.Point(25, 600);
-            this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(285, 45);
-            this.btnSetting.TabIndex = 10;
-            this.btnSetting.Text = "Cài đặt";
-            this.btnSetting.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSetting.TextOffset = new System.Drawing.Point(40, 0);
-            // 
-            // btnNotification
-            // 
-            this.btnNotification.Animated = true;
-            this.btnNotification.BorderRadius = 10;
-            this.btnNotification.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNotification.CustomImages.HoveredImage = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconThongBao;
-            this.btnNotification.CustomImages.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconThongBaoNOHOVER;
-            this.btnNotification.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnNotification.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNotification.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNotification.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNotification.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNotification.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNotification.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.btnNotification.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotification.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnNotification.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(93)))), ((int)(((byte)(211)))));
-            this.btnNotification.HoverState.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnNotification.HoverState.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNotification.Location = new System.Drawing.Point(25, 550);
-            this.btnNotification.Name = "btnNotification";
-            this.btnNotification.Size = new System.Drawing.Size(285, 45);
-            this.btnNotification.TabIndex = 9;
-            this.btnNotification.Text = "Thông báo";
-            this.btnNotification.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnNotification.TextOffset = new System.Drawing.Point(40, 0);
-            // 
-            // sephLine
-            // 
-            this.sephLine.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(111)))), ((int)(((byte)(117)))));
-            this.sephLine.Location = new System.Drawing.Point(30, 530);
-            this.sephLine.Name = "sephLine";
-            this.sephLine.Size = new System.Drawing.Size(265, 10);
-            this.sephLine.TabIndex = 8;
-            // 
-            // btnStonk
-            // 
-            this.btnStonk.Animated = true;
-            this.btnStonk.BorderRadius = 10;
-            this.btnStonk.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStonk.CustomImages.HoveredImage = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icnThongKe;
-            this.btnStonk.CustomImages.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icnThongKeNOHOVER;
-            this.btnStonk.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnStonk.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnStonk.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnStonk.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnStonk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnStonk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnStonk.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.btnStonk.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStonk.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnStonk.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(93)))), ((int)(((byte)(211)))));
-            this.btnStonk.HoverState.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnStonk.HoverState.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnStonk.Location = new System.Drawing.Point(25, 470);
-            this.btnStonk.Name = "btnStonk";
-            this.btnStonk.Size = new System.Drawing.Size(285, 45);
-            this.btnStonk.TabIndex = 7;
-            this.btnStonk.Text = "Quản lý doanh thu";
-            this.btnStonk.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnStonk.TextOffset = new System.Drawing.Point(40, 0);
-            this.btnStonk.Click += new System.EventHandler(this.btnStonk_Click);
-            // 
-            // btnInvoices
-            // 
-            this.btnInvoices.Animated = true;
-            this.btnInvoices.BorderRadius = 10;
-            this.btnInvoices.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInvoices.CustomImages.HoveredImage = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icnOrder;
-            this.btnInvoices.CustomImages.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icnOrderNOHOVER;
-            this.btnInvoices.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnInvoices.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnInvoices.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnInvoices.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnInvoices.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnInvoices.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnInvoices.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.btnInvoices.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvoices.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnInvoices.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(93)))), ((int)(((byte)(211)))));
-            this.btnInvoices.HoverState.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnInvoices.HoverState.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnInvoices.Location = new System.Drawing.Point(25, 420);
-            this.btnInvoices.Name = "btnInvoices";
-            this.btnInvoices.Size = new System.Drawing.Size(285, 45);
-            this.btnInvoices.TabIndex = 6;
-            this.btnInvoices.Text = "Quản lý hóa đơn";
-            this.btnInvoices.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnInvoices.TextOffset = new System.Drawing.Point(40, 0);
-            this.btnInvoices.Click += new System.EventHandler(this.btnInvoices_Click);
-            // 
-            // btnProduct
-            // 
-            this.btnProduct.Animated = true;
-            this.btnProduct.BorderRadius = 10;
-            this.btnProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProduct.CustomImages.HoveredImage = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icon_Product;
-            this.btnProduct.CustomImages.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icon_ProductNOHOVER;
-            this.btnProduct.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnProduct.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.btnProduct.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProduct.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnProduct.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(93)))), ((int)(((byte)(211)))));
-            this.btnProduct.HoverState.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnProduct.HoverState.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnProduct.Location = new System.Drawing.Point(25, 370);
-            this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(285, 45);
-            this.btnProduct.TabIndex = 5;
-            this.btnProduct.Text = "Quản lý sản phẩm";
-            this.btnProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnProduct.TextOffset = new System.Drawing.Point(40, 0);
-            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
-            // 
-            // btnCustomer
-            // 
-            this.btnCustomer.Animated = true;
-            this.btnCustomer.BorderRadius = 10;
-            this.btnCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCustomer.CustomImages.HoveredImage = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icn_Customer;
-            this.btnCustomer.CustomImages.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icn_CustomerNOHOVER;
-            this.btnCustomer.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCustomer.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnCustomer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCustomer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCustomer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCustomer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCustomer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomer.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnCustomer.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(93)))), ((int)(((byte)(211)))));
-            this.btnCustomer.HoverState.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnCustomer.HoverState.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCustomer.Location = new System.Drawing.Point(25, 270);
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(285, 45);
-            this.btnCustomer.TabIndex = 4;
-            this.btnCustomer.Text = "Quản lý khách hàng";
-            this.btnCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCustomer.TextOffset = new System.Drawing.Point(40, 0);
-            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
-            // 
-            // lblAdmin
-            // 
-            this.lblAdmin.AutoSize = true;
-            this.lblAdmin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdmin.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblAdmin.Location = new System.Drawing.Point(24, 190);
-            this.lblAdmin.Name = "lblAdmin";
-            this.lblAdmin.Size = new System.Drawing.Size(95, 20);
-            this.lblAdmin.TabIndex = 2;
-            this.lblAdmin.Text = "Admin tools";
-            this.lblAdmin.Visible = false;
-            // 
-            // lblLogOut
-            // 
-            this.lblLogOut.ActiveLinkColor = System.Drawing.Color.White;
-            this.lblLogOut.AutoSize = true;
-            this.lblLogOut.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblLogOut.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogOut.LinkColor = System.Drawing.Color.White;
-            this.lblLogOut.Location = new System.Drawing.Point(124, 659);
-            this.lblLogOut.Name = "lblLogOut";
-            this.lblLogOut.Size = new System.Drawing.Size(61, 13);
-            this.lblLogOut.TabIndex = 2;
-            this.lblLogOut.TabStop = true;
-            this.lblLogOut.Text = "Đăng xuất";
-            this.lblLogOut.VisitedLinkColor = System.Drawing.Color.White;
-            this.lblLogOut.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogOut_LinkClicked);
             // 
             // guna2DragControl2
             // 
@@ -306,9 +70,6 @@
             // 
             // panelTop
             // 
-            this.panelTop.Controls.Add(this.btnMaximize);
-            this.panelTop.Controls.Add(this.btnClose);
-            this.panelTop.Controls.Add(this.btnMinimize);
             this.panelTop.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelTop.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(123)))), ((int)(((byte)(129)))));
             this.panelTop.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 1);
@@ -317,45 +78,6 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1264, 25);
             this.panelTop.TabIndex = 14;
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximize.Animated = true;
-            this.btnMaximize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximize.FillColor = System.Drawing.Color.Transparent;
-            this.btnMaximize.IconColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(1208, -1);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(25, 25);
-            this.btnMaximize.TabIndex = 4;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Animated = true;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FillColor = System.Drawing.Color.Transparent;
-            this.btnClose.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(93)))), ((int)(((byte)(211)))));
-            this.btnClose.IconColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1239, -1);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(25, 25);
-            this.btnClose.TabIndex = 2;
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.Animated = true;
-            this.btnMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FillColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.IconColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(1177, -1);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(25, 25);
-            this.btnMinimize.TabIndex = 3;
             // 
             // guna2AnimateWindow1
             // 
@@ -368,52 +90,10 @@
             this.guna2Elipse1.BorderRadius = 15;
             this.guna2Elipse1.TargetControl = this;
             // 
-            // btnHome
-            // 
-            this.btnHome.Animated = true;
-            this.btnHome.BorderRadius = 10;
-            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHome.CustomImages.HoveredImage = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icn_home;
-            this.btnHome.CustomImages.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icn_homeNOHOVER1;
-            this.btnHome.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHome.CustomImages.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHome.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnHome.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnHome.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(93)))), ((int)(((byte)(211)))));
-            this.btnHome.HoverState.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnHome.HoverState.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHome.Location = new System.Drawing.Point(25, 220);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(285, 45);
-            this.btnHome.TabIndex = 3;
-            this.btnHome.Text = "Trang Chủ";
-            this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHome.TextOffset = new System.Drawing.Point(40, 0);
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(47)))));
             this.panelLeft.BorderRadius = 20;
-            this.panelLeft.Controls.Add(this.btnSuppiler);
-            this.panelLeft.Controls.Add(this.topSeph);
-            this.panelLeft.Controls.Add(this.btnSetting);
-            this.panelLeft.Controls.Add(this.btnNotification);
-            this.panelLeft.Controls.Add(this.sephLine);
-            this.panelLeft.Controls.Add(this.btnStonk);
-            this.panelLeft.Controls.Add(this.btnInvoices);
-            this.panelLeft.Controls.Add(this.btnProduct);
-            this.panelLeft.Controls.Add(this.btnCustomer);
-            this.panelLeft.Controls.Add(this.lblAdmin);
-            this.panelLeft.Controls.Add(this.picMenu);
-            this.panelLeft.Controls.Add(this.lblLogOut);
-            this.panelLeft.Controls.Add(this.picLogo);
-            this.panelLeft.Controls.Add(this.btnHome);
             this.panelLeft.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(123)))), ((int)(((byte)(129)))));
             this.panelLeft.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.panelLeft.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
@@ -422,42 +102,270 @@
             this.panelLeft.Size = new System.Drawing.Size(75, 700);
             this.panelLeft.TabIndex = 13;
             // 
-            // picMenu
-            // 
-            this.picMenu.BackColor = System.Drawing.Color.Transparent;
-            this.picMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picMenu.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.menu_icon;
-            this.picMenu.ImageRotate = 0F;
-            this.picMenu.Location = new System.Drawing.Point(32, 33);
-            this.picMenu.Name = "picMenu";
-            this.picMenu.Size = new System.Drawing.Size(30, 30);
-            this.picMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMenu.TabIndex = 0;
-            this.picMenu.TabStop = false;
-            this.picMenu.UseTransparentBackground = true;
-            this.picMenu.Click += new System.EventHandler(this.picMenu_Click);
-            // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.Transparent;
-            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picLogo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picLogo.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.MediumLogo;
-            this.picLogo.Location = new System.Drawing.Point(45, 81);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(254, 101);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 2;
-            this.picLogo.TabStop = false;
-            this.picLogo.Visible = false;
-            // 
             // panelMid
             // 
+            this.panelMid.Controls.Add(this.guna2VScrollBar1);
+            this.panelMid.Controls.Add(this.cbLoaiSP);
+            this.panelMid.Controls.Add(this.lblProduct);
+            this.panelMid.Controls.Add(this.flpProduct);
+            this.panelMid.Controls.Add(this.panelRight);
             this.panelMid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMid.Location = new System.Drawing.Point(0, 0);
             this.panelMid.Name = "panelMid";
             this.panelMid.Size = new System.Drawing.Size(1264, 681);
             this.panelMid.TabIndex = 15;
+            // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.BindingContainer = this.flpProduct;
+            this.guna2VScrollBar1.BorderRadius = 5;
+            this.guna2VScrollBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 573;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(784, 108);
+            this.guna2VScrollBar1.Maximum = 578;
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 18;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 573);
+            this.guna2VScrollBar1.SmallChange = 5;
+            this.guna2VScrollBar1.TabIndex = 1;
+            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.SteelBlue;
+            this.guna2VScrollBar1.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
+            // 
+            // flpProduct
+            // 
+            this.flpProduct.AutoScroll = true;
+            this.flpProduct.Controls.Add(this.panelProduct);
+            this.flpProduct.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flpProduct.Location = new System.Drawing.Point(0, 108);
+            this.flpProduct.Name = "flpProduct";
+            this.flpProduct.Padding = new System.Windows.Forms.Padding(83, 0, 10, 10);
+            this.flpProduct.Size = new System.Drawing.Size(802, 573);
+            this.flpProduct.TabIndex = 25;
+            // 
+            // panelProduct
+            // 
+            this.panelProduct.BorderRadius = 15;
+            this.panelProduct.Controls.Add(this.lblPrice);
+            this.panelProduct.Controls.Add(this.lblNameSP);
+            this.panelProduct.Controls.Add(this.picProduct);
+            this.panelProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(47)))));
+            this.panelProduct.Location = new System.Drawing.Point(86, 3);
+            this.panelProduct.Name = "panelProduct";
+            this.panelProduct.Size = new System.Drawing.Size(150, 170);
+            this.panelProduct.TabIndex = 0;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblPrice.ForeColor = System.Drawing.Color.White;
+            this.lblPrice.Location = new System.Drawing.Point(5, 150);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(38, 13);
+            this.lblPrice.TabIndex = 24;
+            this.lblPrice.Text = "TenSP\r\n";
+            // 
+            // lblNameSP
+            // 
+            this.lblNameSP.AutoSize = true;
+            this.lblNameSP.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblNameSP.ForeColor = System.Drawing.Color.White;
+            this.lblNameSP.Location = new System.Drawing.Point(5, 110);
+            this.lblNameSP.Name = "lblNameSP";
+            this.lblNameSP.Size = new System.Drawing.Size(51, 20);
+            this.lblNameSP.TabIndex = 23;
+            this.lblNameSP.Text = "TenSP\r\n";
+            // 
+            // picProduct
+            // 
+            this.picProduct.BackColor = System.Drawing.Color.Transparent;
+            this.picProduct.BorderRadius = 15;
+            this.picProduct.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icnThongKeNOHOVER;
+            this.picProduct.ImageRotate = 0F;
+            this.picProduct.Location = new System.Drawing.Point(5, 5);
+            this.picProduct.Name = "picProduct";
+            this.picProduct.Size = new System.Drawing.Size(140, 100);
+            this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProduct.TabIndex = 0;
+            this.picProduct.TabStop = false;
+            // 
+            // cbLoaiSP
+            // 
+            this.cbLoaiSP.BackColor = System.Drawing.Color.Transparent;
+            this.cbLoaiSP.BorderRadius = 5;
+            this.cbLoaiSP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLoaiSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLoaiSP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbLoaiSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbLoaiSP.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLoaiSP.ForeColor = System.Drawing.Color.Black;
+            this.cbLoaiSP.ItemHeight = 30;
+            this.cbLoaiSP.Items.AddRange(new object[] {
+            "Tất cả",
+            "Nhẫn",
+            "Dây chuyền",
+            "Bông tai",
+            "Lắc tay",
+            "Mặt dây chuyền"});
+            this.cbLoaiSP.Location = new System.Drawing.Point(596, 50);
+            this.cbLoaiSP.Name = "cbLoaiSP";
+            this.cbLoaiSP.Size = new System.Drawing.Size(183, 36);
+            this.cbLoaiSP.TabIndex = 23;
+            // 
+            // lblProduct
+            // 
+            this.lblProduct.AutoSize = true;
+            this.lblProduct.Font = new System.Drawing.Font("Segoe UI", 13.25F, System.Drawing.FontStyle.Bold);
+            this.lblProduct.ForeColor = System.Drawing.Color.White;
+            this.lblProduct.Location = new System.Drawing.Point(90, 50);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(185, 25);
+            this.lblProduct.TabIndex = 24;
+            this.lblProduct.Text = "Danh mục sản phẩm";
+            // 
+            // panelRight
+            // 
+            this.panelRight.BorderThickness = 1;
+            this.panelRight.Controls.Add(this.panelThemSuaXoa);
+            this.panelRight.Controls.Add(this.panelLuuHuy);
+            this.panelRight.Controls.Add(this.lblInfor);
+            this.panelRight.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(123)))), ((int)(((byte)(129)))));
+            this.panelRight.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
+            this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelRight.Location = new System.Drawing.Point(802, 0);
+            this.panelRight.Name = "panelRight";
+            this.panelRight.Size = new System.Drawing.Size(462, 681);
+            this.panelRight.TabIndex = 16;
+            // 
+            // panelThemSuaXoa
+            // 
+            this.panelThemSuaXoa.AutoScroll = true;
+            this.panelThemSuaXoa.Controls.Add(this.btnSua);
+            this.panelThemSuaXoa.Controls.Add(this.btnXoa);
+            this.panelThemSuaXoa.Controls.Add(this.btnThem);
+            this.panelThemSuaXoa.Location = new System.Drawing.Point(117, 392);
+            this.panelThemSuaXoa.Name = "panelThemSuaXoa";
+            this.panelThemSuaXoa.Size = new System.Drawing.Size(285, 122);
+            this.panelThemSuaXoa.TabIndex = 23;
+            // 
+            // btnSua
+            // 
+            this.btnSua.Animated = true;
+            this.btnSua.BackColor = System.Drawing.Color.Transparent;
+            this.btnSua.BorderRadius = 10;
+            this.btnSua.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSua.Enabled = false;
+            this.btnSua.FillColor = System.Drawing.Color.White;
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.btnSua.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSua.Location = new System.Drawing.Point(150, 10);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(130, 45);
+            this.btnSua.TabIndex = 46;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseTransparentBackground = true;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Animated = true;
+            this.btnXoa.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoa.BorderRadius = 10;
+            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoa.FillColor = System.Drawing.Color.Red;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(3, 62);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(282, 45);
+            this.btnXoa.TabIndex = 47;
+            this.btnXoa.Text = "Xóa sản phẩm";
+            this.btnXoa.UseTransparentBackground = true;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Animated = true;
+            this.btnThem.BackColor = System.Drawing.Color.Transparent;
+            this.btnThem.BorderRadius = 10;
+            this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThem.FillColor = System.Drawing.Color.White;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.btnThem.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnThem.Location = new System.Drawing.Point(3, 10);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(130, 45);
+            this.btnThem.TabIndex = 45;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseTransparentBackground = true;
+            // 
+            // panelLuuHuy
+            // 
+            this.panelLuuHuy.Controls.Add(this.btnLuu);
+            this.panelLuuHuy.Controls.Add(this.btnHuy);
+            this.panelLuuHuy.Location = new System.Drawing.Point(160, 550);
+            this.panelLuuHuy.Name = "panelLuuHuy";
+            this.panelLuuHuy.Size = new System.Drawing.Size(290, 57);
+            this.panelLuuHuy.TabIndex = 23;
+            this.panelLuuHuy.Visible = false;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Animated = true;
+            this.btnLuu.BackColor = System.Drawing.Color.Transparent;
+            this.btnLuu.BorderRadius = 10;
+            this.btnLuu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLuu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLuu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLuu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLuu.FillColor = System.Drawing.Color.White;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.btnLuu.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnLuu.Location = new System.Drawing.Point(3, 5);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(134, 45);
+            this.btnLuu.TabIndex = 43;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseTransparentBackground = true;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Animated = true;
+            this.btnHuy.BackColor = System.Drawing.Color.Transparent;
+            this.btnHuy.BorderRadius = 10;
+            this.btnHuy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHuy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHuy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHuy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHuy.FillColor = System.Drawing.Color.White;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.btnHuy.ForeColor = System.Drawing.Color.Red;
+            this.btnHuy.Location = new System.Drawing.Point(156, 5);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(131, 45);
+            this.btnHuy.TabIndex = 44;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseTransparentBackground = true;
+            // 
+            // lblInfor
+            // 
+            this.lblInfor.AutoSize = true;
+            this.lblInfor.Font = new System.Drawing.Font("Segoe UI", 13.25F, System.Drawing.FontStyle.Bold);
+            this.lblInfor.ForeColor = System.Drawing.Color.Gold;
+            this.lblInfor.Location = new System.Drawing.Point(15, 31);
+            this.lblInfor.Name = "lblInfor";
+            this.lblInfor.Size = new System.Drawing.Size(170, 25);
+            this.lblInfor.TabIndex = 22;
+            this.lblInfor.Text = "Thông tin hóa đơn";
             // 
             // frmInvoices
             // 
@@ -474,39 +382,43 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý hóa đơn";
             this.Load += new System.EventHandler(this.frmInvoices_Load);
-            this.panelTop.ResumeLayout(false);
-            this.panelLeft.ResumeLayout(false);
-            this.panelLeft.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.panelMid.ResumeLayout(false);
+            this.panelMid.PerformLayout();
+            this.flpProduct.ResumeLayout(false);
+            this.panelProduct.ResumeLayout(false);
+            this.panelProduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
+            this.panelRight.ResumeLayout(false);
+            this.panelRight.PerformLayout();
+            this.panelThemSuaXoa.ResumeLayout(false);
+            this.panelLuuHuy.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Button btnSuppiler;
-        private Guna.UI2.WinForms.Guna2Separator topSeph;
-        private Guna.UI2.WinForms.Guna2Button btnSetting;
-        private Guna.UI2.WinForms.Guna2Button btnNotification;
-        private Guna.UI2.WinForms.Guna2Separator sephLine;
-        private Guna.UI2.WinForms.Guna2Button btnStonk;
-        private Guna.UI2.WinForms.Guna2Button btnInvoices;
-        private Guna.UI2.WinForms.Guna2Button btnProduct;
-        private Guna.UI2.WinForms.Guna2Button btnCustomer;
-        private System.Windows.Forms.Label lblAdmin;
-        private Guna.UI2.WinForms.Guna2PictureBox picMenu;
-        private System.Windows.Forms.LinkLabel lblLogOut;
-        private System.Windows.Forms.PictureBox picLogo;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
         private Guna.UI2.WinForms.Guna2Panel panelTop;
-        private Guna.UI2.WinForms.Guna2ControlBox btnMaximize;
-        private Guna.UI2.WinForms.Guna2ControlBox btnClose;
-        private Guna.UI2.WinForms.Guna2ControlBox btnMinimize;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2GradientPanel panelLeft;
         private Guna.UI2.WinForms.Guna2Panel panelMid;
+        private Guna.UI2.WinForms.Guna2Panel panelRight;
+        private Guna.UI2.WinForms.Guna2ComboBox cbLoaiSP;
+        private Guna.UI2.WinForms.Guna2Panel panelThemSuaXoa;
+        private Guna.UI2.WinForms.Guna2Button btnSua;
+        private Guna.UI2.WinForms.Guna2Button btnXoa;
+        private Guna.UI2.WinForms.Guna2Button btnThem;
+        private Guna.UI2.WinForms.Guna2Panel panelLuuHuy;
+        private Guna.UI2.WinForms.Guna2Button btnLuu;
+        private Guna.UI2.WinForms.Guna2Button btnHuy;
+        private System.Windows.Forms.Label lblInfor;
+        private System.Windows.Forms.Label lblProduct;
+        private System.Windows.Forms.FlowLayoutPanel flpProduct;
+        private Guna.UI2.WinForms.Guna2Panel panelProduct;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblNameSP;
+        private Guna.UI2.WinForms.Guna2PictureBox picProduct;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
     }
 }

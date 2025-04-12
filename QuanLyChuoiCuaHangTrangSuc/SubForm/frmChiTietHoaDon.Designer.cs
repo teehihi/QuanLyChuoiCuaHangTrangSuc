@@ -107,6 +107,7 @@
             this.btnDong.Size = new System.Drawing.Size(90, 19);
             this.btnDong.TabIndex = 16;
             this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // lblGiamGia
             // 
@@ -402,6 +403,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmChiTietHoaDon";
             this.Text = "Chi tiết hóa đơn - TeeNStyle";
+            this.Load += new System.EventHandler(this.frmChiTietHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTiet)).EndInit();
             this.grpInvoiceInfo.ResumeLayout(false);
             this.grpInvoiceInfo.PerformLayout();

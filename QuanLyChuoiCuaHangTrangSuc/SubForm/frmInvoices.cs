@@ -464,7 +464,34 @@ namespace QuanLyChuoiCuaHangTrangSuc
             }
         }
 
+        public List<CartItem> GetCartItems()
+        {
+            List<CartItem> cartItems = new List<CartItem>();
+
+            foreach (var entry in selectedProducts)
+            {
+                DataRow row = entry.Value;
+                CartItem item = new CartItem
+                {
+                    ProductID = row["ProductID"].ToString(),
+                    Name = row["Name"].ToString(),
+                    Price = Convert.ToDecimal(row["Price"]),
+                    //Quantity = Convert.ToInt32(row["Quantity"]),
+                    Quantity = 1
+                };
+                cartItems.Add(item);
+            }
+
+            return cartItems;
+        }
 
 
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            List<CartItem> cart = GetCartItems(); // bạn đã có danh sách sản phẩm
+            frmChiTietHoaDon frm = new frmChiTietHoaDon(cart);
+            frm.ShowDialog();
+
+        }
     }
 }

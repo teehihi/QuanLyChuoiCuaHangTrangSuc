@@ -47,9 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartItem.cs" />
     <Compile Include="DBChiTietHoaDon.cs" />
     <Compile Include="DBCustomer.cs" />
     <Compile Include="DBLogin.cs" />
+    <Compile Include="DBOrder.cs" />
     <Compile Include="DBProduct.cs" />
     <Compile Include="DBPromotion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

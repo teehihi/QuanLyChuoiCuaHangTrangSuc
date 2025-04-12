@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,47 @@ namespace BusinessAccessLayer
             DataSet ds = dal.ExecuteQueryDataSet(query, CommandType.Text, parameters);
             return ds.Tables[0];
         }
+
+        public int InsertOrder(int customerId, DateTime orderDate, decimal totalAmount, string paymentMethod, decimal discount)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionHelper.CurrentConnectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(@"
+            INSERT INTO Orders (CustomerID, OrderDate, TotalAmount, PaymentMethod, Discount) 
+            OUTPUT INSERTED.OrderID 
+            VALUES (@CustomerID, @OrderDate, @TotalAmount, @PaymentMethod, @Discount)", conn);
+
+                cmd.Parameters.AddWithValue("@CustomerID", customerId);
+                cmd.Parameters.AddWithValue("@OrderDate", orderDate);
+                cmd.Parameters.AddWithValue("@TotalAmount", totalAmount);
+                cmd.Parameters.AddWithValue("@PaymentMethod", paymentMethod);
+                cmd.Parameters.AddWithValue("@Discount", discount);
+
+                return (int)cmd.ExecuteScalar();
+            }
+        }
+
+        public void InsertOrderItem(int orderId, string productId, int quantity, decimal unitPrice)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionHelper.CurrentConnectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(@"
+            INSERT INTO OrderItems (OrderID, ProductID, Quantity, UnitPrice, SubTotal) 
+            VALUES (@OrderID, @ProductID, @Quantity, @UnitPrice, @SubTotal)", conn);
+
+                cmd.Parameters.AddWithValue("@OrderID", orderId);
+                cmd.Parameters.AddWithValue("@ProductID", productId);
+                cmd.Parameters.AddWithValue("@Quantity", quantity);
+                cmd.Parameters.AddWithValue("@UnitPrice", unitPrice);
+                cmd.Parameters.AddWithValue("@SubTotal", unitPrice * quantity);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
     }
 
 }

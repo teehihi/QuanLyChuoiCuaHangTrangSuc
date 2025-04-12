@@ -64,7 +64,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
 
-            string connectionString = $"Data Source=TEE\\TEE;Initial Catalog=JwelrySystemDBMSFinal;User ID={username};Password={password}";
+            string connectionString = $"Data Source=CT\\SQLEXPRESS02;Initial Catalog=JwelrySystemDBMSFinal;User ID={username};Password={password}";
 
             try
             {

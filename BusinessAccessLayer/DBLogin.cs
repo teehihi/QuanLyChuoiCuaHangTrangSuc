@@ -10,7 +10,7 @@ namespace BusinessAccessLayer
 {
     public class DBLogin
     {
-        private readonly string server = "TEE\\TEE";
+        private readonly string server = "CT\\SQLEXPRESS02";
         private readonly string saUser = "sa";
         private readonly string saPassword = "2105";
         private readonly string targetDb = "JwelrySystemDBMSFinal";

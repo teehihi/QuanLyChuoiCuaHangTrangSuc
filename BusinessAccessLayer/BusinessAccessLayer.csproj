@@ -47,12 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-  <Compile Include="DBCustomer.cs" />
-  <Compile Include="DBLogin.cs" />
-  <Compile Include="DBProduct.cs" />
-  <Compile Include="Properties\AssemblyInfo.cs" />
-</ItemGroup>
-
+    <Compile Include="DBChiTietHoaDon.cs" />
+    <Compile Include="DBCustomer.cs" />
+    <Compile Include="DBLogin.cs" />
+    <Compile Include="DBProduct.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

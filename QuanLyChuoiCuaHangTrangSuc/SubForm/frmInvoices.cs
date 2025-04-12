@@ -32,6 +32,9 @@ namespace QuanLyChuoiCuaHangTrangSuc
             LoadLoaiTrangSuc();
             cbLoaiSP.SelectedIndex = 0;
 
+        
+
+
         }
 
         private void LoadProducts(string loai)

@@ -15,18 +15,15 @@ using QuanLyChuoiCuaHangTrangSuc.MainForm;
 
 namespace QuanLyChuoiCuaHangTrangSuc
 {
-    public partial class frmProduct : Form, IReloadable
+    public partial class frmProduct : Form
     {
-        public void ReloadData()
-        {
-            frmProduct_Load(this, EventArgs.Empty); // Gọi lại sự kiện Load để làm mới dữ liệu    
-        }
         DBProduct dbProduct = new DBProduct();
         private byte[] imageData; // Biến lưu ảnh dưới dạng byte[]
 
         public frmProduct()
         {
             InitializeComponent();
+            
             this.Text = "Quản lý sản phẩm - TeeNStyle";
         }
 

@@ -2,6 +2,7 @@
 using DataAcessLayer;
 using Guna.UI2.WinForms;
 using QuanLyChuoiCuaHangTrangSuc.MainForm;
+using QuanLyChuoiCuaHangTrangSuc.SubForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,17 +16,15 @@ using System.Windows.Forms;
 
 namespace QuanLyChuoiCuaHangTrangSuc
 {
-    public partial class frmInvoices : Form, IReloadable
+    public partial class frmInvoices : Form
     {
-        public void ReloadData()
-        {
-            frmInvoices_Load(this, EventArgs.Empty);
-        }
+        
         DBProduct dbProduct = new DBProduct();
 
         private Dictionary<Guna2Panel, bool> selectedPanels = new Dictionary<Guna2Panel, bool>();
         private Dictionary<string, DataRow> selectedProducts = new Dictionary<string, DataRow>();
-        
+        private double currentDiscountAmount = 0;
+        private double currentDiscountRate = 0;
 
         private byte[] imageData; // Biến lưu ảnh dưới dạng byte[]
 
@@ -264,6 +263,8 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
                 selectedPanels[panel] = false;
                 RemoveFromCart(row["ProductID"].ToString()); 
+                CapNhatTamTinh();
+                UpdateTotals();
             }
 
 
@@ -288,6 +289,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
                 {
                     flpCart.Controls.Remove(cartItem);
                     cartItem.Dispose();
+                    
                     break;
                 }
             }
@@ -329,9 +331,16 @@ namespace QuanLyChuoiCuaHangTrangSuc
             nudQuantity.Location = new Point(300, 20);
             nudQuantity.BorderRadius = 7;
             nudQuantity.BackColor = Color.Transparent;
-            nudQuantity.FillColor = Color.FromArgb(192, 192, 255);
-            nudQuantity.BorderColor = Color.DarkGoldenrod;
-            nudQuantity.UpDownButtonFillColor = Color.DarkGoldenrod;
+            nudQuantity.FillColor = Color.White;
+            nudQuantity.BorderColor = Color.Gold;
+            nudQuantity.UpDownButtonFillColor = Color.Gold;
+            nudQuantity.ValueChanged += (s, e) =>
+            {
+                CapNhatTamTinh();
+                UpdateTotals();
+            };
+
+
             nudQuantity.Tag = row;
 
             // Nút xóa
@@ -345,13 +354,14 @@ namespace QuanLyChuoiCuaHangTrangSuc
             btnDelete.Anchor = AnchorStyles.Right;
             btnDelete.BackColor = Color.Transparent;
             btnDelete.FillColor = Color.Transparent;
+            btnDelete.HoverState.FillColor = Color.Transparent;
             btnDelete.Cursor = Cursors.Hand;
+            btnDelete.Animated = true;
             btnDelete.Click += (s, e) =>
             {
                 flpCart.Controls.Remove(panelCart);
                 string pid = row["ProductID"].ToString();
                 selectedProducts.Remove(pid);
-
                 // Gỡ hiệu ứng chọn ở panel sản phẩm
                 var selectedPanel = selectedPanels.Keys.FirstOrDefault(p => ((DataRow)p.Tag)["ProductID"].ToString() == pid);
                 if (selectedPanel != null)
@@ -361,6 +371,9 @@ namespace QuanLyChuoiCuaHangTrangSuc
                     if (btnCheck != null) btnCheck.Visible = false;
                     selectedPanels[selectedPanel] = false;
                 }
+                CapNhatTamTinh();
+                UpdateTotals();
+
             };
 
             // Thêm control vào panelCart
@@ -371,7 +384,62 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
             // Thêm vào flpCart
             flpCart.Controls.Add(panelCart);
+            CapNhatTamTinh();
+            UpdateTotals();
+
         }
+
+
+        private void CapNhatTamTinh()
+        {
+            decimal tongTien = 0;
+
+            foreach (Guna2Panel panel in flpCart.Controls.OfType<Guna2Panel>())
+            {
+                var row = panel.Tag as DataRow;
+                if (row != null)
+                {
+                    decimal gia = Convert.ToDecimal(row["Price"]);
+                    var nud = panel.Controls.OfType<Guna2NumericUpDown>().FirstOrDefault();
+                    if (nud != null)
+                    {
+                        tongTien += gia * nud.Value;
+                    }
+                }
+            }
+
+            lblTamTinh.Text = tongTien.ToString("N0") + " VNĐ";
+        }
+
+
+        private void UpdateTotals()
+        {
+            double tamTinh = 0;
+
+            foreach (Control c in flpCart.Controls)
+            {
+                if (c is Guna2Panel panel && panel.Tag is DataRow row)
+                {
+                    decimal price = Convert.ToDecimal(row["Price"]);
+                    var nud = panel.Controls.OfType<Guna2NumericUpDown>().FirstOrDefault();
+                    if (nud != null)
+                    {
+                        int quantity = (int)nud.Value;
+                        tamTinh += (double)(price * quantity);
+                    }
+                }
+            }
+
+            lblTamTinh.Text = tamTinh.ToString("N0") + " VNĐ";
+            currentDiscountAmount = tamTinh * currentDiscountRate;
+
+            lblGiamGia.Text = "-" + currentDiscountAmount.ToString("N0") + " VNĐ";
+
+            double tongTien = tamTinh - currentDiscountAmount;
+            if (tongTien < 0) tongTien = 0;
+            lblTotal.Text = tongTien.ToString("N0") + " VNĐ";
+        }
+
 
 
         //Chuyển đổi ảnh thành chuỗi để lưu vào CSDL
@@ -385,8 +453,18 @@ namespace QuanLyChuoiCuaHangTrangSuc
             }
         }
 
+        private void btnSelectPromotion_Click(object sender, EventArgs e)
+        {
+            frmSelectPromotion frm = new frmSelectPromotion();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                currentDiscountRate = frm.DiscountRate ?? 0;
+                txtTenKM.Text = frm.PromotionName;
+                UpdateTotals();
+            }
+        }
 
-        //Xóa dữ liệu
+
 
     }
 }

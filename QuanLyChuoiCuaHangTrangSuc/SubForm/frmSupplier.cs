@@ -11,12 +11,9 @@ using System.Windows.Forms;
 
 namespace QuanLyChuoiCuaHangTrangSuc
 {
-    public partial class frmSupplier : Form, IReloadable
+    public partial class frmSupplier : Form
     {
-        public void ReloadData()
-        {
-            frmSupplier_Load(this, EventArgs.Empty);    
-        }
+        
         public frmSupplier()
         {
             InitializeComponent();

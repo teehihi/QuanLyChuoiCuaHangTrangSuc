@@ -14,12 +14,9 @@ using QuanLyChuoiCuaHangTrangSuc.MainForm;
 namespace QuanLyChuoiCuaHangTrangSuc
 {
 
-    public partial class frmCustomer : Form, IReloadable
+    public partial class frmCustomer : Form
     {
-        public void ReloadData()
-        {
-            frmCustomer_Load(this, EventArgs.Empty);
-        }
+       
         DBCustomer dbCustomer;
         private bool isAdding = false;
         public frmCustomer()

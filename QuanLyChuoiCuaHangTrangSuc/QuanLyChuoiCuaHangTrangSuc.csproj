@@ -121,6 +121,12 @@
     <Compile Include="MainForm\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForm\frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForm\frmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>

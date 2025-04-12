@@ -75,6 +75,7 @@
             this.stepSampleDataSet = new QuanLyChuoiCuaHangTrangSuc.StepSampleDataSet();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerTableAdapter = new QuanLyChuoiCuaHangTrangSuc.StepSampleDataSetTableAdapters.CustomerTableAdapter();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.panelTop.SuspendLayout();
             this.panelRight.SuspendLayout();
             this.panelLuuHuy.SuspendLayout();
@@ -593,6 +594,7 @@
             // 
             // panelMid
             // 
+            this.panelMid.Controls.Add(this.guna2VScrollBar1);
             this.panelMid.Controls.Add(this.guna2PictureBox3);
             this.panelMid.Controls.Add(this.lblDSKH);
             this.panelMid.Controls.Add(this.picText);
@@ -798,6 +800,16 @@
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
             // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(-15, -15);
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 18;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(18, 300);
+            this.guna2VScrollBar1.TabIndex = 52;
+            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -874,5 +886,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDSKH;
         private Guna.UI2.WinForms.Guna2PictureBox picText;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
     }
 }

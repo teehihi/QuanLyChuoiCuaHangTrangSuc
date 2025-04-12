@@ -471,14 +471,34 @@ namespace QuanLyChuoiCuaHangTrangSuc
             foreach (var entry in selectedProducts)
             {
                 DataRow row = entry.Value;
+                string productId = row["ProductID"].ToString();
+                int quantity = 1; // default
+
+                // Tìm panel tương ứng trong flpCart
+                foreach (Control c in flpCart.Controls)
+                {
+                    if (c is Guna2Panel panel && panel.Tag is DataRow panelRow)
+                    {
+                        if (panelRow["ProductID"].ToString() == productId)
+                        {
+                            var nud = panel.Controls.OfType<Guna2NumericUpDown>().FirstOrDefault();
+                            if (nud != null)
+                            {
+                                quantity = (int)nud.Value;
+                            }
+                            break;
+                        }
+                    }
+                }
+
                 CartItem item = new CartItem
                 {
-                    ProductID = row["ProductID"].ToString(),
+                    ProductID = productId,
                     Name = row["Name"].ToString(),
                     Price = Convert.ToDecimal(row["Price"]),
-                    //Quantity = Convert.ToInt32(row["Quantity"]),
-                    Quantity = 1
+                    Quantity = quantity
                 };
+
                 cartItems.Add(item);
             }
 
@@ -486,10 +506,11 @@ namespace QuanLyChuoiCuaHangTrangSuc
         }
 
 
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             List<CartItem> cart = GetCartItems(); // bạn đã có danh sách sản phẩm
-            frmChiTietHoaDon frm = new frmChiTietHoaDon(cart);
+            frmChiTietHoaDon frm = new frmChiTietHoaDon(cart,currentDiscountAmount);
             frm.ShowDialog();
 
         }

@@ -55,11 +55,10 @@
             this.guna2VScrollBar2 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.flpCart = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.panelThemSuaXoa = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.lblInfor = new System.Windows.Forms.Label();
+            this.tlpThemXoa = new System.Windows.Forms.TableLayoutPanel();
             this.panelMid.SuspendLayout();
             this.flpProduct.SuspendLayout();
             this.panelProduct.SuspendLayout();
@@ -67,7 +66,7 @@
             this.panelRight.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panelThemSuaXoa.SuspendLayout();
+            this.tlpThemXoa.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -217,12 +216,12 @@
             // panelRight
             // 
             this.panelRight.BorderThickness = 1;
+            this.panelRight.Controls.Add(this.tlpThemXoa);
+            this.panelRight.Controls.Add(this.guna2VScrollBar2);
             this.panelRight.Controls.Add(this.tableLayoutPanel2);
             this.panelRight.Controls.Add(this.tableLayoutPanel1);
-            this.panelRight.Controls.Add(this.guna2VScrollBar2);
             this.panelRight.Controls.Add(this.guna2Separator1);
             this.panelRight.Controls.Add(this.flpCart);
-            this.panelRight.Controls.Add(this.panelThemSuaXoa);
             this.panelRight.Controls.Add(this.lblInfor);
             this.panelRight.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(123)))), ((int)(((byte)(129)))));
             this.panelRight.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
@@ -237,11 +236,11 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.7931F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.2069F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
             this.tableLayoutPanel2.Controls.Add(this.btnSelectPromotion, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtTenKM, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(15, 437);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(15, 371);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -250,7 +249,6 @@
             // 
             // btnSelectPromotion
             // 
-            this.btnSelectPromotion.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnSelectPromotion.Animated = true;
             this.btnSelectPromotion.BackColor = System.Drawing.Color.Transparent;
             this.btnSelectPromotion.BorderRadius = 5;
@@ -258,12 +256,13 @@
             this.btnSelectPromotion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSelectPromotion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSelectPromotion.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSelectPromotion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSelectPromotion.FillColor = System.Drawing.Color.White;
             this.btnSelectPromotion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnSelectPromotion.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSelectPromotion.Location = new System.Drawing.Point(367, 4);
+            this.btnSelectPromotion.Location = new System.Drawing.Point(349, 3);
             this.btnSelectPromotion.Name = "btnSelectPromotion";
-            this.btnSelectPromotion.Size = new System.Drawing.Size(65, 34);
+            this.btnSelectPromotion.Size = new System.Drawing.Size(83, 37);
             this.btnSelectPromotion.TabIndex = 48;
             this.btnSelectPromotion.Text = "Chọn";
             this.btnSelectPromotion.UseTransparentBackground = true;
@@ -299,8 +298,9 @@
             this.txtTenKM.Location = new System.Drawing.Point(137, 8);
             this.txtTenKM.Name = "txtTenKM";
             this.txtTenKM.PlaceholderText = "Chọn mã KM...";
+            this.txtTenKM.ReadOnly = true;
             this.txtTenKM.SelectedText = "";
-            this.txtTenKM.Size = new System.Drawing.Size(207, 27);
+            this.txtTenKM.Size = new System.Drawing.Size(206, 27);
             this.txtTenKM.TabIndex = 33;
             // 
             // tableLayoutPanel1
@@ -318,7 +318,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblTotal, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 487);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 421);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
@@ -404,14 +404,14 @@
             // 
             this.guna2VScrollBar2.AutoRoundedCorners = true;
             this.guna2VScrollBar2.BindingContainer = this.flpCart;
-            this.guna2VScrollBar2.BorderRadius = 4;
+            this.guna2VScrollBar2.BorderRadius = 8;
             this.guna2VScrollBar2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2VScrollBar2.InUpdate = false;
             this.guna2VScrollBar2.LargeChange = 10;
-            this.guna2VScrollBar2.Location = new System.Drawing.Point(449, 111);
+            this.guna2VScrollBar2.Location = new System.Drawing.Point(441, 111);
             this.guna2VScrollBar2.Name = "guna2VScrollBar2";
-            this.guna2VScrollBar2.ScrollbarSize = 10;
-            this.guna2VScrollBar2.Size = new System.Drawing.Size(10, 320);
+            this.guna2VScrollBar2.ScrollbarSize = 18;
+            this.guna2VScrollBar2.Size = new System.Drawing.Size(18, 254);
             this.guna2VScrollBar2.TabIndex = 26;
             this.guna2VScrollBar2.ThumbColor = System.Drawing.Color.SteelBlue;
             this.guna2VScrollBar2.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
@@ -422,48 +422,17 @@
             this.flpCart.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpCart.Location = new System.Drawing.Point(3, 111);
             this.flpCart.Name = "flpCart";
-            this.flpCart.Size = new System.Drawing.Size(456, 320);
+            this.flpCart.Size = new System.Drawing.Size(456, 254);
             this.flpCart.TabIndex = 24;
             this.flpCart.WrapContents = false;
             // 
             // guna2Separator1
             // 
             this.guna2Separator1.FillColor = System.Drawing.Color.Silver;
-            this.guna2Separator1.Location = new System.Drawing.Point(4, 427);
+            this.guna2Separator1.Location = new System.Drawing.Point(4, 363);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(456, 10);
             this.guna2Separator1.TabIndex = 27;
-            // 
-            // panelThemSuaXoa
-            // 
-            this.panelThemSuaXoa.AutoScroll = true;
-            this.panelThemSuaXoa.Controls.Add(this.btnSua);
-            this.panelThemSuaXoa.Controls.Add(this.btnXoa);
-            this.panelThemSuaXoa.Controls.Add(this.btnThem);
-            this.panelThemSuaXoa.Location = new System.Drawing.Point(11, 611);
-            this.panelThemSuaXoa.Name = "panelThemSuaXoa";
-            this.panelThemSuaXoa.Size = new System.Drawing.Size(439, 70);
-            this.panelThemSuaXoa.TabIndex = 23;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Animated = true;
-            this.btnSua.BackColor = System.Drawing.Color.Transparent;
-            this.btnSua.BorderRadius = 10;
-            this.btnSua.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSua.Enabled = false;
-            this.btnSua.FillColor = System.Drawing.Color.White;
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.btnSua.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSua.Location = new System.Drawing.Point(150, 10);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(130, 45);
-            this.btnSua.TabIndex = 46;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseTransparentBackground = true;
             // 
             // btnXoa
             // 
@@ -474,15 +443,17 @@
             this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnXoa.FillColor = System.Drawing.Color.Red;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(286, 10);
+            this.btnXoa.Location = new System.Drawing.Point(220, 3);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(135, 45);
+            this.btnXoa.Size = new System.Drawing.Size(212, 44);
             this.btnXoa.TabIndex = 47;
-            this.btnXoa.Text = "Xóa sản phẩm";
+            this.btnXoa.Text = "Xóa tất cả";
             this.btnXoa.UseTransparentBackground = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -493,14 +464,15 @@
             this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnThem.FillColor = System.Drawing.Color.White;
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnThem.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnThem.Location = new System.Drawing.Point(3, 10);
+            this.btnThem.Location = new System.Drawing.Point(3, 3);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(130, 45);
+            this.btnThem.Size = new System.Drawing.Size(211, 44);
             this.btnThem.TabIndex = 45;
-            this.btnThem.Text = "Thêm";
+            this.btnThem.Text = "Thêm Hóa đơn";
             this.btnThem.UseTransparentBackground = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -514,6 +486,20 @@
             this.lblInfor.Size = new System.Drawing.Size(204, 30);
             this.lblInfor.TabIndex = 22;
             this.lblInfor.Text = "Thông tin hóa đơn";
+            // 
+            // tlpThemXoa
+            // 
+            this.tlpThemXoa.ColumnCount = 2;
+            this.tlpThemXoa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpThemXoa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpThemXoa.Controls.Add(this.btnXoa, 1, 0);
+            this.tlpThemXoa.Controls.Add(this.btnThem, 0, 0);
+            this.tlpThemXoa.Location = new System.Drawing.Point(15, 550);
+            this.tlpThemXoa.Name = "tlpThemXoa";
+            this.tlpThemXoa.RowCount = 1;
+            this.tlpThemXoa.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpThemXoa.Size = new System.Drawing.Size(435, 50);
+            this.tlpThemXoa.TabIndex = 53;
             // 
             // frmInvoices
             // 
@@ -541,7 +527,7 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panelThemSuaXoa.ResumeLayout(false);
+            this.tlpThemXoa.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -552,8 +538,6 @@
         private Guna.UI2.WinForms.Guna2Panel panelMid;
         private Guna.UI2.WinForms.Guna2Panel panelRight;
         private Guna.UI2.WinForms.Guna2ComboBox cbLoaiSP;
-        private Guna.UI2.WinForms.Guna2Panel panelThemSuaXoa;
-        private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private System.Windows.Forms.Label lblInfor;
@@ -578,5 +562,6 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tlpThemXoa;
     }
 }

@@ -14,18 +14,20 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
         private List<CartItem> cartItems; // Lưu trữ giỏ hàng
         private DBChiTietHoaDon orderBAL = new DBChiTietHoaDon(); // Thực thi các thao tác với cơ sở dữ liệu
         private double discount;
+        private decimal tongTien;
         public frmChiTietHoaDon(List<CartItem> cartItems, double discountAmount)
         {
             InitializeComponent();
             this.cartItems = cartItems;
             discount = discountAmount; // Giảm giá (nếu có)
             LoadNewOrderInfo();  // Gọi phương thức hiển thị giỏ hàng khi form được tạo
+            txtKhachHang.Focus();
 
         }
 
         private void frmChiTietHoaDon_Load(object sender, EventArgs e)
         {
-            txtKhachHang.Focus();
+            
 
             // Chỉnh sửa tiêu đề form
             lblHoaDonInf.Left = (this.ClientSize.Width - lblHoaDonInf.Width) / 2;
@@ -35,12 +37,14 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
             dgvChiTiet.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvChiTiet.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             dgvChiTiet.EnableHeadersVisualStyles = false;
+
+            
         }
 
         private void LoadNewOrderInfo()
         {
             dgvChiTiet.Rows.Clear();  // Xóa các dòng cũ
-            decimal tongTien = 0;
+            tongTien = 0;
             // Thêm các cột đã có
             dgvChiTiet.Columns.Add("ProductName", "Tên sản phẩm");
             dgvChiTiet.Columns.Add("Quantity", "Số lượng");
@@ -150,8 +154,16 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            frmPayment paymentForm = new frmPayment();
-            paymentForm.ShowDialog();
+            if(string.IsNullOrWhiteSpace(txtKhachHang.Text))
+            {
+                MessageBox.Show("Vui lòng nhập thông tin khách hàng trước khi thanh toán!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtKhachHang.Focus();
+            }
+            else
+            {
+                frmPayment paymentForm = new frmPayment(Convert.ToInt32(tongTien));
+                paymentForm.ShowDialog();
+            }
         }
     }
 }

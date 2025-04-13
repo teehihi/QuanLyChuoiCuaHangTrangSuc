@@ -193,6 +193,26 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icnCash {
+            get {
+                object obj = ResourceManager.GetObject("icnCash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icnMomo {
+            get {
+                object obj = ResourceManager.GetObject("icnMomo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icnOrder {
             get {
                 object obj = ResourceManager.GetObject("icnOrder", resourceCulture);
@@ -236,6 +256,26 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         internal static System.Drawing.Bitmap icnTrash {
             get {
                 object obj = ResourceManager.GetObject("icnTrash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icnVPAYLogo1 {
+            get {
+                object obj = ResourceManager.GetObject("icnVPAYLogo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icnZaloPay {
+            get {
+                object obj = ResourceManager.GetObject("icnZaloPay", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,6 +556,16 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         internal static System.Drawing.Bitmap menu_icon_closed {
             get {
                 object obj = ResourceManager.GetObject("menu_icon_closed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap momoQR {
+            get {
+                object obj = ResourceManager.GetObject("momoQR", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

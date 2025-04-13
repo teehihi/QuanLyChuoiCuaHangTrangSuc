@@ -190,7 +190,6 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void Panel_Click(object sender, EventArgs e)
         {
-            btnSua.Enabled = true;
             Control control = (Control)sender;
 
             // Tìm panel cha (nếu sender không phải Guna2Panel)
@@ -504,7 +503,44 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
             return cartItems;
         }
+        //Xóa giỏ hàng
+        private void ClearCart()
+        {
+            // Xóa tất cả sản phẩm trong flpCart
+            foreach (Control control in flpCart.Controls)
+            {
+                control.Dispose();
+            }
+            flpCart.Controls.Clear();
 
+            // Xóa trạng thái đã chọn
+            foreach (var panel in selectedPanels.Keys.ToList())
+            {
+                if (selectedPanels[panel])
+                {
+                    // Bỏ viền và ẩn nút check
+                    panel.BorderThickness = 0;
+                    var btnCheck = panel.Controls.OfType<Guna2Button>().FirstOrDefault(b => b.Name == "btnCheck");
+                    if (btnCheck != null)
+                        btnCheck.Visible = false;
+
+                    selectedPanels[panel] = false;
+                }
+            }
+
+            // Xóa danh sách sản phẩm đã chọn
+            selectedProducts.Clear();
+
+            // Reset các label liên quan tiền tệ
+            lblTamTinh.Text = "0 VNĐ";
+            lblGiamGia.Text = "-0 VNĐ";
+            lblTotal.Text = "0 VNĐ";
+
+            // Xóa khuyến mãi đang áp dụng
+            currentDiscountRate = 0;
+            currentDiscountAmount = 0;
+            txtTenKM.Text = "";
+        }
 
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -513,6 +549,14 @@ namespace QuanLyChuoiCuaHangTrangSuc
             frmChiTietHoaDon frm = new frmChiTietHoaDon(cart,currentDiscountAmount);
             frm.ShowDialog();
 
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa toàn bộ giỏ hàng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                ClearCart();
+            }       
         }
     }
 }

@@ -8,21 +8,26 @@ using System.Windows.Forms;
 
 namespace QuanLyChuoiCuaHangTrangSuc.SubForm
 {
+
     public partial class frmChiTietHoaDon : Form
     {
+        private DBOrder dbOrder = new DBOrder();
         DBCustomer dBCustomer = new DBCustomer();
         private List<CartItem> cartItems; // Lưu trữ giỏ hàng
         private DBChiTietHoaDon orderBAL = new DBChiTietHoaDon(); // Thực thi các thao tác với cơ sở dữ liệu
         private double discount;
         private decimal tongTien;
-        public frmChiTietHoaDon(List<CartItem> cartItems, double discountAmount)
+        private int promotionId;
+
+        private int orderId;
+        public frmChiTietHoaDon(List<CartItem> cartItems, double discountAmount, int promotionId)
         {
             InitializeComponent();
             this.cartItems = cartItems;
             discount = discountAmount; // Giảm giá (nếu có)
             LoadNewOrderInfo();  // Gọi phương thức hiển thị giỏ hàng khi form được tạo
             txtKhachHang.Focus();
-
+            this.promotionId = promotionId;
         }
 
         private void frmChiTietHoaDon_Load(object sender, EventArgs e)
@@ -60,13 +65,13 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
                 dgvChiTiet.Rows.Add(item.Name, item.Quantity, item.Price.ToString("N0"), thanhTien.ToString("N0"));
                 tongTien += thanhTien;
             }
-
+            double toTal = Convert.ToDouble(tongTien) - discount;
             // Hiển thị thông tin tổng tiền và các thông tin khác
             lblTamTinh.Text = tongTien.ToString("N0") + " VNĐ";
             lblGiamGia.Text = discount.ToString("N0") + " VNĐ";  // Mặc định là 0 (có thể chỉnh sửa sau)
-            lblTotal.Text = tongTien.ToString("N0") + " VNĐ"; ;  // Mặc định hoặc có thể sử dụng ComboBox để chọn phương thức thanh toán
+            lblTotal.Text = toTal.ToString("N0") + " VNĐ"; ;  // Mặc định hoặc có thể sử dụng ComboBox để chọn phương thức thanh toán
             txtNgayLap.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            txtMaHD.Text = "(Tự tạo)";
+            txtMaHD.Text = "";
 
         }
 
@@ -161,9 +166,60 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
             }
             else
             {
-                frmPayment paymentForm = new frmPayment(Convert.ToInt32(tongTien));
+                frmPayment paymentForm = new frmPayment(Convert.ToInt32(tongTien),orderId);
                 paymentForm.ShowDialog();
             }
         }
+
+        private void btnLuuHD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string tenKH = txtKhachHang.Text.Trim();
+                int customerID = DBCustomer.GetCustomerIDByName(tenKH);
+                int branchID = 1; // Cũng mặc định luôn
+                string selectedAppName = cboApp.SelectedItem.ToString();
+                int appID = DBApplication.GetAppIDByName(selectedAppName);
+                int promotionID = promotionId; // Truyền từ form frmOrder
+                string discountText = lblGiamGia.Text.Replace("VNĐ", "").Replace(",", "").Trim();
+                decimal discountValue = Convert.ToDecimal(discountText);
+                decimal total = cartItems.Sum(i => i.Price * i.Quantity) - discountValue;
+                string shippingMethod = cboShippingMethod.SelectedItem?.ToString() ?? "";
+
+                // Convert CartItem sang OrderItem
+                List<OrderItem> orderItems = cartItems.Select(ci => new OrderItem
+                {
+                    ProductID = Convert.ToInt32(ci.ProductID),
+                    Quantity = ci.Quantity,
+                    UnitPrice = ci.Price,
+                    
+                }).ToList();
+
+                string error;
+                int orderID = dbOrder.SaveOrder_UsingSP(total, shippingMethod, branchID, customerID, appID, promotionID, discountValue, orderItems, out error);
+
+                if (orderID == -1)
+                {
+                    MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    // Gán mã hóa đơn vừa tạo vào txtMaHD.Text
+                    orderId = orderID;
+                    txtMaHD.Text = orderID.ToString();
+                    txtKhachHang.Enabled = false;
+                    cboApp.Enabled = false;
+                    cboShippingMethod.Enabled = false;
+                    btnLuu.Enabled = false;
+                    btnPay.Enabled = true;
+                    MessageBox.Show("Lưu hóa đơn thành công! Mã HD: " + orderID, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
     }
 }

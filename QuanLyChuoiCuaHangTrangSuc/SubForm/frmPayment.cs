@@ -1,4 +1,5 @@
-﻿using QRCoder;
+﻿using BusinessAccessLayer;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,12 +19,18 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
         private int amount;
         private string content;
         private string paymentMethod;
-        public frmPayment(int amountTotal)
+        private int orderID;
+        
+        DBOrder dbOrder = new DBOrder();
+        public frmPayment(int amountTotal, int orderID)
         {
             InitializeComponent();
             amount = amountTotal;
-            content = Uri.EscapeDataString($"TEENNSTYLEHOADON");
-    }
+            content = Uri.EscapeDataString($"TEENSTYLEHOADON + {amount}");
+            this.orderID = orderID;
+
+            btnCash.Checked = true;
+        }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
@@ -72,6 +79,55 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
             picQR.Load(qrContent); // Vì VietQR hỗ trợ ảnh URL
 
             picQR.Visible = true; // Hiện ảnh QR
+        }
+
+        private void btnComplete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Xác định phương thức thanh toán từ RadioButton
+                string paymentMethod = "";
+
+                if (btnCash.Checked)
+                {
+                    paymentMethod = "Cash";
+                }
+                else if (btnVNPAY.Checked)
+                {
+                    paymentMethod = "VNPAY";
+                }
+                else if (btnMoMo.Checked)
+                {
+                    paymentMethod = "VIMOMO";
+                }
+                else if (btnZaloPay.Checked)
+                {
+                    paymentMethod = "ZaloPay";
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn phương thức thanh toán!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Cập nhật PaymentMethod và OrderStatus
+                string error;
+                bool success = dbOrder.UpdatePaymentAndStatus(orderID, paymentMethod, out error);
+
+                if (success)
+                {
+                    MessageBox.Show("Thanh toán thành công! Trạng thái đơn hàng đã được cập nhật.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close(); 
+                }
+                else
+                {
+                    MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xử lý thanh toán: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

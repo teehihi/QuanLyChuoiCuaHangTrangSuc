@@ -25,7 +25,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
         private Dictionary<string, DataRow> selectedProducts = new Dictionary<string, DataRow>();
         private double currentDiscountAmount = 0;
         private double currentDiscountRate = 0;
-
+        private int promotionID;
         private byte[] imageData; // Biến lưu ảnh dưới dạng byte[]
 
         public frmInvoices()
@@ -459,6 +459,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
             {
                 currentDiscountRate = frm.DiscountRate ?? 0;
                 txtTenKM.Text = frm.PromotionName;
+                promotionID = frm.PromotionID;
                 UpdateTotals();
             }
         }
@@ -546,7 +547,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
         private void btnThem_Click(object sender, EventArgs e)
         {
             List<CartItem> cart = GetCartItems(); // bạn đã có danh sách sản phẩm
-            frmChiTietHoaDon frm = new frmChiTietHoaDon(cart,currentDiscountAmount);
+            frmChiTietHoaDon frm = new frmChiTietHoaDon(cart,currentDiscountAmount, promotionID);
             frm.ShowDialog();
 
         }
@@ -557,6 +558,11 @@ namespace QuanLyChuoiCuaHangTrangSuc
             {
                 ClearCart();
             }       
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

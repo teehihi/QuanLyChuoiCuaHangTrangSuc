@@ -15,6 +15,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
     {
         public double? DiscountRate { get; set; }
         public string PromotionName { get; set; }
+        public int PromotionID { get; set; }
         DBPromotion dbPromotion = new DBPromotion();
 
         public frmSelectPromotion()
@@ -36,6 +37,8 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
 
                 DiscountRate = discountRate;
                 PromotionName = dgvPromotion.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+
+                PromotionID = Convert.ToInt32(dgvPromotion.Rows[e.RowIndex].Cells["PromotionID"].Value.ToString());
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

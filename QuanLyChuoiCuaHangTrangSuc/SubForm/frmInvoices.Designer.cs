@@ -41,6 +41,12 @@
             this.cbLoaiSP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblProduct = new System.Windows.Forms.Label();
             this.panelRight = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnHistory = new Guna.UI2.WinForms.Guna2Button();
+            this.tlpThemXoa = new System.Windows.Forms.TableLayoutPanel();
+            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2VScrollBar2 = new Guna.UI2.WinForms.Guna2VScrollBar();
+            this.flpCart = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSelectPromotion = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,21 +58,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2VScrollBar2 = new Guna.UI2.WinForms.Guna2VScrollBar();
-            this.flpCart = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
-            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.lblInfor = new System.Windows.Forms.Label();
-            this.tlpThemXoa = new System.Windows.Forms.TableLayoutPanel();
             this.panelMid.SuspendLayout();
             this.flpProduct.SuspendLayout();
             this.panelProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             this.panelRight.SuspendLayout();
+            this.tlpThemXoa.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tlpThemXoa.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -216,6 +217,7 @@
             // panelRight
             // 
             this.panelRight.BorderThickness = 1;
+            this.panelRight.Controls.Add(this.btnHistory);
             this.panelRight.Controls.Add(this.tlpThemXoa);
             this.panelRight.Controls.Add(this.guna2VScrollBar2);
             this.panelRight.Controls.Add(this.tableLayoutPanel2);
@@ -231,12 +233,116 @@
             this.panelRight.Size = new System.Drawing.Size(462, 681);
             this.panelRight.TabIndex = 16;
             // 
+            // btnHistory
+            // 
+            this.btnHistory.Animated = true;
+            this.btnHistory.BackColor = System.Drawing.Color.Transparent;
+            this.btnHistory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHistory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHistory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHistory.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHistory.FillColor = System.Drawing.Color.Transparent;
+            this.btnHistory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnHistory.ForeColor = System.Drawing.Color.White;
+            this.btnHistory.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icnHistoryW;
+            this.btnHistory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHistory.Location = new System.Drawing.Point(361, 65);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(90, 45);
+            this.btnHistory.TabIndex = 54;
+            this.btnHistory.Text = "Lịch sử";
+            this.btnHistory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHistory.UseTransparentBackground = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
+            // tlpThemXoa
+            // 
+            this.tlpThemXoa.ColumnCount = 2;
+            this.tlpThemXoa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpThemXoa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpThemXoa.Controls.Add(this.btnXoa, 1, 0);
+            this.tlpThemXoa.Controls.Add(this.btnThem, 0, 0);
+            this.tlpThemXoa.Location = new System.Drawing.Point(15, 550);
+            this.tlpThemXoa.Name = "tlpThemXoa";
+            this.tlpThemXoa.RowCount = 1;
+            this.tlpThemXoa.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpThemXoa.Size = new System.Drawing.Size(435, 50);
+            this.tlpThemXoa.TabIndex = 53;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Animated = true;
+            this.btnXoa.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoa.BorderRadius = 10;
+            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXoa.FillColor = System.Drawing.Color.Red;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(220, 3);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(212, 44);
+            this.btnXoa.TabIndex = 47;
+            this.btnXoa.Text = "Xóa tất cả";
+            this.btnXoa.UseTransparentBackground = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Animated = true;
+            this.btnThem.BackColor = System.Drawing.Color.Transparent;
+            this.btnThem.BorderRadius = 10;
+            this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThem.FillColor = System.Drawing.Color.White;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.btnThem.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnThem.Location = new System.Drawing.Point(3, 3);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(211, 44);
+            this.btnThem.TabIndex = 45;
+            this.btnThem.Text = "Thêm Hóa đơn";
+            this.btnThem.UseTransparentBackground = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // guna2VScrollBar2
+            // 
+            this.guna2VScrollBar2.AutoRoundedCorners = true;
+            this.guna2VScrollBar2.BindingContainer = this.flpCart;
+            this.guna2VScrollBar2.BorderRadius = 8;
+            this.guna2VScrollBar2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2VScrollBar2.InUpdate = false;
+            this.guna2VScrollBar2.LargeChange = 10;
+            this.guna2VScrollBar2.Location = new System.Drawing.Point(441, 111);
+            this.guna2VScrollBar2.Name = "guna2VScrollBar2";
+            this.guna2VScrollBar2.ScrollbarSize = 18;
+            this.guna2VScrollBar2.Size = new System.Drawing.Size(18, 254);
+            this.guna2VScrollBar2.TabIndex = 26;
+            this.guna2VScrollBar2.ThumbColor = System.Drawing.Color.SteelBlue;
+            this.guna2VScrollBar2.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
+            // 
+            // flpCart
+            // 
+            this.flpCart.AutoScroll = true;
+            this.flpCart.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpCart.Location = new System.Drawing.Point(3, 111);
+            this.flpCart.Name = "flpCart";
+            this.flpCart.Size = new System.Drawing.Size(456, 254);
+            this.flpCart.TabIndex = 24;
+            this.flpCart.WrapContents = false;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.7931F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.2069F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
             this.tableLayoutPanel2.Controls.Add(this.btnSelectPromotion, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtTenKM, 1, 0);
@@ -260,9 +366,9 @@
             this.btnSelectPromotion.FillColor = System.Drawing.Color.White;
             this.btnSelectPromotion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnSelectPromotion.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSelectPromotion.Location = new System.Drawing.Point(349, 3);
+            this.btnSelectPromotion.Location = new System.Drawing.Point(346, 3);
             this.btnSelectPromotion.Name = "btnSelectPromotion";
-            this.btnSelectPromotion.Size = new System.Drawing.Size(83, 37);
+            this.btnSelectPromotion.Size = new System.Drawing.Size(86, 37);
             this.btnSelectPromotion.TabIndex = 48;
             this.btnSelectPromotion.Text = "Chọn";
             this.btnSelectPromotion.UseTransparentBackground = true;
@@ -274,9 +380,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 12);
+            this.label4.Location = new System.Drawing.Point(3, 2);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 19);
+            this.label4.Size = new System.Drawing.Size(99, 38);
             this.label4.TabIndex = 32;
             this.label4.Text = "Chọn khuyến mãi:";
             // 
@@ -295,12 +401,12 @@
             this.txtTenKM.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenKM.ForeColor = System.Drawing.Color.White;
             this.txtTenKM.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenKM.Location = new System.Drawing.Point(137, 8);
+            this.txtTenKM.Location = new System.Drawing.Point(136, 8);
             this.txtTenKM.Name = "txtTenKM";
             this.txtTenKM.PlaceholderText = "Chọn mã KM...";
             this.txtTenKM.ReadOnly = true;
             this.txtTenKM.SelectedText = "";
-            this.txtTenKM.Size = new System.Drawing.Size(206, 27);
+            this.txtTenKM.Size = new System.Drawing.Size(204, 27);
             this.txtTenKM.TabIndex = 33;
             // 
             // tableLayoutPanel1
@@ -400,32 +506,6 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "Tổng cộng:";
             // 
-            // guna2VScrollBar2
-            // 
-            this.guna2VScrollBar2.AutoRoundedCorners = true;
-            this.guna2VScrollBar2.BindingContainer = this.flpCart;
-            this.guna2VScrollBar2.BorderRadius = 8;
-            this.guna2VScrollBar2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.guna2VScrollBar2.InUpdate = false;
-            this.guna2VScrollBar2.LargeChange = 10;
-            this.guna2VScrollBar2.Location = new System.Drawing.Point(441, 111);
-            this.guna2VScrollBar2.Name = "guna2VScrollBar2";
-            this.guna2VScrollBar2.ScrollbarSize = 18;
-            this.guna2VScrollBar2.Size = new System.Drawing.Size(18, 254);
-            this.guna2VScrollBar2.TabIndex = 26;
-            this.guna2VScrollBar2.ThumbColor = System.Drawing.Color.SteelBlue;
-            this.guna2VScrollBar2.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
-            // 
-            // flpCart
-            // 
-            this.flpCart.AutoScroll = true;
-            this.flpCart.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpCart.Location = new System.Drawing.Point(3, 111);
-            this.flpCart.Name = "flpCart";
-            this.flpCart.Size = new System.Drawing.Size(456, 254);
-            this.flpCart.TabIndex = 24;
-            this.flpCart.WrapContents = false;
-            // 
             // guna2Separator1
             // 
             this.guna2Separator1.FillColor = System.Drawing.Color.Silver;
@@ -433,48 +513,6 @@
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(456, 10);
             this.guna2Separator1.TabIndex = 27;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Animated = true;
-            this.btnXoa.BackColor = System.Drawing.Color.Transparent;
-            this.btnXoa.BorderRadius = 10;
-            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnXoa.FillColor = System.Drawing.Color.Red;
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(220, 3);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(212, 44);
-            this.btnXoa.TabIndex = 47;
-            this.btnXoa.Text = "Xóa tất cả";
-            this.btnXoa.UseTransparentBackground = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Animated = true;
-            this.btnThem.BackColor = System.Drawing.Color.Transparent;
-            this.btnThem.BorderRadius = 10;
-            this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnThem.FillColor = System.Drawing.Color.White;
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.btnThem.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnThem.Location = new System.Drawing.Point(3, 3);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(211, 44);
-            this.btnThem.TabIndex = 45;
-            this.btnThem.Text = "Thêm Hóa đơn";
-            this.btnThem.UseTransparentBackground = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // lblInfor
             // 
@@ -486,20 +524,6 @@
             this.lblInfor.Size = new System.Drawing.Size(204, 30);
             this.lblInfor.TabIndex = 22;
             this.lblInfor.Text = "Thông tin hóa đơn";
-            // 
-            // tlpThemXoa
-            // 
-            this.tlpThemXoa.ColumnCount = 2;
-            this.tlpThemXoa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpThemXoa.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpThemXoa.Controls.Add(this.btnXoa, 1, 0);
-            this.tlpThemXoa.Controls.Add(this.btnThem, 0, 0);
-            this.tlpThemXoa.Location = new System.Drawing.Point(15, 550);
-            this.tlpThemXoa.Name = "tlpThemXoa";
-            this.tlpThemXoa.RowCount = 1;
-            this.tlpThemXoa.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpThemXoa.Size = new System.Drawing.Size(435, 50);
-            this.tlpThemXoa.TabIndex = 53;
             // 
             // frmInvoices
             // 
@@ -523,11 +547,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
             this.panelRight.ResumeLayout(false);
             this.panelRight.PerformLayout();
+            this.tlpThemXoa.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tlpThemXoa.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -563,5 +587,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tlpThemXoa;
+        private Guna.UI2.WinForms.Guna2Button btnHistory;
     }
 }

@@ -142,11 +142,17 @@
   <data name="icn_homeNOHOVER1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icn_homeNOHOVER1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icnTrash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icnTrash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icnMomo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icnMomo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_ProductNOHOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_ProductNOHOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avtAI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avtAI1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconSupplierNOHOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconSupplierNOHOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,9 +190,6 @@
   <data name="iconRight-chevron" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconRight-chevron.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconBracelet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconBracelet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="picKhachHang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picKhachHang.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,8 +208,8 @@
   <data name="icons8-search-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-search-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icnTrash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icnTrash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconCheck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconCheck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="picProduct1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picProduct1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,8 +283,8 @@
   <data name="iconSetting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconSetting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconCheck" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconCheck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconBracelet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconBracelet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icn_CustomerNOHOVER" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icn_CustomerNOHOVER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,10 +298,13 @@
   <data name="iconSupplier" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconSupplier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="avtAI" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\avtAI1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icnHistory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icnHistory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="momoQR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\momoQR.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icnHistoryW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icnHistoryW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

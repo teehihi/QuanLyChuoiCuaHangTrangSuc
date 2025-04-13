@@ -332,5 +332,11 @@
   <ItemGroup>
     <None Include="Resources\momoQR.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icnHistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icnHistoryW.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

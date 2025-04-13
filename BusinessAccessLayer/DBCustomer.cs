@@ -83,5 +83,21 @@ namespace BusinessAccessLayer
                 new SqlParameter[] { new SqlParameter("@TuKhoa", tuKhoa) });
         }
 
+        public static int GetCustomerIDByName(string customerName)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionHelper.CurrentConnectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT CustomerID FROM Customer WHERE FullName = @FullName", conn);
+                cmd.Parameters.AddWithValue("@FullName", customerName);
+
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                    return Convert.ToInt32(result);
+                else
+                    throw new Exception("Không tìm thấy ứng dụng với tên: " + customerName);
+            }
+        }
+
     }
 }

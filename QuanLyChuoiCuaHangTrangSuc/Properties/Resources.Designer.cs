@@ -203,6 +203,26 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icnHistory {
+            get {
+                object obj = ResourceManager.GetObject("icnHistory", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icnHistoryW {
+            get {
+                object obj = ResourceManager.GetObject("icnHistoryW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icnMomo {
             get {
                 object obj = ResourceManager.GetObject("icnMomo", resourceCulture);

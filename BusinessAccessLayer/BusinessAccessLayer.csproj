@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CartItem.cs" />
+    <Compile Include="DBApplication.cs" />
     <Compile Include="DBChiTietHoaDon.cs" />
     <Compile Include="DBCustomer.cs" />
     <Compile Include="DBLogin.cs" />

@@ -100,6 +100,7 @@
             this.btnComplete.TabIndex = 91;
             this.btnComplete.Text = "Đã thanh toán";
             this.btnComplete.UseTransparentBackground = true;
+            this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
             // 
             // lblPayment
             // 

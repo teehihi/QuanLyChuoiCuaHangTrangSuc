@@ -51,21 +51,28 @@ namespace DataAcessLayer
         }
 
 
-        public object ExecuteScalar(string query, SqlParameter[] parameters = null)
+        public object ExecuteScalar(string query, SqlParameter[] parameters = null, bool isStoredProcedure = false)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    if (isStoredProcedure)
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                    }
+
                     if (parameters != null)
                     {
                         cmd.Parameters.AddRange(parameters);
                     }
+
                     return cmd.ExecuteScalar();
                 }
             }
         }
+
     }
 }
 

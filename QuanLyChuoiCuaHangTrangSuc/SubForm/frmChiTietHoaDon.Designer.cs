@@ -45,6 +45,10 @@
             this.lblMaHD = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.grpInvoiceInfo = new Guna.UI2.WinForms.Guna2GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cboShippingMethod = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.cboApp = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblHoaDonInf = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -71,10 +75,6 @@
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.seph2 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.cboShippingMethod = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.cboApp = new Guna.UI2.WinForms.Guna2ComboBox();
             this.grpInvoiceInfo.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -293,6 +293,77 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(555, 84);
             this.tableLayoutPanel2.TabIndex = 23;
+            // 
+            // cboShippingMethod
+            // 
+            this.cboShippingMethod.BackColor = System.Drawing.Color.Transparent;
+            this.cboShippingMethod.BorderRadius = 5;
+            this.cboShippingMethod.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboShippingMethod.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboShippingMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboShippingMethod.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboShippingMethod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboShippingMethod.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.cboShippingMethod.ForeColor = System.Drawing.Color.Black;
+            this.cboShippingMethod.ItemHeight = 30;
+            this.cboShippingMethod.Items.AddRange(new object[] {
+            "Chọn",
+            "Standard",
+            "Express",
+            "Store pickup"});
+            this.cboShippingMethod.Location = new System.Drawing.Point(221, 45);
+            this.cboShippingMethod.Name = "cboShippingMethod";
+            this.cboShippingMethod.Size = new System.Drawing.Size(120, 36);
+            this.cboShippingMethod.TabIndex = 93;
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(148, 53);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(68, 19);
+            this.guna2HtmlLabel2.TabIndex = 101;
+            this.guna2HtmlLabel2.Text = "Giao hàng:";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(346, 53);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(69, 19);
+            this.guna2HtmlLabel3.TabIndex = 102;
+            this.guna2HtmlLabel3.Text = "Ứng dụng:";
+            // 
+            // cboApp
+            // 
+            this.cboApp.BackColor = System.Drawing.Color.Transparent;
+            this.cboApp.BorderRadius = 5;
+            this.cboApp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboApp.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboApp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboApp.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboApp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboApp.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.cboApp.ForeColor = System.Drawing.Color.Black;
+            this.cboApp.ItemHeight = 30;
+            this.cboApp.Items.AddRange(new object[] {
+            "Chọn",
+            "JewelryApp",
+            "Shopee",
+            "Lazada",
+            "TikTokShop"});
+            this.cboApp.Location = new System.Drawing.Point(430, 45);
+            this.cboApp.Name = "cboApp";
+            this.cboApp.Size = new System.Drawing.Size(122, 36);
+            this.cboApp.TabIndex = 103;
             // 
             // lblHoaDonInf
             // 
@@ -583,7 +654,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(317, 63);
+            this.label3.Location = new System.Drawing.Point(316, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 20);
             this.label3.TabIndex = 89;
@@ -691,7 +762,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(317, 14);
+            this.label5.Location = new System.Drawing.Point(316, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 20);
             this.label5.TabIndex = 85;
@@ -747,7 +818,7 @@
             this.btnLuu.FillColor = System.Drawing.Color.White;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnLuu.ForeColor = System.Drawing.Color.Lime;
-            this.btnLuu.Location = new System.Drawing.Point(323, 102);
+            this.btnLuu.Location = new System.Drawing.Point(322, 102);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(91, 44);
             this.btnLuu.TabIndex = 83;
@@ -761,7 +832,7 @@
             this.tlpAddCustomer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.88095F));
             this.tlpAddCustomer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.11905F));
             this.tlpAddCustomer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
-            this.tlpAddCustomer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
+            this.tlpAddCustomer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
             this.tlpAddCustomer.Controls.Add(this.btnHuy, 3, 2);
             this.tlpAddCustomer.Controls.Add(this.label2, 0, 0);
             this.tlpAddCustomer.Controls.Add(this.label9, 0, 1);
@@ -821,77 +892,6 @@
             this.seph2.Size = new System.Drawing.Size(562, 13);
             this.seph2.TabIndex = 92;
             this.seph2.Visible = false;
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(148, 53);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(70, 19);
-            this.guna2HtmlLabel2.TabIndex = 101;
-            this.guna2HtmlLabel2.Text = "Giao hàng:";
-            // 
-            // cboShippingMethod
-            // 
-            this.cboShippingMethod.BackColor = System.Drawing.Color.Transparent;
-            this.cboShippingMethod.BorderRadius = 5;
-            this.cboShippingMethod.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboShippingMethod.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboShippingMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboShippingMethod.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboShippingMethod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboShippingMethod.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
-            this.cboShippingMethod.ForeColor = System.Drawing.Color.Black;
-            this.cboShippingMethod.ItemHeight = 30;
-            this.cboShippingMethod.Items.AddRange(new object[] {
-            "Chọn",
-            "Standard",
-            "Express",
-            "Store pickup"});
-            this.cboShippingMethod.Location = new System.Drawing.Point(221, 45);
-            this.cboShippingMethod.Name = "cboShippingMethod";
-            this.cboShippingMethod.Size = new System.Drawing.Size(120, 36);
-            this.cboShippingMethod.TabIndex = 93;
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(346, 53);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(69, 19);
-            this.guna2HtmlLabel3.TabIndex = 102;
-            this.guna2HtmlLabel3.Text = "Ứng dụng:";
-            // 
-            // cboApp
-            // 
-            this.cboApp.BackColor = System.Drawing.Color.Transparent;
-            this.cboApp.BorderRadius = 5;
-            this.cboApp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboApp.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboApp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboApp.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboApp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboApp.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.cboApp.ForeColor = System.Drawing.Color.Black;
-            this.cboApp.ItemHeight = 30;
-            this.cboApp.Items.AddRange(new object[] {
-            "Chọn",
-            "JewelryApp",
-            "Shopee",
-            "Lazada",
-            "TikTokShop"});
-            this.cboApp.Location = new System.Drawing.Point(430, 45);
-            this.cboApp.Name = "cboApp";
-            this.cboApp.Size = new System.Drawing.Size(122, 36);
-            this.cboApp.TabIndex = 103;
             // 
             // frmChiTietHoaDon
             // 

@@ -17,7 +17,7 @@ namespace BusinessAccessLayer
         }
 
         public int SaveOrder_UsingSP(decimal totalAmount, string shippingMethod, int branchID, int customerID,
-            int appID, int promotionID, decimal discountValue, List<OrderItem> orderItems, out string error)
+    int appID, int promotionID, decimal discountValue, List<OrderItem> orderItems, out string error)
         {
             error = "";
             List<SqlCommand> commands = new List<SqlCommand>();
@@ -49,15 +49,18 @@ namespace BusinessAccessLayer
                 commands.Add(cmdDetail);
             }
 
-            // 3. Thêm khuyến mãi (OrderPromotion)
-            SqlCommand cmdPromotion = new SqlCommand();
-            cmdPromotion.CommandText = @"
-                INSERT INTO OrderPromotion (OrderID, PromotionID, DiscountValue)
-                VALUES (@OrderID, @PromotionID, @DiscountValue);";
-            cmdPromotion.Parameters.AddWithValue("@OrderID", 0); // Sẽ được thay thế sau khi có OrderID
-            cmdPromotion.Parameters.AddWithValue("@PromotionID", promotionID);
-            cmdPromotion.Parameters.AddWithValue("@DiscountValue", discountValue);
-            commands.Add(cmdPromotion);
+            // 3. Chỉ thêm khuyến mãi nếu promotionID > 0 (coi như 0 là không chọn)
+            if (promotionID > 0)
+            {
+                SqlCommand cmdPromotion = new SqlCommand();
+                cmdPromotion.CommandText = @"
+            INSERT INTO OrderPromotion (OrderID, PromotionID, DiscountValue)
+            VALUES (@OrderID, @PromotionID, @DiscountValue);";
+                cmdPromotion.Parameters.AddWithValue("@OrderID", 0); // Sẽ được thay thế sau khi có OrderID
+                cmdPromotion.Parameters.AddWithValue("@PromotionID", promotionID);
+                cmdPromotion.Parameters.AddWithValue("@DiscountValue", discountValue);
+                commands.Add(cmdPromotion);
+            }
 
             // Thực thi giao dịch
             try
@@ -113,6 +116,7 @@ namespace BusinessAccessLayer
                 return -1;
             }
         }
+
 
         //PAYMENT
 

@@ -55,6 +55,7 @@
     <Compile Include="DBOrder.cs" />
     <Compile Include="DBProduct.cs" />
     <Compile Include="DBPromotion.cs" />
+    <Compile Include="DBTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

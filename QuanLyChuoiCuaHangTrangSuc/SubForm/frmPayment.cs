@@ -86,7 +86,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
             try
             {
                 // Xác định phương thức thanh toán từ RadioButton
-                string paymentMethod = "";
+                string paymentMethod = "Cash";
 
                 if (btnCash.Checked)
                 {
@@ -116,8 +116,21 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
 
                 if (success)
                 {
-                    MessageBox.Show("Thanh toán thành công! Trạng thái đơn hàng đã được cập nhật.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close(); 
+                    DBTransaction dbTransaction = new DBTransaction();
+
+                    decimal amountD = Convert.ToDecimal(amount); // Gán đúng tổng tiền đơn hàng
+                    int branchID = 1;
+                    bool transactionAdded = dbTransaction.AddTransaction(DateTime.Now, amountD, "Sale", "Thanh toán đơn hàng #" + orderID, branchID, orderID, out error);
+
+                    if (transactionAdded)
+                    {
+                        MessageBox.Show("Thanh toán thành công! Đơn hàng và giao dịch đã được ghi nhận.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật đơn hàng thành công nhưng lỗi ghi giao dịch: " + error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {

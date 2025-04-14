@@ -209,12 +209,12 @@ INSERT INTO TransactionTable (TransactionDate, Amount, Type, Description, Branch
 GO
 
 
-INSERT INTO Promotion (Name, Type, Condition, StartDate, EndDate) VALUES
-(N'Khuyến mãi tháng 3', N'Discount', N'Mua trên 1 triệu', '2025-03-01 00:00:00', '2025-03-31 23:59:59'),
-(N'Quà tặng VIP', N'Gift', N'Khách VIP', '2025-03-01 00:00:00', '2025-03-15 23:59:59'),
-(N'Sale 10%', N'Discount', N'Mua trên 2 triệu', '2025-03-05 00:00:00', '2025-03-20 23:59:59'),
-(N'Tặng hộp quà', N'Gift', N'Mua 2 sản phẩm', '2025-03-10 00:00:00', '2025-03-25 23:59:59'),
-(N'Giảm giá cuối tuần', N'Discount', N'Mua ngày thứ 7', '2025-03-01 00:00:00', '2025-03-31 23:59:59');
+INSERT INTO Promotion (Name, Type, Condition, StartDate, EndDate, DiscountRate) VALUES
+(N'Khuyến mãi tháng 4', N'Discount', N'Mua trên 1 triệu', '2025-03-01 00:00:00', '2025-03-31 23:59:59', 10),
+(N'Quà tặng VIP', N'Gift', N'Khách VIP', '2025-03-01 00:00:00', '2025-03-15 23:59:59',1),
+(N'Sale 10%', N'Discount', N'Mua trên 2 triệu', '2025-03-05 00:00:00', '2025-03-20 23:59:59',10),
+(N'Tặng hộp quà', N'Gift', N'Mua 2 sản phẩm', '2025-03-10 00:00:00', '2025-03-25 23:59:59',0),
+(N'Giảm giá cuối tuần', N'Discount', N'Mua ngày thứ 7', '2025-03-01 00:00:00', '2025-03-31 23:59:59',0.2);
 GO
 
 INSERT INTO OrderPromotion (OrderID, PromotionID, DiscountValue) VALUES
@@ -305,6 +305,15 @@ BEGIN
     END
 END;
 GO
+
+CREATE PROCEDURE sp_LayDanhSachKhuyenMai
+AS
+BEGIN
+    SELECT * FROM Promotion
+    WHERE GETDATE() BETWEEN StartDate AND EndDate
+END
+GO
+
 -- Kiểm tra tổng tiền của đơn hàng không âm
 
 CREATE TRIGGER trg_CheckOrderTotalAmount
@@ -523,6 +532,7 @@ BEGIN
 
     INSERT INTO OrderTable (OrderDate, TotalAmount, PaymentMethod, OrderStatus, ShippingMethod, BranchID, CustomerID, AppID)
     VALUES (GETDATE(), @TotalAmount, @PaymentMethod, @OrderStatus, @ShippingMethod, @BranchID, @CustomerID, @AppID);
+	SELECT SCOPE_IDENTITY() AS NewOrderID;
 END;
 GO
 
@@ -578,6 +588,22 @@ BEGIN
     WHERE OrderID = @OrderID;
 END;
 GO
+
+--Thêm giao dịch
+CREATE PROCEDURE sp_AddTransaction
+    @TransactionDate DATETIME,
+    @Amount DECIMAL(18,2),
+    @Type NVARCHAR(50),
+    @Description NVARCHAR(255),
+    @BranchID INT,
+    @OrderID INT
+AS
+BEGIN
+    INSERT INTO TransactionTable (TransactionDate, Amount, Type, Description, BranchID, OrderID)
+    VALUES (@TransactionDate, @Amount, @Type, @Description, @BranchID, @OrderID)
+END
+GO
+
 
 
 --Thêm sản phẩm

@@ -126,6 +126,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
                     {
                         MessageBox.Show("Thanh toán thành công! Đơn hàng và giao dịch đã được ghi nhận.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
+                      
                     }
                     else
                     {

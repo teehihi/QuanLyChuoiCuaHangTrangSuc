@@ -29,6 +29,8 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
             LoadNewOrderInfo();  // Gọi phương thức hiển thị giỏ hàng khi form được tạo
             txtKhachHang.Focus();
             this.promotionId = promotionId;
+
+
         }
 
         private void frmChiTietHoaDon_Load(object sender, EventArgs e)
@@ -76,11 +78,19 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
 
         }
 
-        
+
+
         private void btnDong_Click(object sender, EventArgs e)
         {
-            this.Close();
+            // Nếu Owner là frmInvoices và chưa bị Dispose
+            if (this.Owner is frmInvoices parentForm && !parentForm.IsDisposed)
+            {
+                parentForm.ClearCart(); // Gọi hàm dọn giỏ hàng
+            }
+
+            this.Close(); // Đóng form hiện tại
         }
+
 
         private void txtKhachHang_TextChanged(object sender, EventArgs e)
         {
@@ -140,7 +150,6 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
             }
             else
             {
-                MessageBox.Show(toTal.ToString());
                 frmPayment paymentForm = new frmPayment(Convert.ToInt32(toTal),orderId);
                 paymentForm.ShowDialog();
             }
@@ -188,6 +197,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
                     btnLuu.Enabled = false;
                     btnPay.Enabled = true;
                     MessageBox.Show("Lưu hóa đơn thành công! Mã HD: " + orderID, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
             catch (Exception ex)
@@ -195,6 +205,5 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
                 MessageBox.Show("Lỗi khi lưu hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
     }
 }

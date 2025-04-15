@@ -109,6 +109,12 @@
     <Compile Include="SubForm\frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForm\frmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\frmHistory.Designer.cs">
+      <DependentUpon>frmHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForm\frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     <EmbeddedResource Include="SubForm\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\frmHistory.resx">
+      <DependentUpon>frmHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>

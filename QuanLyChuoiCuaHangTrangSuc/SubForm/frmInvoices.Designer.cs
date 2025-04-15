@@ -235,8 +235,8 @@
             // 
             // btnHistory
             // 
-            this.btnHistory.Animated = true;
             this.btnHistory.BackColor = System.Drawing.Color.Transparent;
+            this.btnHistory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHistory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHistory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHistory.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -244,6 +244,7 @@
             this.btnHistory.FillColor = System.Drawing.Color.Transparent;
             this.btnHistory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnHistory.ForeColor = System.Drawing.Color.White;
+            this.btnHistory.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnHistory.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icnHistoryW;
             this.btnHistory.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHistory.Location = new System.Drawing.Point(361, 65);
@@ -342,7 +343,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.7931F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.2069F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
             this.tableLayoutPanel2.Controls.Add(this.btnSelectPromotion, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtTenKM, 1, 0);
@@ -366,9 +367,9 @@
             this.btnSelectPromotion.FillColor = System.Drawing.Color.White;
             this.btnSelectPromotion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnSelectPromotion.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSelectPromotion.Location = new System.Drawing.Point(346, 3);
+            this.btnSelectPromotion.Location = new System.Drawing.Point(345, 3);
             this.btnSelectPromotion.Name = "btnSelectPromotion";
-            this.btnSelectPromotion.Size = new System.Drawing.Size(86, 37);
+            this.btnSelectPromotion.Size = new System.Drawing.Size(87, 37);
             this.btnSelectPromotion.TabIndex = 48;
             this.btnSelectPromotion.Text = "Chọn";
             this.btnSelectPromotion.UseTransparentBackground = true;
@@ -406,7 +407,7 @@
             this.txtTenKM.PlaceholderText = "Chọn mã KM...";
             this.txtTenKM.ReadOnly = true;
             this.txtTenKM.SelectedText = "";
-            this.txtTenKM.Size = new System.Drawing.Size(204, 27);
+            this.txtTenKM.Size = new System.Drawing.Size(203, 27);
             this.txtTenKM.TabIndex = 33;
             // 
             // tableLayoutPanel1

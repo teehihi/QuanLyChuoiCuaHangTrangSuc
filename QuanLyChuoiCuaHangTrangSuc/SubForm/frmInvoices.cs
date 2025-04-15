@@ -27,6 +27,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
         private double currentDiscountRate = 0;
         private int promotionID;
         private byte[] imageData; // Biến lưu ảnh dưới dạng byte[]
+        private List<CartItem> cart;
 
         public frmInvoices()
         {
@@ -226,6 +227,8 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
                 // Tìm hoặc tạo button check
                 Guna2Button btnCheck = panel.Controls.OfType<Guna2Button>().FirstOrDefault(b => b.Name == "btnCheck");
+                
+
                 if (btnCheck == null)
                 {
                     btnCheck = new Guna2Button();
@@ -240,8 +243,8 @@ namespace QuanLyChuoiCuaHangTrangSuc
                     btnCheck.BackColor = Color.Transparent;
                     btnCheck.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
                     btnCheck.Location = new Point(145, 185);
-                    btnCheck.Visible = false; 
-
+                    btnCheck.Visible = false;
+                    btnCheck.Name = "btnCheck";
                     panel.Controls.Add(btnCheck);
                     btnCheck.BringToFront();
                 }
@@ -253,6 +256,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
             }
             else
             {
+
                 // Bỏ chọn: ẩn viền và ảnh check
                 panel.BorderThickness = 0;
 
@@ -261,9 +265,12 @@ namespace QuanLyChuoiCuaHangTrangSuc
                     btnCheck.Visible = false;
 
                 selectedPanels[panel] = false;
-                RemoveFromCart(row["ProductID"].ToString()); 
+                RemoveFromCart(row["ProductID"].ToString());
+                selectedProducts.Remove(row["ProductID"].ToString());
+                
                 CapNhatTamTinh();
                 UpdateTotals();
+
             }
 
 
@@ -288,11 +295,19 @@ namespace QuanLyChuoiCuaHangTrangSuc
                 {
                     flpCart.Controls.Remove(cartItem);
                     cartItem.Dispose();
-                    
+
                     break;
                 }
             }
+            if (cart != null)
+            {
+                cart.Clear();
+            }
+
         }
+
+
+
 
         private void AddToCart(DataRow row)
         {
@@ -464,6 +479,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
             }
         }
 
+
         public List<CartItem> GetCartItems()
         {
             List<CartItem> cartItems = new List<CartItem>();
@@ -472,40 +488,42 @@ namespace QuanLyChuoiCuaHangTrangSuc
             {
                 DataRow row = entry.Value;
                 string productId = row["ProductID"].ToString();
-                int quantity = 1; // default
+                int quantity = 1;
 
-                // Tìm panel tương ứng trong flpCart
+                // Tìm panel trong flpCart
+                bool foundInCart = false;
                 foreach (Control c in flpCart.Controls)
                 {
-                    if (c is Guna2Panel panel && panel.Tag is DataRow panelRow)
+                    if (c is Guna2Panel panel && panel.Tag is DataRow panelRow && panelRow["ProductID"].ToString() == productId)
                     {
-                        if (panelRow["ProductID"].ToString() == productId)
+                        var nud = panel.Controls.OfType<Guna2NumericUpDown>().FirstOrDefault();
+                        if (nud != null)
                         {
-                            var nud = panel.Controls.OfType<Guna2NumericUpDown>().FirstOrDefault();
-                            if (nud != null)
-                            {
-                                quantity = (int)nud.Value;
-                            }
-                            break;
+                            quantity = (int)nud.Value;
                         }
+                        foundInCart = true;
+                        break;
                     }
                 }
 
-                CartItem item = new CartItem
+                if (!foundInCart)
+                    continue;
+
+                cartItems.Add(new CartItem
                 {
                     ProductID = productId,
                     Name = row["Name"].ToString(),
                     Price = Convert.ToDecimal(row["Price"]),
                     Quantity = quantity
-                };
-
-                cartItems.Add(item);
+                });
             }
 
             return cartItems;
         }
+
+
         //Xóa giỏ hàng
-        private void ClearCart()
+        public void ClearCart()
         {
             // Xóa tất cả sản phẩm trong flpCart
             foreach (Control control in flpCart.Controls)
@@ -527,6 +545,11 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
                     selectedPanels[panel] = false;
                 }
+            }
+
+            if (cart != null)
+            {
+                cart.Clear();
             }
 
             // Xóa danh sách sản phẩm đã chọn
@@ -560,9 +583,11 @@ namespace QuanLyChuoiCuaHangTrangSuc
             }       
         }
 
+      
         private void btnHistory_Click(object sender, EventArgs e)
         {
-
+            frmHistory frmHistory = new frmHistory();
+            frmHistory.ShowDialog();
         }
     }
 }

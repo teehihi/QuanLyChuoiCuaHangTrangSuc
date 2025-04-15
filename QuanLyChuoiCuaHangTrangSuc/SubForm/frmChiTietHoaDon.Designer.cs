@@ -445,6 +445,8 @@
             // 
             // dgvChiTiet
             // 
+            this.dgvChiTiet.AllowUserToAddRows = false;
+            this.dgvChiTiet.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(203)))), ((int)(((byte)(232)))));
             this.dgvChiTiet.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -467,6 +469,7 @@
             this.dgvChiTiet.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(201)))), ((int)(((byte)(231)))));
             this.dgvChiTiet.Location = new System.Drawing.Point(12, 140);
             this.dgvChiTiet.Name = "dgvChiTiet";
+            this.dgvChiTiet.ReadOnly = true;
             this.dgvChiTiet.RowHeadersVisible = false;
             this.dgvChiTiet.Size = new System.Drawing.Size(562, 204);
             this.dgvChiTiet.TabIndex = 21;
@@ -484,7 +487,7 @@
             this.dgvChiTiet.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvChiTiet.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvChiTiet.ThemeStyle.HeaderStyle.Height = 23;
-            this.dgvChiTiet.ThemeStyle.ReadOnly = false;
+            this.dgvChiTiet.ThemeStyle.ReadOnly = true;
             this.dgvChiTiet.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(220)))), ((int)(((byte)(239)))));
             this.dgvChiTiet.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvChiTiet.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -654,7 +657,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(316, 63);
+            this.label3.Location = new System.Drawing.Point(314, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 20);
             this.label3.TabIndex = 89;
@@ -698,7 +701,7 @@
             this.txtCustomerPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtCustomerPhone.ForeColor = System.Drawing.Color.Black;
             this.txtCustomerPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerPhone.Location = new System.Drawing.Point(129, 56);
+            this.txtCustomerPhone.Location = new System.Drawing.Point(128, 56);
             this.txtCustomerPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustomerPhone.Name = "txtCustomerPhone";
             this.txtCustomerPhone.PlaceholderText = "";
@@ -734,7 +737,7 @@
             this.txtCustomerAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtCustomerAddress.ForeColor = System.Drawing.Color.Black;
             this.txtCustomerAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerAddress.Location = new System.Drawing.Point(129, 104);
+            this.txtCustomerAddress.Location = new System.Drawing.Point(128, 104);
             this.txtCustomerAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustomerAddress.Name = "txtCustomerAddress";
             this.txtCustomerAddress.PlaceholderText = "";
@@ -762,7 +765,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(316, 14);
+            this.label5.Location = new System.Drawing.Point(314, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 20);
             this.label5.TabIndex = 85;
@@ -783,7 +786,7 @@
             this.txtCustomerName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.txtCustomerName.ForeColor = System.Drawing.Color.Black;
             this.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerName.Location = new System.Drawing.Point(129, 7);
+            this.txtCustomerName.Location = new System.Drawing.Point(128, 7);
             this.txtCustomerName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.PlaceholderText = "";
@@ -818,7 +821,7 @@
             this.btnLuu.FillColor = System.Drawing.Color.White;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnLuu.ForeColor = System.Drawing.Color.Lime;
-            this.btnLuu.Location = new System.Drawing.Point(322, 102);
+            this.btnLuu.Location = new System.Drawing.Point(320, 102);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(91, 44);
             this.btnLuu.TabIndex = 83;
@@ -832,7 +835,7 @@
             this.tlpAddCustomer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.88095F));
             this.tlpAddCustomer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.11905F));
             this.tlpAddCustomer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
-            this.tlpAddCustomer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
+            this.tlpAddCustomer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147F));
             this.tlpAddCustomer.Controls.Add(this.btnHuy, 3, 2);
             this.tlpAddCustomer.Controls.Add(this.label2, 0, 0);
             this.tlpAddCustomer.Controls.Add(this.label9, 0, 1);

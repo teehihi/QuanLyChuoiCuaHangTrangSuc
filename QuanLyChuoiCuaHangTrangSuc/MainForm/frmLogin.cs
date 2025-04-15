@@ -18,6 +18,7 @@ using System.Net;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Diagnostics;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QuanLyChuoiCuaHangTrangSuc
 {
@@ -101,7 +102,6 @@ namespace QuanLyChuoiCuaHangTrangSuc
             }
         }
 
-
         private async void btnGGSign_Click(object sender, EventArgs e)
         {
             try
@@ -109,7 +109,30 @@ namespace QuanLyChuoiCuaHangTrangSuc
                 string email = await LoginWithGoogle();
                 if (email != null)
                 {
+                    // Bước 1: Tạo LOGIN + USER nếu chưa có
                     dbLogin.EnsureUserForEmail(email);
+
+                    // Bước 2: Tạo chuỗi kết nối SQL bằng email và mật khẩu mặc định
+                    string password = "2105"; // mật khẩu mặc định trong DBLogin.cs
+                    string connectionString = $"Server=TEE\\TEE;Database=JwelrySystemDBMSFinal;User Id={email};Password={password};";
+
+                    // Bước 3: Gán cho toàn bộ chương trình
+                    DataAcessLayer.ConnectionHelper.CurrentConnectionString = connectionString;
+                    DataAcessLayer.ConnectionHelper.CurrentUserName = email;
+
+                    // Bước 4: Kiểm tra role (có phải quản lý không?)
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        string roleQuery = "SELECT IS_MEMBER('db_owner')";
+                        using (SqlCommand cmd = new SqlCommand(roleQuery, conn))
+                        {
+                            int isManager = Convert.ToInt32(cmd.ExecuteScalar());
+                            DataAcessLayer.ConnectionHelper.IsManager = (isManager == 1);
+                        }
+                    }
+
+                    // Bước 5: Chuyển sang form chính
                     UIHelper.SwitchForm(this, new frmMenu());
                 }
             }
@@ -118,6 +141,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
                 MessageBox.Show("Lỗi đăng nhập: " + ex.Message);
             }
         }
+
 
         //Hàm đóng mở mật khẩu
         private void TogglePasswordVisibility(object sender, EventArgs e)

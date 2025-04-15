@@ -94,6 +94,8 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
 
         private void txtKhachHang_TextChanged(object sender, EventArgs e)
         {
+            cboThanhPho.SelectedIndex = 0;
+            txtCustomerType.SelectedIndex = 0;
             if (txtKhachHang.Text.Length == 10)
             {
                 // Tìm kiếm khách hàng theo mã
@@ -111,10 +113,17 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
                     txtCustomerName.Focus();
                 }
             }
+            else
+            {
+                tlpAddCustomer.Visible = false;
+                seph2.Visible = false;
+            }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (!KiemTraThongTinDayDu(tlpAddCustomer))
+                return;
             dBCustomer.ThemKhachHang(txtCustomerName.Text, txtCustomerType.Text, txtCustomerAddress.Text, txtCustomerPhone.Text);
             
             seph2.Visible = false;
@@ -205,5 +214,32 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
                 MessageBox.Show("Lỗi khi lưu hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        // Hàm kiểm tra tự động các ô nhập liệu trong tlpAddCustomer
+        private bool KiemTraThongTinDayDu(TableLayoutPanel tlp)
+        {
+            foreach (Control ctrl in tlp.Controls)
+            {
+                if (ctrl is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Focus();
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                else if (ctrl is ComboBox comboBox && comboBox.SelectedIndex == 0)
+                {
+                    comboBox.Focus();
+                    MessageBox.Show("Vui lòng chọn đầy đủ thông tin khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                else if (ctrl is RichTextBox richTextBox && string.IsNullOrWhiteSpace(richTextBox.Text))
+                {
+                    richTextBox.Focus();
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+            return true;
+        }
+
     }
 }

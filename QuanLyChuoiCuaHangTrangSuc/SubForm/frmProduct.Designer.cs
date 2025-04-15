@@ -77,6 +77,7 @@
             this.btnRing = new Guna.UI2.WinForms.Guna2Button();
             this.btnAll = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.panelMid.SuspendLayout();
             this.flpProduct.SuspendLayout();
             this.panelProduct.SuspendLayout();
@@ -115,6 +116,7 @@
             // 
             // panelMid
             // 
+            this.panelMid.Controls.Add(this.guna2VScrollBar1);
             this.panelMid.Controls.Add(this.lblProduct);
             this.panelMid.Controls.Add(this.flpProduct);
             this.panelMid.Controls.Add(this.panelRight);
@@ -140,6 +142,7 @@
             // 
             // flpProduct
             // 
+            this.flpProduct.AutoScroll = true;
             this.flpProduct.Controls.Add(this.panelProduct);
             this.guna2Transition1.SetDecoration(this.flpProduct, Guna.UI2.AnimatorNS.DecorationType.None);
             this.flpProduct.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -933,6 +936,20 @@
             animation1.TransparencyCoeff = 0F;
             this.guna2Transition1.DefaultAnimation = animation1;
             // 
+            // guna2VScrollBar1
+            // 
+            this.guna2VScrollBar1.BindingContainer = this.flpProduct;
+            this.guna2VScrollBar1.BorderRadius = 7;
+            this.guna2Transition1.SetDecoration(this.guna2VScrollBar1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(963, 283);
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 10;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(10, 398);
+            this.guna2VScrollBar1.TabIndex = 1;
+            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.Aqua;
+            // 
             // frmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -1015,5 +1032,6 @@
         private Guna.UI2.WinForms.Guna2Button btnRing;
         private Guna.UI2.WinForms.Guna2Button btnAll;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2VScrollBar1;
     }
 }

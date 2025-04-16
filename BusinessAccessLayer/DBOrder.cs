@@ -17,7 +17,7 @@ namespace BusinessAccessLayer
         }
 
         public int SaveOrder_UsingSP(decimal totalAmount, string shippingMethod, int branchID, int customerID,
-    int appID, int promotionID, decimal discountValue, List<OrderItem> orderItems, out string error)
+            int appID, int promotionID, decimal discountValue, List<OrderItem> orderItems, out string error)
         {
             error = "";
             List<SqlCommand> commands = new List<SqlCommand>();
@@ -164,19 +164,61 @@ namespace BusinessAccessLayer
             return db.ExecuteQueryDataSet(query, CommandType.Text, parameters);
         }
 
-        public string GetAppNameByID(int appId)
+
+        public DataSet LayHoaDonTheoBoLoc(
+            string branchID,
+            string paymentMethod,
+            string shippingMethod,
+            string appID,
+            string orderStatus)
         {
+            string query = @"
+                SELECT * FROM OrderTable
+                WHERE BranchID = @BranchID
+                AND (@PaymentMethod = '' OR PaymentMethod = @PaymentMethod)
+                AND (@ShippingMethod = '' OR ShippingMethod = @ShippingMethod)
+                AND (@AppID = '' OR AppID = @AppID)
+                AND (@OrderStatus = '' OR OrderStatus = @OrderStatus)";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@BranchID", branchID),
+                new SqlParameter("@PaymentMethod", paymentMethod),
+                new SqlParameter("@ShippingMethod", shippingMethod),
+                new SqlParameter("@AppID", appID),
+                new SqlParameter("@OrderStatus", orderStatus)
+            };
+
+            return db.ExecuteQueryDataSet(query, CommandType.Text, parameters);
+        }
+
+
+
+        public DataSet LayChiTietHoaDon(int orderID)
+        {
+            DataSet ds = new DataSet();
+
             using (SqlConnection conn = new SqlConnection(ConnectionHelper.CurrentConnectionString))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Name FROM Application WHERE AppID = @AppID", conn);
-                cmd.Parameters.AddWithValue("@AppID", appId);
 
-                object result = cmd.ExecuteScalar();
-                return result != null ? result.ToString() : null;
+                SqlCommand cmd = new SqlCommand("sp_GetOrderFullInfo", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@OrderID", orderID);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                // Gán tên bảng thủ công nếu muốn
+                ds.Tables[0].TableName = "Order";
+                ds.Tables[1].TableName = "OrderDetail";
+                ds.Tables[2].TableName = "Promotion";
+                ds.Tables[3].TableName = "ShippingMethod";
+                ds.Tables[4].TableName = "Application";
             }
-        }
 
+            return ds;
+        }
 
     }
 

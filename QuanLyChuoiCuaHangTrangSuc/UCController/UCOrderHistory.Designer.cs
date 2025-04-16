@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.lblCustomer = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblOrderID = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -45,6 +46,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 7;
+            this.guna2Panel1.Controls.Add(this.guna2Separator1);
             this.guna2Panel1.Controls.Add(this.tableLayoutPanel4);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.FillColor = System.Drawing.SystemColors.Control;
@@ -52,6 +54,15 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(692, 50);
             this.guna2Panel1.TabIndex = 1;
+            this.guna2Panel1.Click += new System.EventHandler(this.UCOrderHistory_Click);
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Separator1.Location = new System.Drawing.Point(0, 40);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(692, 10);
+            this.guna2Separator1.TabIndex = 10;
             // 
             // tableLayoutPanel4
             // 
@@ -79,6 +90,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(819, 35);
             this.tableLayoutPanel4.TabIndex = 9;
+            this.tableLayoutPanel4.Click += new System.EventHandler(this.UCOrderHistory_Click);
             // 
             // lblCustomer
             // 
@@ -204,5 +216,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDate;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblStatus;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTotal;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
     }
 }

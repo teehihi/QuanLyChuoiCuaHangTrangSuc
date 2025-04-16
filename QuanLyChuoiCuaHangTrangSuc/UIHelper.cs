@@ -229,5 +229,78 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
 
 
+
+        // Chuyển số tiền thành chữ
+        public static string NumberToVietnameseText(decimal number)
+        {
+            if (number == 0) return "(Không đồng)";
+
+            string[] unitNames = { "", "nghìn", "triệu", "tỷ", "nghìn tỷ", "triệu tỷ" };
+            string[] digitNames = { "không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín" };
+
+            string result = "";
+            int unitIndex = 0;
+
+            while (number > 0)
+            {
+                int block = (int)(number % 1000); // Lấy từng khối 3 số
+                if (block > 0)
+                {
+                    string blockText = ConvertBlockToText(block, digitNames);
+                    if (unitIndex > 0) blockText += " " + unitNames[unitIndex];
+                    result = blockText + " " + result;
+                }
+
+                number /= 1000;
+                unitIndex++;
+            }
+
+            result = result.Trim() + " đồng";
+
+            // Bọc trong ngoặc đơn và viết hoa chữ cái đầu tiên
+            return FormatVietnameseText(result);
+        }
+
+        // Thêm dấu ngoặc đơn và viết hoa chữ cái đầu
+        private static string FormatVietnameseText(string input)
+        {
+            if (string.IsNullOrEmpty(input)) return input;
+            return "(" + char.ToUpper(input[0]) + input.Substring(1) + ")";
+        }
+
+
+        private static string ConvertBlockToText(int number, string[] digitNames)
+        {
+            int tram = number / 100;
+            int chuc = (number / 10) % 10;
+            int donvi = number % 10;
+            string result = "";
+
+            if (tram > 0)
+                result += digitNames[tram] + " trăm";
+
+            if (chuc > 0)
+            {
+                if (chuc == 1)
+                    result += " mười";
+                else
+                    result += " " + digitNames[chuc] + " mươi";
+            }
+
+            if (donvi > 0)
+            {
+                if (chuc == 0 && tram > 0)
+                    result += " lẻ";
+                if (donvi == 1 && chuc > 1)
+                    result += " mốt";
+                else if (donvi == 5 && chuc > 0)
+                    result += " lăm";
+                else
+                    result += " " + digitNames[donvi];
+            }
+
+            return result.Trim();
+        }
+
     }
 }

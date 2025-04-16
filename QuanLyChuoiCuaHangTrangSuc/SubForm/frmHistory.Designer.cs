@@ -33,13 +33,11 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.lblChung = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2DateTimePicker3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpEnd = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpStart = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -51,11 +49,17 @@
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.flpOrderHistory = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cboPayment = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cboDeli = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cboApp = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cboStatus = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnClearFilters = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -85,55 +89,57 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.Controls.Add(this.guna2DateTimePicker2, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.guna2DateTimePicker3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dtpEnd, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dtpStart, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2HtmlLabel1, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(181, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(526, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(263, 31);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // guna2DateTimePicker2
+            // dtpEnd
             // 
-            this.guna2DateTimePicker2.Animated = true;
-            this.guna2DateTimePicker2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2DateTimePicker2.BorderRadius = 7;
-            this.guna2DateTimePicker2.BorderThickness = 1;
-            this.guna2DateTimePicker2.Checked = true;
-            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.Empty;
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker2.ForeColor = System.Drawing.Color.Black;
-            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(147, 3);
-            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
-            this.guna2DateTimePicker2.Size = new System.Drawing.Size(110, 25);
-            this.guna2DateTimePicker2.TabIndex = 6;
-            this.guna2DateTimePicker2.UseTransparentBackground = true;
-            this.guna2DateTimePicker2.Value = new System.DateTime(2025, 4, 15, 16, 23, 50, 177);
+            this.dtpEnd.Animated = true;
+            this.dtpEnd.BackColor = System.Drawing.Color.Transparent;
+            this.dtpEnd.BorderRadius = 7;
+            this.dtpEnd.BorderThickness = 1;
+            this.dtpEnd.Checked = true;
+            this.dtpEnd.FillColor = System.Drawing.Color.Empty;
+            this.dtpEnd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpEnd.ForeColor = System.Drawing.Color.Black;
+            this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEnd.Location = new System.Drawing.Point(147, 3);
+            this.dtpEnd.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpEnd.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpEnd.Name = "dtpEnd";
+            this.dtpEnd.Size = new System.Drawing.Size(110, 25);
+            this.dtpEnd.TabIndex = 6;
+            this.dtpEnd.UseTransparentBackground = true;
+            this.dtpEnd.Value = new System.DateTime(2025, 4, 15, 16, 23, 50, 177);
+            this.dtpEnd.ValueChanged += new System.EventHandler(this.dtpEnd_ValueChanged);
             // 
-            // guna2DateTimePicker3
+            // dtpStart
             // 
-            this.guna2DateTimePicker3.Animated = true;
-            this.guna2DateTimePicker3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2DateTimePicker3.BorderRadius = 7;
-            this.guna2DateTimePicker3.BorderThickness = 1;
-            this.guna2DateTimePicker3.Checked = true;
-            this.guna2DateTimePicker3.FillColor = System.Drawing.Color.Empty;
-            this.guna2DateTimePicker3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker3.ForeColor = System.Drawing.Color.Black;
-            this.guna2DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.guna2DateTimePicker3.Location = new System.Drawing.Point(3, 3);
-            this.guna2DateTimePicker3.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker3.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker3.Name = "guna2DateTimePicker3";
-            this.guna2DateTimePicker3.Size = new System.Drawing.Size(110, 25);
-            this.guna2DateTimePicker3.TabIndex = 5;
-            this.guna2DateTimePicker3.UseTransparentBackground = true;
-            this.guna2DateTimePicker3.Value = new System.DateTime(2025, 4, 15, 16, 23, 50, 177);
+            this.dtpStart.Animated = true;
+            this.dtpStart.BackColor = System.Drawing.Color.Transparent;
+            this.dtpStart.BorderRadius = 7;
+            this.dtpStart.BorderThickness = 1;
+            this.dtpStart.Checked = true;
+            this.dtpStart.FillColor = System.Drawing.Color.Empty;
+            this.dtpStart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpStart.ForeColor = System.Drawing.Color.Black;
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStart.Location = new System.Drawing.Point(3, 3);
+            this.dtpStart.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpStart.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(110, 25);
+            this.dtpStart.TabIndex = 5;
+            this.dtpStart.UseTransparentBackground = true;
+            this.dtpStart.Value = new System.DateTime(2025, 4, 15, 16, 23, 50, 177);
+            this.dtpStart.ValueChanged += new System.EventHandler(this.dtpStart_ValueChanged);
             // 
             // guna2HtmlLabel1
             // 
@@ -168,49 +174,6 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 1;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.88439F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.11561F));
-            this.tableLayoutPanel2.Controls.Add(this.txtSearch, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(487, 44);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(447, 37);
-            this.tableLayoutPanel2.TabIndex = 4;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSearch.Animated = true;
-            this.txtSearch.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSearch.BorderRadius = 5;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconRight = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.icons8_search_50;
-            this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.txtSearch.IconRightSize = new System.Drawing.Size(25, 25);
-            this.txtSearch.Location = new System.Drawing.Point(3, 4);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PlaceholderText = "Tìm kiếm hóa đơn...";
-            this.txtSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(168, 29);
-            this.txtSearch.TabIndex = 3;
-            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // guna2Panel2
             // 
@@ -358,15 +321,152 @@
             this.flpOrderHistory.Name = "flpOrderHistory";
             this.flpOrderHistory.Size = new System.Drawing.Size(925, 330);
             this.flpOrderHistory.TabIndex = 6;
+            this.flpOrderHistory.WrapContents = false;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 6;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 272F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cboStatus, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cboApp, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cboDeli, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cboPayment, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnClearFilters, 5, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(10, 44);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(925, 41);
+            this.tableLayoutPanel2.TabIndex = 7;
+            // 
+            // cboPayment
+            // 
+            this.cboPayment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboPayment.BackColor = System.Drawing.Color.Transparent;
+            this.cboPayment.BorderRadius = 7;
+            this.cboPayment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboPayment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPayment.FillColor = System.Drawing.Color.LightGray;
+            this.cboPayment.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboPayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPayment.ForeColor = System.Drawing.Color.Black;
+            this.cboPayment.ItemHeight = 30;
+            this.cboPayment.Items.AddRange(new object[] {
+            "Thanh toán",
+            "Cash",
+            "MoMo",
+            "VNPAY",
+            "ZaloPay"});
+            this.cboPayment.Location = new System.Drawing.Point(3, 3);
+            this.cboPayment.Name = "cboPayment";
+            this.cboPayment.Size = new System.Drawing.Size(124, 36);
+            this.cboPayment.TabIndex = 0;
+            this.cboPayment.SelectedIndexChanged += new System.EventHandler(this.cbFilter_Changed);
+            // 
+            // cboDeli
+            // 
+            this.cboDeli.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboDeli.BackColor = System.Drawing.Color.Transparent;
+            this.cboDeli.BorderRadius = 7;
+            this.cboDeli.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboDeli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDeli.FillColor = System.Drawing.Color.LightGray;
+            this.cboDeli.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboDeli.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboDeli.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDeli.ForeColor = System.Drawing.Color.Black;
+            this.cboDeli.ItemHeight = 30;
+            this.cboDeli.Items.AddRange(new object[] {
+            "Giao hàng",
+            "Standard",
+            "Express",
+            "Store pickup"});
+            this.cboDeli.Location = new System.Drawing.Point(133, 3);
+            this.cboDeli.Name = "cboDeli";
+            this.cboDeli.Size = new System.Drawing.Size(124, 36);
+            this.cboDeli.TabIndex = 1;
+            this.cboDeli.SelectedIndexChanged += new System.EventHandler(this.cbFilter_Changed);
+            // 
+            // cboApp
+            // 
+            this.cboApp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboApp.BackColor = System.Drawing.Color.Transparent;
+            this.cboApp.BorderRadius = 7;
+            this.cboApp.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboApp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboApp.FillColor = System.Drawing.Color.LightGray;
+            this.cboApp.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboApp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboApp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboApp.ForeColor = System.Drawing.Color.Black;
+            this.cboApp.ItemHeight = 30;
+            this.cboApp.Items.AddRange(new object[] {
+            "Ứng dụng",
+            "JewelryApp",
+            "Shopee",
+            "Lazada",
+            "TikTokShop"});
+            this.cboApp.Location = new System.Drawing.Point(263, 3);
+            this.cboApp.Name = "cboApp";
+            this.cboApp.Size = new System.Drawing.Size(124, 36);
+            this.cboApp.TabIndex = 2;
+            this.cboApp.SelectedIndexChanged += new System.EventHandler(this.cbFilter_Changed);
+            // 
+            // cboStatus
+            // 
+            this.cboStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cboStatus.BorderRadius = 7;
+            this.cboStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStatus.FillColor = System.Drawing.Color.LightGray;
+            this.cboStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStatus.ForeColor = System.Drawing.Color.Black;
+            this.cboStatus.ItemHeight = 30;
+            this.cboStatus.Items.AddRange(new object[] {
+            "Trạng thái",
+            "Pending",
+            "Complete"});
+            this.cboStatus.Location = new System.Drawing.Point(393, 3);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(124, 36);
+            this.cboStatus.TabIndex = 3;
+            this.cboStatus.SelectedIndexChanged += new System.EventHandler(this.cbFilter_Changed);
+            // 
+            // btnClearFilters
+            // 
+            this.btnClearFilters.BorderRadius = 7;
+            this.btnClearFilters.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearFilters.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearFilters.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClearFilters.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClearFilters.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnClearFilters.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearFilters.ForeColor = System.Drawing.Color.White;
+            this.btnClearFilters.Location = new System.Drawing.Point(795, 3);
+            this.btnClearFilters.Name = "btnClearFilters";
+            this.btnClearFilters.Size = new System.Drawing.Size(127, 35);
+            this.btnClearFilters.TabIndex = 4;
+            this.btnClearFilters.Text = "Xóa bộ lọc";
+            this.btnClearFilters.Click += new System.EventHandler(this.btnClearFilters_Click);
             // 
             // frmHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 475);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.flpOrderHistory);
             this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.guna2Panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Control;
@@ -377,16 +477,15 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHistory";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmHistory_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -397,12 +496,10 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblChung;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2ControlBox btnClose;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker3;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpStart;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpEnd;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -414,5 +511,11 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private System.Windows.Forms.FlowLayoutPanel flpOrderHistory;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Guna.UI2.WinForms.Guna2ComboBox cboPayment;
+        private Guna.UI2.WinForms.Guna2ComboBox cboStatus;
+        private Guna.UI2.WinForms.Guna2ComboBox cboApp;
+        private Guna.UI2.WinForms.Guna2ComboBox cboDeli;
+        private Guna.UI2.WinForms.Guna2Button btnClearFilters;
     }
 }

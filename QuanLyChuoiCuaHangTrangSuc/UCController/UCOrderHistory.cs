@@ -12,15 +12,98 @@ namespace QuanLyChuoiCuaHangTrangSuc.UCController
 {
     public partial class UCOrderHistory : UserControl
     {
+        private Timer fadeTimer = new Timer();
+        private Color startColor = SystemColors.Control;
+        private Color targetColor = Color.LightBlue;
+        private Color currentColor;
+        private bool fadingIn = false;
+        private int fadeStep = 0;
+        private const int totalSteps = 10;
+
+        public event EventHandler<string> OrderClicked;
         public UCOrderHistory()
         {
             InitializeComponent();
-            //foreach (Control control in this.Controls)
-            //{
-            //    control.MouseHover += new EventHandler(UCOrderHistory_MouseEnter);
-            //    control.MouseLeave += new EventHandler(UCOrderHistory_MouseLeave);
-            //}
+            ApplyMouseEvents(this);
+
+            fadeTimer.Interval = 2; // tốc độ mượt
+            fadeTimer.Tick += FadeTimer_Tick;
+
+            this.currentColor = this.BackColor;
+
+            this.Click += UCOrderHistory_Click;
+            foreach (Control ctrl in this.Controls) ctrl.Click += UCOrderHistory_Click;
         }
+
+
+        private void UCOrderHistory_Click(object sender, EventArgs e)
+        {
+            OrderClicked?.Invoke(this, this.OrderID); // phát sự kiện với OrderID
+        }
+
+
+
+        private void StartFade(Color fromColor, Color toColor)
+        {
+            startColor = fromColor;
+            targetColor = toColor;
+            fadeStep = 0;
+            fadeTimer.Start();
+        }
+
+        private void FadeTimer_Tick(object sender, EventArgs e)
+        {
+            fadeStep++;
+
+            int r = Interpolate(startColor.R, targetColor.R, fadeStep, totalSteps);
+            int g = Interpolate(startColor.G, targetColor.G, fadeStep, totalSteps);
+            int b = Interpolate(startColor.B, targetColor.B, fadeStep, totalSteps);
+
+            guna2Panel1.FillColor = Color.FromArgb(r, g, b);
+
+            if (fadeStep >= totalSteps)
+            {
+                fadeTimer.Stop();
+            }
+        }
+
+
+        private int Interpolate(int start, int end, int step, int maxSteps)
+        {
+            return start + (end - start) * step / maxSteps;
+        }
+
+        private void Control_MouseEnter(object sender, EventArgs e)
+        {
+            StartFade(guna2Panel1.FillColor, Color.LightBlue);
+        }
+
+        private void Control_MouseLeave(object sender, EventArgs e)
+        {
+            StartFade(guna2Panel1.FillColor, SystemColors.Control);
+        }
+
+        
+        private void ApplyMouseEvents(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                
+                control.MouseEnter += Control_MouseEnter;
+                control.MouseLeave += Control_MouseLeave;
+
+                if (control.HasChildren)
+                {
+                    ApplyMouseEvents(control);
+                }
+            }
+            parent.MouseEnter += Control_MouseEnter;
+            parent.MouseLeave += Control_MouseLeave;
+            
+        }
+
+
+
         public string OrderID
         {
             get => lblOrderID.Text;

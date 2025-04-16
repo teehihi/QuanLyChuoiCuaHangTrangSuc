@@ -171,6 +171,12 @@
     <Compile Include="SubForm\NhanVien\frmHomeNV.Designer.cs">
       <DependentUpon>frmHomeNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCController\UCOrderHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCController\UCOrderHistory.Designer.cs">
+      <DependentUpon>UCOrderHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIHelper.cs" />
     <EmbeddedResource Include="MainForm\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
@@ -224,6 +230,9 @@
     </Compile>
     <EmbeddedResource Include="SubForm\NhanVien\frmHomeNV.resx">
       <DependentUpon>frmHomeNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCController\UCOrderHistory.resx">
+      <DependentUpon>UCOrderHistory.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

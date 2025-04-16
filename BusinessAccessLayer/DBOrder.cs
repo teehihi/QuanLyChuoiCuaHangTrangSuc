@@ -154,6 +154,30 @@ namespace BusinessAccessLayer
             }
         }
 
+        public DataSet LayHoaDonTheoChiNhanh(string branchID)
+        {
+            string query = "SELECT * FROM OrderTable WHERE BranchID = @BranchID";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@BranchID", branchID)
+            };
+            return db.ExecuteQueryDataSet(query, CommandType.Text, parameters);
+        }
+
+        public string GetAppNameByID(int appId)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionHelper.CurrentConnectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT Name FROM Application WHERE AppID = @AppID", conn);
+                cmd.Parameters.AddWithValue("@AppID", appId);
+
+                object result = cmd.ExecuteScalar();
+                return result != null ? result.ToString() : null;
+            }
+        }
+
+
     }
 
     public class OrderItem
@@ -165,6 +189,7 @@ namespace BusinessAccessLayer
     }
 
     
+
 }
 
 

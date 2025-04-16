@@ -99,5 +99,19 @@ namespace BusinessAccessLayer
             }
         }
 
+        public string LayTenKhachHangTheoID(int customerId)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionHelper.CurrentConnectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT FullName FROM Customer WHERE CustomerID = @CustomerID", conn);
+                cmd.Parameters.AddWithValue("@CustomerID", customerId);
+
+                object result = cmd.ExecuteScalar();
+                return result != null ? result.ToString() : null;
+            }
+        }
+
+
     }
 }

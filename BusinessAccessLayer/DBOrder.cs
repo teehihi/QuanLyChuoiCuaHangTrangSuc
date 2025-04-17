@@ -117,6 +117,127 @@ namespace BusinessAccessLayer
             }
         }
 
+        public bool UpdateOrder_UsingSP(int orderID, decimal totalAmount, string shippingMethod, int branchID, int customerID,
+            int appID, int promotionID, decimal discountValue, List<OrderItem> orderItems, out string error)
+        {
+            error = "";
+            List<SqlCommand> commands = new List<SqlCommand>();
+
+            // 1. Gọi stored procedure cập nhật đơn hàng
+            SqlCommand cmdUpdateOrder = new SqlCommand("[dbo].[sp_UpdateOrder]");
+            cmdUpdateOrder.CommandType = CommandType.StoredProcedure;
+            cmdUpdateOrder.Parameters.AddWithValue("@OrderID", orderID);
+            cmdUpdateOrder.Parameters.AddWithValue("@CustomerID", customerID);
+            cmdUpdateOrder.Parameters.AddWithValue("@OrderDate", DateTime.Now); // cập nhật thời gian mới
+            cmdUpdateOrder.Parameters.AddWithValue("@TotalAmount", totalAmount);
+            cmdUpdateOrder.Parameters.AddWithValue("@OrderStatus", "Pending");
+            cmdUpdateOrder.Parameters.AddWithValue("@ShippingMethod", shippingMethod);
+            cmdUpdateOrder.Parameters.AddWithValue("@PaymentMethod", "Cash");
+            cmdUpdateOrder.Parameters.AddWithValue("@BranchID", branchID);
+            cmdUpdateOrder.Parameters.AddWithValue("@AppID", appID);
+            commands.Add(cmdUpdateOrder);
+
+            // 2. Xoá chi tiết đơn hàng cũ
+            SqlCommand cmdDeleteDetails = new SqlCommand("DELETE FROM OrderDetail WHERE OrderID = @OrderID;");
+            cmdDeleteDetails.Parameters.AddWithValue("@OrderID", orderID);
+            commands.Add(cmdDeleteDetails);
+
+            // 3. Xoá khuyến mãi cũ (nếu có)
+            SqlCommand cmdDeletePromo = new SqlCommand("DELETE FROM OrderPromotion WHERE OrderID = @OrderID;");
+            cmdDeletePromo.Parameters.AddWithValue("@OrderID", orderID);
+            commands.Add(cmdDeletePromo);
+
+            // 4. Thêm lại OrderDetail mới
+            foreach (var item in orderItems)
+            {
+                SqlCommand cmdDetail = new SqlCommand(@"
+            INSERT INTO OrderDetail (OrderID, ProductID, Quantity, UnitPrice, SubTotal)
+            VALUES (@OrderID, @ProductID, @Quantity, @UnitPrice, @SubTotal);");
+                cmdDetail.Parameters.AddWithValue("@OrderID", orderID);
+                cmdDetail.Parameters.AddWithValue("@ProductID", item.ProductID);
+                cmdDetail.Parameters.AddWithValue("@Quantity", item.Quantity);
+                cmdDetail.Parameters.AddWithValue("@UnitPrice", item.UnitPrice);
+                cmdDetail.Parameters.AddWithValue("@SubTotal", item.SubTotal);
+                commands.Add(cmdDetail);
+            }
+
+            // 5. Thêm lại khuyến mãi nếu có
+            if (promotionID > 0)
+            {
+                SqlCommand cmdPromo = new SqlCommand(@"
+            INSERT INTO OrderPromotion (OrderID, PromotionID, DiscountValue)
+            VALUES (@OrderID, @PromotionID, @DiscountValue);");
+                cmdPromo.Parameters.AddWithValue("@OrderID", orderID);
+                cmdPromo.Parameters.AddWithValue("@PromotionID", promotionID);
+                cmdPromo.Parameters.AddWithValue("@DiscountValue", discountValue);
+                commands.Add(cmdPromo);
+            }
+
+            // 6. Thực thi giao dịch
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionHelper.CurrentConnectionString))
+                {
+                    conn.Open();
+                    using (SqlTransaction transaction = conn.BeginTransaction())
+                    {
+                        try
+                        {
+                            foreach (var cmd in commands)
+                            {
+                                cmd.Connection = conn;
+                                cmd.Transaction = transaction;
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            transaction.Commit();
+                            return true;
+                        }
+                        catch (Exception ex)
+                        {
+                            transaction.Rollback();
+                            error = "Lỗi khi cập nhật đơn hàng: " + ex.Message;
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = "Lỗi kết nối cơ sở dữ liệu: " + ex.Message;
+                return false;
+            }
+        }
+
+
+        public bool DeleteOrder_UsingSP(int orderID, out string error)
+        {
+            error = "";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConnectionHelper.CurrentConnectionString))
+                {
+                    conn.Open();
+
+                    // Tạo lệnh gọi stored procedure
+                    using (SqlCommand cmd = new SqlCommand("[dbo].[sp_DeleteOrder]", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@OrderID", orderID);
+
+                        // Thực thi stored procedure
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                error = "Lỗi khi xóa đơn hàng: " + ex.Message;
+                return false;
+            }
+        }
 
         //PAYMENT
 
@@ -172,14 +293,6 @@ namespace BusinessAccessLayer
             string appID,
             string orderStatus)
         {
-            string query = @"
-                SELECT * FROM OrderTable
-                WHERE BranchID = @BranchID
-                AND (@PaymentMethod = '' OR PaymentMethod = @PaymentMethod)
-                AND (@ShippingMethod = '' OR ShippingMethod = @ShippingMethod)
-                AND (@AppID = '' OR AppID = @AppID)
-                AND (@OrderStatus = '' OR OrderStatus = @OrderStatus)";
-
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@BranchID", branchID),
@@ -189,8 +302,9 @@ namespace BusinessAccessLayer
                 new SqlParameter("@OrderStatus", orderStatus)
             };
 
-            return db.ExecuteQueryDataSet(query, CommandType.Text, parameters);
+            return db.ExecuteQueryDataSet("sp_LayHoaDonTheoBoLoc", CommandType.StoredProcedure, parameters);
         }
+
 
 
 
@@ -208,8 +322,7 @@ namespace BusinessAccessLayer
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(ds);
-
-                // Gán tên bảng thủ công nếu muốn
+                
                 ds.Tables[0].TableName = "Order";
                 ds.Tables[1].TableName = "OrderDetail";
                 ds.Tables[2].TableName = "Promotion";

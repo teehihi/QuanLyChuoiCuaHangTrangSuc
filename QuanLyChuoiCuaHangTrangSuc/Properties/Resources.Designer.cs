@@ -253,6 +253,16 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icnReload {
+            get {
+                object obj = ResourceManager.GetObject("icnReload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icnThongKe {
             get {
                 object obj = ResourceManager.GetObject("icnThongKe", resourceCulture);

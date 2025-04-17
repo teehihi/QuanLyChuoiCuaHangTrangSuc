@@ -26,6 +26,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
 
         private int orderId;
 
+        private DataSet orderDataSet;
 
         private PrintDocument printDocument;
         private PrintPreviewDialog printPreviewDialog;
@@ -180,56 +181,79 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
             }
         }
 
+
         private void btnLuuHD_Click(object sender, EventArgs e)
         {
             try
             {
                 string tenKH = txtKhachHang.Text.Trim();
                 int customerID = DBCustomer.GetCustomerIDByName(tenKH);
-                int branchID = 1; // Cũng mặc định luôn
+                int branchID = 1; // Mặc định
                 string selectedAppName = cboApp.SelectedItem.ToString();
                 int appID = DBApplication.GetAppIDByName(selectedAppName);
-                int promotionID = promotionId; // Truyền từ form frmOrder
+                int promotionID = promotionId; // Được truyền từ form
                 string discountText = lblGiamGia.Text.Replace("VNĐ", "").Replace(",", "").Trim();
                 decimal discountValue = Convert.ToDecimal(discountText);
-                decimal total = cartItems.Sum(i => i.Price * i.Quantity) - discountValue;
+               // decimal total = cartItems.Sum(i => i.Price * i.Quantity) - discountValue;
+                decimal total = Convert.ToDecimal(lblTotal.Text.Replace("VNĐ", "").Replace(",", "").Trim());
                 string shippingMethod = cboShippingMethod.SelectedItem?.ToString() ?? "";
 
-                // Convert CartItem sang OrderItem
+                // Chuyển đổi giỏ hàng thành danh sách OrderItem
                 List<OrderItem> orderItems = cartItems.Select(ci => new OrderItem
                 {
                     ProductID = Convert.ToInt32(ci.ProductID),
                     Quantity = ci.Quantity,
                     UnitPrice = ci.Price,
-                    
                 }).ToList();
 
                 string error;
-                int orderID = dbOrder.SaveOrder_UsingSP(total, shippingMethod, branchID, customerID, appID, promotionID, discountValue, orderItems, out error);
-
-                if (orderID == -1)
+                bool isUpdate = !string.IsNullOrWhiteSpace(txtMaHD.Text);
+                bool success;
+                if (isUpdate)
                 {
-                    MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    int existingOrderID = int.Parse(txtMaHD.Text);
+                    total = Convert.ToDecimal(lblTotal.Text.Replace("VNĐ", "").Replace(",", "").Trim());
+                    success = dbOrder.UpdateOrder_UsingSP(existingOrderID, total, shippingMethod, branchID, customerID, appID, promotionID, discountValue, orderItems, out error);
+                    
+                    if (success)
+                    {
+                        MessageBox.Show("Cập nhật hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    // Gán mã hóa đơn vừa tạo vào txtMaHD.Text
-                    orderId = orderID;
-                    txtMaHD.Text = orderID.ToString();
-                    txtKhachHang.Enabled = false;
-                    cboApp.Enabled = false;
-                    cboShippingMethod.Enabled = false;
-                    btnLuu.Enabled = false;
-                    btnPay.Enabled = true;
-                    MessageBox.Show("Lưu hóa đơn thành công! Mã HD: " + orderID, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int newOrderID = dbOrder.SaveOrder_UsingSP(total, shippingMethod, branchID, customerID, appID, promotionID, discountValue, orderItems, out error);
 
+                    if (newOrderID == -1)
+                    {
+                        MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    orderId = newOrderID;
+                    txtMaHD.Text = newOrderID.ToString();
+                    MessageBox.Show("Lưu hóa đơn thành công! Mã HD: " + newOrderID, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
+                // Khóa các control để không chỉnh sửa nữa
+                txtKhachHang.Enabled = false;
+                cboApp.Enabled = false;
+                cboShippingMethod.Enabled = false;
+                btnLuu.Enabled = false;
+                btnPay.Enabled = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi lưu hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
         // Hàm kiểm tra tự động các ô nhập liệu trong tlpAddCustomer
         private bool KiemTraThongTinDayDu(TableLayoutPanel tlp)
         {
@@ -262,8 +286,9 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
         {
             InitializeComponent();
             this.orderId = orderID;
+            this.cartItems = new List<CartItem>();
             LoadOldOrderInfo(); // Hàm mới để hiển thị hóa đơn cũ
-
+            SyncCartItemsFromGrid();
             // Disable thao tác chỉnh sửa
             DisableEditing();
 
@@ -275,8 +300,11 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
             printPreviewDialog.Size = new Size(800, 600); // Thiết lập kích thước hộp thoại
             printPreviewDialog.StartPosition = FormStartPosition.CenterScreen; // Căn giữa màn hình
         }
+
+
         private void LoadOldOrderInfo()
         {
+            orderDataSet = dbOrder.LayChiTietHoaDon(orderId);
             DataSet ds = dbOrder.LayChiTietHoaDon(orderId);
 
             if (ds.Tables["Order"].Rows.Count > 0)
@@ -287,24 +315,42 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
                 txtMaHD.Text = orderId.ToString();
                 lblTotal.Text = Convert.ToDecimal(row["TotalAmount"]).ToString("N0") + " VNĐ";
 
-                // Đổ dữ liệu vào ComboBox cboShippingMethod từ cột ShippingMethod trong OrderTable
+                // Lấy giá trị ShippingMethod từ cơ sở dữ liệu
                 string shippingMethod = ds.Tables["ShippingMethod"].Rows[0]["ShippingMethod"].ToString();
-                cboShippingMethod.Items.Add(shippingMethod);
-                cboShippingMethod.SelectedItem = shippingMethod;
+                // So sánh và chọn mục phù hợp
+                foreach (var item in cboShippingMethod.Items)
+                {
+                    if (item.ToString() == shippingMethod)
+                    {
+                        cboShippingMethod.SelectedItem = item;
+                        break;
+                    }
+                }
+                if (cboShippingMethod.SelectedIndex == -1 && cboShippingMethod.Items.Count > 0)
+                {
+                    cboShippingMethod.SelectedIndex = 0; // Chọn mục đầu tiên nếu không tìm thấy
+                }
 
-                // Đổ dữ liệu vào ComboBox cboApp từ bảng Application
-                cboApp.DataSource = ds.Tables["Application"];
-                cboApp.DisplayMember = "Name";  // Hiển thị tên ứng dụng
-                cboApp.ValueMember = "AppID";  // Sử dụng AppID làm giá trị
+                // Lấy giá trị ShippingMethod từ cơ sở dữ liệu
+                string appName = ds.Tables["Application"].Rows[0]["Name"].ToString();
+                // So sánh và chọn mục phù hợp
+                foreach (var item in cboApp.Items)
+                {
+                    if (item.ToString() == appName)
+                    {
+                        cboApp.SelectedItem = item;
+                        break;
+                    }
+                }
+                if (cboApp.SelectedIndex == -1 && cboApp.Items.Count > 0)
+                {
+                    cboApp.SelectedIndex = 0; // Chọn mục đầu tiên nếu không tìm thấy
+                }
 
-                // Set giá trị ứng dụng đã chọn
-                int appId = Convert.ToInt32(row["AppID"]);
-                cboApp.SelectedValue = appId;
             }
 
             dgvChiTiet.Rows.Clear();
             dgvChiTiet.Columns.Clear();
-
             dgvChiTiet.Columns.Add("ProductName", "Tên sản phẩm");
             dgvChiTiet.Columns.Add("Quantity", "Số lượng");
             dgvChiTiet.Columns.Add("Price", "Giá");
@@ -338,7 +384,34 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
             lblTamTinh.Text = tamTinh.ToString("N0") + " VNĐ";
         }
 
+        private void SyncCartItemsFromGrid()
+        {
+            cartItems.Clear(); // Xóa dữ liệu cũ trong cartItems
 
+            // Kiểm tra xem orderDataSet có tồn tại và có dữ liệu không
+            if (orderDataSet == null || !orderDataSet.Tables.Contains("OrderDetail") || orderDataSet.Tables["OrderDetail"].Rows.Count == 0)
+            {
+                System.Diagnostics.Debug.WriteLine("Không có dữ liệu chi tiết hóa đơn để đồng bộ cartItems.");
+                return;
+            }
+
+            // Đồng bộ cartItems từ DataSet
+            foreach (DataRow detailRow in orderDataSet.Tables["OrderDetail"].Rows)
+            {
+                string productId = detailRow["ProductID"].ToString();
+                string productName = detailRow["Name"].ToString();
+                int quantity = Convert.ToInt32(detailRow["Quantity"]);
+                decimal unitPrice = Convert.ToDecimal(detailRow["UnitPrice"]);
+
+                cartItems.Add(new CartItem
+                {
+                    ProductID = productId,
+                    Name = productName,
+                    Quantity = quantity,
+                    Price = unitPrice
+                });
+            }
+        }
 
         private void DisableEditing()
         {

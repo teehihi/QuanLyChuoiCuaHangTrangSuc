@@ -21,17 +21,29 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
         public frmHistory()
         {
             InitializeComponent();
-            cboPayment.SelectedIndex = 0;
-            cboDeli.SelectedIndex = 0;
-            cboApp.SelectedIndex = 0;
-            cboStatus.SelectedIndex = 0;
-            dtpStart.Value = Convert.ToDateTime("01/01/2024");
-            dtpEnd.Value = DateTime.Now;
+            
         }
 
         private void frmHistory_Load(object sender, EventArgs e)
         {
-            LoadHistory();
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor; // Hiển thị con trỏ đang tải
+
+                cboPayment.SelectedIndex = 0;
+                cboDeli.SelectedIndex = 0;
+                cboApp.SelectedIndex = 0;
+                cboStatus.SelectedIndex = 0;
+                dtpStart.Value = Convert.ToDateTime("01/01/2024");
+                dtpEnd.Value = DateTime.Now;
+                LoadHistory();
+            }
+            finally
+            {
+                // Khôi phục con trỏ về mặc định sau khi load xong
+                Cursor.Current = Cursors.Default;
+            }
+
         }
         private void LoadHistory()
         {
@@ -55,22 +67,33 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
 
         private void DisplayFilteredData()
         {
-            flpOrderHistory.Controls.Clear();
 
-            DateTime startDate = dtpStart.Value.Date;
-            DateTime endDate = dtpEnd.Value.Date;
-
-            var filteredRows = originalData.AsEnumerable()
-                .Where(row =>
-                {
-                    DateTime orderDate = row.Field<DateTime>("OrderDate").Date;
-                    return orderDate >= startDate && orderDate <= endDate;
-                });
-
-            foreach (var row in filteredRows)
+            try
             {
-                var item = CreateOrderHistoryItem(row);
-                flpOrderHistory.Controls.Add(item);
+                Cursor.Current = Cursors.WaitCursor; // Hiển thị con trỏ đang tải
+
+                flpOrderHistory.Controls.Clear();
+
+                DateTime startDate = dtpStart.Value.Date;
+                DateTime endDate = dtpEnd.Value.Date;
+
+                var filteredRows = originalData.AsEnumerable()
+                    .Where(row =>
+                    {
+                        DateTime orderDate = row.Field<DateTime>("OrderDate").Date;
+                        return orderDate >= startDate && orderDate <= endDate;
+                    });
+
+                foreach (var row in filteredRows)
+                {
+                    var item = CreateOrderHistoryItem(row);
+                    flpOrderHistory.Controls.Add(item);
+                }
+            }
+            finally
+            {
+                // Khôi phục con trỏ về mặc định
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -89,9 +112,11 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
 
             // Gán sự kiện click
             item.OrderClicked += Item_OrderClicked;
+            item.OrderDeleted += Item_OrderDeleted;
 
             return item;
         }
+
 
         private void Item_OrderClicked(object sender, string orderID)
         {
@@ -100,6 +125,33 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
             chiTietForm.ShowDialog();
         }
 
+        private void Item_OrderDeleted(object sender, string orderID)
+        {
+            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa hóa đơn {orderID}?",
+                "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                try
+                {
+                    int id = Convert.ToInt32(orderID);
+                    string error;
+                    if (dbOrder.DeleteOrder_UsingSP(id, out error))
+                    {
+                        MessageBox.Show("Xóa hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadHistory();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Xóa thất bại: {error}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                finally
+                {
+                    Cursor.Current = Cursors.Default;
+                }
+            }
+        }
 
         private void dtpStart_ValueChanged(object sender, EventArgs e)
         {
@@ -142,7 +194,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
                 }
 
                 originalData = dt;
-                DisplayFilteredData(); // nếu bạn muốn kết hợp lọc theo ngày
+                DisplayFilteredData();
             }
         }
 
@@ -161,5 +213,12 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
             dtpEnd.Value = DateTime.Now;
             LoadHistory();
         }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            frmHistory_Load(sender, e);
+        }
+
+
     }
 }

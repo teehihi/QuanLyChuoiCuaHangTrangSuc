@@ -236,6 +236,7 @@
             // btnHistory
             // 
             this.btnHistory.BackColor = System.Drawing.Color.Transparent;
+            this.btnHistory.BorderRadius = 7;
             this.btnHistory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHistory.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHistory.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -343,7 +344,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.7931F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.2069F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanel2.Controls.Add(this.btnSelectPromotion, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtTenKM, 1, 0);
@@ -367,9 +368,9 @@
             this.btnSelectPromotion.FillColor = System.Drawing.Color.White;
             this.btnSelectPromotion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnSelectPromotion.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnSelectPromotion.Location = new System.Drawing.Point(345, 3);
+            this.btnSelectPromotion.Location = new System.Drawing.Point(343, 3);
             this.btnSelectPromotion.Name = "btnSelectPromotion";
-            this.btnSelectPromotion.Size = new System.Drawing.Size(87, 37);
+            this.btnSelectPromotion.Size = new System.Drawing.Size(89, 37);
             this.btnSelectPromotion.TabIndex = 48;
             this.btnSelectPromotion.Text = "Chọn";
             this.btnSelectPromotion.UseTransparentBackground = true;
@@ -402,12 +403,12 @@
             this.txtTenKM.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenKM.ForeColor = System.Drawing.Color.White;
             this.txtTenKM.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenKM.Location = new System.Drawing.Point(136, 8);
+            this.txtTenKM.Location = new System.Drawing.Point(135, 8);
             this.txtTenKM.Name = "txtTenKM";
             this.txtTenKM.PlaceholderText = "Chọn mã KM...";
             this.txtTenKM.ReadOnly = true;
             this.txtTenKM.SelectedText = "";
-            this.txtTenKM.Size = new System.Drawing.Size(203, 27);
+            this.txtTenKM.Size = new System.Drawing.Size(202, 27);
             this.txtTenKM.TabIndex = 33;
             // 
             // tableLayoutPanel1

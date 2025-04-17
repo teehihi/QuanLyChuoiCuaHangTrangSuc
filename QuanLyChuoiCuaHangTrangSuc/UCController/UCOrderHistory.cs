@@ -21,6 +21,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.UCController
         private const int totalSteps = 10;
 
         public event EventHandler<string> OrderClicked;
+        public event EventHandler<string> OrderDeleted;
         public UCOrderHistory()
         {
             InitializeComponent();
@@ -41,7 +42,10 @@ namespace QuanLyChuoiCuaHangTrangSuc.UCController
             OrderClicked?.Invoke(this, this.OrderID); // phát sự kiện với OrderID
         }
 
-
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            OrderDeleted?.Invoke(this, OrderID);
+        }
 
         private void StartFade(Color fromColor, Color toColor)
         {
@@ -146,6 +150,6 @@ namespace QuanLyChuoiCuaHangTrangSuc.UCController
             set => lblTotal.Text = value;
         }
 
-      
+        
     }
 }

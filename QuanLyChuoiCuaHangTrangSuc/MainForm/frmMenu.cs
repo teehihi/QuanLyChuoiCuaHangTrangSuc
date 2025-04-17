@@ -1,5 +1,4 @@
-﻿
-using DataAcessLayer;
+﻿using DataAcessLayer;
 using Guna.UI2.WinForms;
 using QuanLyChuoiCuaHangTrangSuc.SubForm.NhanVien;
 using System;
@@ -40,48 +39,53 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            // Load trước các Form con
-            LoadAllChildForms();
-
-            if (ConnectionHelper.IsManager)
+            try
             {
-                OpenChildForm("frmHome"); // Giao diện Quản lý
-               
-            }
-            else
-            {
-                OpenChildForm("frmHomeNV"); // Giao diện Nhân viên
-                btnSuppiler.Visible = false; // Ẩn nút nhà cung cấp
-                // Di chuyển các nút lên 50px
-                btnStonk.Location = new Point(btnStonk.Location.X, btnStonk.Location.Y - 50);
-                btnProduct.Location = new Point(btnProduct.Location.X, btnProduct.Location.Y - 50);
-                btnInvoices.Location = new Point(btnInvoices.Location.X, btnInvoices.Location.Y - 50);
-                lblAdmin.Text = "Employee Tools"; // Đổi tên admin thành Employee
+                Cursor.Current = Cursors.WaitCursor; // Hiển thị con trỏ đang tải
 
-            }
+                LoadAllChildForms();
 
-
-
-
-            // Kết nối sự kiện từ frmHome
-            if (openForms["frmHome"] is frmHome homeForm)
-            {
-                homeForm.RequestFormChange += (formName) =>
+                if (ConnectionHelper.IsManager)
                 {
-                    OpenChildForm(formName);
-                    UpdateSelectedButton(formName);
-                };
-            }
-            if (openForms["frmHomeNV"] is frmHomeNV homeNVForm)
-            {
-                homeNVForm.RequestFormChange += (formName) =>
+                    OpenChildForm("frmHome"); // Giao diện Quản lý
+
+                }
+                else
                 {
-                    OpenChildForm(formName);
-                    UpdateSelectedButton(formName);
-                };
+                    OpenChildForm("frmHomeNV"); // Giao diện Nhân viên
+                    btnSuppiler.Visible = false; // Ẩn nút nhà cung cấp
+                                                 // Di chuyển các nút lên 50px
+                    btnStonk.Location = new Point(btnStonk.Location.X, btnStonk.Location.Y - 50);
+                    btnProduct.Location = new Point(btnProduct.Location.X, btnProduct.Location.Y - 50);
+                    btnInvoices.Location = new Point(btnInvoices.Location.X, btnInvoices.Location.Y - 50);
+                    lblAdmin.Text = "Employee Tools"; // Đổi tên admin thành Employee
+
+                }
+
+                // Kết nối sự kiện từ frmHome
+                if (openForms["frmHome"] is frmHome homeForm)
+                {
+                    homeForm.RequestFormChange += (formName) =>
+                    {
+                        OpenChildForm(formName);
+                        UpdateSelectedButton(formName);
+                    };
+                }
+                if (openForms["frmHomeNV"] is frmHomeNV homeNVForm)
+                {
+                    homeNVForm.RequestFormChange += (formName) =>
+                    {
+                        OpenChildForm(formName);
+                        UpdateSelectedButton(formName);
+                    };
+                }
             }
-
-
+            finally
+            {
+                // Khôi phục con trỏ về mặc định
+                Cursor.Current = Cursors.Default;
+            }
+            
         }
 
         // Hàm để cập nhật nút được chọn

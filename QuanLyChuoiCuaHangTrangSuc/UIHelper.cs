@@ -261,14 +261,6 @@ namespace QuanLyChuoiCuaHangTrangSuc
             return FormatVietnameseText(result);
         }
 
-        // Thêm dấu ngoặc đơn và viết hoa chữ cái đầu
-        private static string FormatVietnameseText(string input)
-        {
-            if (string.IsNullOrEmpty(input)) return input;
-            return "(" + char.ToUpper(input[0]) + input.Substring(1) + ")";
-        }
-
-
         private static string ConvertBlockToText(int number, string[] digitNames)
         {
             int tram = number / 100;
@@ -278,7 +270,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
             if (tram > 0)
                 result += digitNames[tram] + " trăm";
-
+            
             if (chuc > 0)
             {
                 if (chuc == 1)
@@ -302,5 +294,16 @@ namespace QuanLyChuoiCuaHangTrangSuc
             return result.Trim();
         }
 
+
+
+
+
+
+        // Thêm dấu ngoặc đơn và viết hoa chữ cái đầu
+        private static string FormatVietnameseText(string input)
+        {
+            if (string.IsNullOrEmpty(input)) return input;
+            return "(" + char.ToUpper(input[0]) + input.Substring(1) + ")";
+        }
     }
 }

@@ -50,10 +50,10 @@
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.flpOrderHistory = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.cboPayment = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cboDeli = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cboApp = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cboStatus = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cboApp = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cboDeli = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cboPayment = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnClearFilters = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -345,54 +345,28 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(925, 41);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
-            // cboPayment
+            // cboStatus
             // 
-            this.cboPayment.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cboPayment.BackColor = System.Drawing.Color.Transparent;
-            this.cboPayment.BorderRadius = 7;
-            this.cboPayment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboPayment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPayment.FillColor = System.Drawing.Color.LightGray;
-            this.cboPayment.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboPayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboPayment.ForeColor = System.Drawing.Color.Black;
-            this.cboPayment.ItemHeight = 30;
-            this.cboPayment.Items.AddRange(new object[] {
-            "Thanh toán",
-            "Cash",
-            "MoMo",
-            "VNPAY",
-            "ZaloPay"});
-            this.cboPayment.Location = new System.Drawing.Point(3, 3);
-            this.cboPayment.Name = "cboPayment";
-            this.cboPayment.Size = new System.Drawing.Size(124, 36);
-            this.cboPayment.TabIndex = 0;
-            this.cboPayment.SelectedIndexChanged += new System.EventHandler(this.cbFilter_Changed);
-            // 
-            // cboDeli
-            // 
-            this.cboDeli.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cboDeli.BackColor = System.Drawing.Color.Transparent;
-            this.cboDeli.BorderRadius = 7;
-            this.cboDeli.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboDeli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboDeli.FillColor = System.Drawing.Color.LightGray;
-            this.cboDeli.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboDeli.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboDeli.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboDeli.ForeColor = System.Drawing.Color.Black;
-            this.cboDeli.ItemHeight = 30;
-            this.cboDeli.Items.AddRange(new object[] {
-            "Giao hàng",
-            "Standard",
-            "Express",
-            "Store pickup"});
-            this.cboDeli.Location = new System.Drawing.Point(133, 3);
-            this.cboDeli.Name = "cboDeli";
-            this.cboDeli.Size = new System.Drawing.Size(124, 36);
-            this.cboDeli.TabIndex = 1;
-            this.cboDeli.SelectedIndexChanged += new System.EventHandler(this.cbFilter_Changed);
+            this.cboStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cboStatus.BorderRadius = 7;
+            this.cboStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStatus.FillColor = System.Drawing.Color.LightGray;
+            this.cboStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboStatus.ForeColor = System.Drawing.Color.Black;
+            this.cboStatus.ItemHeight = 30;
+            this.cboStatus.Items.AddRange(new object[] {
+            "Trạng thái",
+            "Pending",
+            "Complete"});
+            this.cboStatus.Location = new System.Drawing.Point(393, 3);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(124, 36);
+            this.cboStatus.TabIndex = 3;
+            this.cboStatus.SelectedIndexChanged += new System.EventHandler(this.cbFilter_Changed);
             // 
             // cboApp
             // 
@@ -419,28 +393,54 @@
             this.cboApp.TabIndex = 2;
             this.cboApp.SelectedIndexChanged += new System.EventHandler(this.cbFilter_Changed);
             // 
-            // cboStatus
+            // cboDeli
             // 
-            this.cboStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cboStatus.BackColor = System.Drawing.Color.Transparent;
-            this.cboStatus.BorderRadius = 7;
-            this.cboStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboStatus.FillColor = System.Drawing.Color.LightGray;
-            this.cboStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboStatus.ForeColor = System.Drawing.Color.Black;
-            this.cboStatus.ItemHeight = 30;
-            this.cboStatus.Items.AddRange(new object[] {
-            "Trạng thái",
-            "Pending",
-            "Complete"});
-            this.cboStatus.Location = new System.Drawing.Point(393, 3);
-            this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(124, 36);
-            this.cboStatus.TabIndex = 3;
-            this.cboStatus.SelectedIndexChanged += new System.EventHandler(this.cbFilter_Changed);
+            this.cboDeli.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboDeli.BackColor = System.Drawing.Color.Transparent;
+            this.cboDeli.BorderRadius = 7;
+            this.cboDeli.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboDeli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDeli.FillColor = System.Drawing.Color.LightGray;
+            this.cboDeli.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboDeli.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboDeli.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDeli.ForeColor = System.Drawing.Color.Black;
+            this.cboDeli.ItemHeight = 30;
+            this.cboDeli.Items.AddRange(new object[] {
+            "Giao hàng",
+            "Standard",
+            "Express",
+            "Store pickup"});
+            this.cboDeli.Location = new System.Drawing.Point(133, 3);
+            this.cboDeli.Name = "cboDeli";
+            this.cboDeli.Size = new System.Drawing.Size(124, 36);
+            this.cboDeli.TabIndex = 1;
+            this.cboDeli.SelectedIndexChanged += new System.EventHandler(this.cbFilter_Changed);
+            // 
+            // cboPayment
+            // 
+            this.cboPayment.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboPayment.BackColor = System.Drawing.Color.Transparent;
+            this.cboPayment.BorderRadius = 7;
+            this.cboPayment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboPayment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPayment.FillColor = System.Drawing.Color.LightGray;
+            this.cboPayment.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboPayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPayment.ForeColor = System.Drawing.Color.Black;
+            this.cboPayment.ItemHeight = 30;
+            this.cboPayment.Items.AddRange(new object[] {
+            "Thanh toán",
+            "Cash",
+            "MoMo",
+            "VNPAY",
+            "ZaloPay"});
+            this.cboPayment.Location = new System.Drawing.Point(3, 3);
+            this.cboPayment.Name = "cboPayment";
+            this.cboPayment.Size = new System.Drawing.Size(124, 36);
+            this.cboPayment.TabIndex = 0;
+            this.cboPayment.SelectedIndexChanged += new System.EventHandler(this.cbFilter_Changed);
             // 
             // btnClearFilters
             // 

@@ -473,34 +473,54 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
 
             y = tableY + 20;
 
-            decimal truocThue = tongTien / 1.1m;
-            decimal tinhThue = truocThue * 0.1m;
+            // Tính tiền trước thuế từ tổng tiền đã giảm
 
-            //HIỂN THỊ SỐ TIỀN TRƯỚC THUẾ
+            decimal thanhTienIN = decimal.Parse(lblTamTinh.Text.Replace("VNĐ", "").Replace(",", "").Trim());
+            decimal giamGia = decimal.Parse(lblGiamGia.Text.Replace("VNĐ", "").Replace(",", "").Trim());
+            decimal tongTienIn = decimal.Parse(lblTotal.Text.Replace("VNĐ", "").Replace(",", "").Trim());
+
+            decimal truocThue = tongTienIn / 1.1m;
+            decimal tinhThue = truocThue * 0.1m;      // Thuế 10%
+
+           
+            // THÀNH TIỀN
+            string thanhTienText = "Thành tiền: ";
+            g.DrawString(thanhTienText, fontHeader, Brushes.Black, col3 + 10, y);
+            string thanhTienNUM = $"{thanhTienIN:N0} VNĐ";
+            g.DrawString(thanhTienNUM, fontHeader, Brushes.Black, new RectangleF(tableX, y, tableWidth, rowHeight), formatRight);
+            y += 30;
+            // GIẢM GIÁ
+            string giamGiaStr = "Giảm giá: ";
+            g.DrawString(giamGiaStr, fontHeader, Brushes.Black, col3 + 10, y);
+            string giamGiaNUM = $"{giamGia:N0} VNĐ";
+            g.DrawString(giamGiaNUM, fontHeader, Brushes.Black, new RectangleF(tableX, y, tableWidth, rowHeight), formatRight);
+            y += 30;
+
+            // GIÁ TRƯỚC THUẾ
             string giaTruocThue = "Giá trước thuế: ";
             g.DrawString(giaTruocThue, fontHeader, Brushes.Black, col3 + 10, y);
             string giaTruocThueNUM = $"{truocThue:N0} VNĐ";
             g.DrawString(giaTruocThueNUM, fontHeader, Brushes.Black, new RectangleF(tableX, y, tableWidth, rowHeight), formatRight);
             y += 30;
-            //HIỂN THỊ THUẾ
-            string thue = "Thuế VAT: ";
+
+            // THUẾ
+            string thue = "Thuế VAT (10%): ";
             g.DrawString(thue, fontHeader, Brushes.Black, col3 + 10, y);
             string thueNUM = $"{tinhThue:N0} VNĐ";
             g.DrawString(thueNUM, fontHeader, Brushes.Black, new RectangleF(tableX, y, tableWidth, rowHeight), formatRight);
             y += 30;
 
-            // Tổng tiền
+            
+            // TỔNG TIỀN THANH TOÁN
             string totalString = "Tổng tiền: ";
-            float totalX = pageWidth - g.MeasureString(totalString, fontHeader).Width - margin;
             g.DrawString(totalString, fontHeader, Brushes.Black, col3 + 10, y);
-
-            string totalStringNUM = $"{tongTien:N0} VNĐ";
-            g.DrawString(totalStringNUM, fontHeader, Brushes.Black, new RectangleF(tableX, y, tableWidth, rowHeight), formatRight);
+            string totalNUM = $"{tongTienIn:N0} VNĐ";
+            g.DrawString(totalNUM, fontHeader, Brushes.Black, new RectangleF(tableX, y, tableWidth, rowHeight), formatRight);
             y += 30;
 
-
+            
             Font fontSoTienBangChu = new Font("Arial", 12, FontStyle.Italic);
-            string soTienBangChu = UIHelper.NumberToVietnameseText(tongTien);
+            string soTienBangChu = UIHelper.NumberToVietnameseText(Convert.ToDecimal(tongTienIn));
             g.DrawString(soTienBangChu, fontSoTienBangChu, Brushes.Black, col1, y);
             y += 30;
             // Font nhỏ hơn để hiển thị ghi chú
@@ -538,7 +558,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
             string bankCode = "VCB"; // Mã ngân hàng
             string accName = "NGUYEN NHAT THIEN";
             string content = "THANHTOANHOADONTEENSTYLE";
-            string qrContent = $"https://img.vietqr.io/image/{bankCode}-{bankAcc}-qr_only.png?amount={tongTien}&addInfo={content}&accountName={Uri.EscapeDataString(accName)}";
+            string qrContent = $"https://img.vietqr.io/image/{bankCode}-{bankAcc}-qr_only.png?amount={tongTienIn}&addInfo={content}&accountName={Uri.EscapeDataString(accName)}";
 
             try
             {
@@ -561,16 +581,6 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
 
 
         }
-        private void AnDongTrungMaHD()
-        {
-            HashSet<string> daXuatHien = new HashSet<string>();
-
-            foreach (DataGridViewRow row in dgvChiTiet.Rows)
-            {
-                string maHD = row.Cells["MaHD"].Value?.ToString();
-                row.Visible = !daXuatHien.Contains(maHD);
-                daXuatHien.Add(maHD);
-            }
-        }
+       
     }
 }

@@ -49,20 +49,12 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
         {
             string BranchID = "1";
             DataSet ds = dbOrder.LayHoaDonTheoChiNhanh(BranchID);
-            
+
             if (ds != null && ds.Tables.Count > 0)
             {
-                DataTable dt = ds.Tables[0];
-
-                foreach (DataRow row in dt.Rows)
-                {
-                    var item = CreateOrderHistoryItem(row);
-
-                    flpOrderHistory.Controls.Add(item);
-                }
+                originalData = ds.Tables[0];
+                DisplayFilteredData(); // Chỉ gọi DisplayFilteredData để hiển thị
             }
-            originalData = ds.Tables[0];
-            
         }
 
         private void DisplayFilteredData()
@@ -166,35 +158,17 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
         private void FilterOrders()
         {
             string branchID = "1";
-
-            // Nếu SelectedIndex = 0 (mặc định) => bỏ qua
             string payment = cboPayment.SelectedIndex > 0 ? cboPayment.SelectedItem.ToString() : "";
             string shipping = cboDeli.SelectedIndex > 0 ? cboDeli.SelectedItem.ToString() : "";
             string status = cboStatus.SelectedIndex > 0 ? cboStatus.SelectedItem.ToString() : "";
-
-            string appID = "";
-            if (cboApp.SelectedIndex > 0)
-            {
-                try { appID = DBApplication.GetAppIDByName(cboApp.SelectedItem.ToString()).ToString(); }
-                catch { appID = ""; }
-            }
+            string appID = cboApp.SelectedIndex > 0 ? DBApplication.GetAppIDByName(cboApp.SelectedItem.ToString()).ToString() : "";
 
             DataSet ds = dbOrder.LayHoaDonTheoBoLoc(branchID, payment, shipping, appID, status);
 
-
             if (ds != null && ds.Tables.Count > 0)
             {
-                DataTable dt = ds.Tables[0];
-                flpOrderHistory.Controls.Clear();
-
-                foreach (DataRow row in dt.Rows)
-                {
-                    var item = CreateOrderHistoryItem(row);
-                    flpOrderHistory.Controls.Add(item);
-                }
-
-                originalData = dt;
-                DisplayFilteredData();
+                originalData = ds.Tables[0];
+                DisplayFilteredData(); // Chỉ gọi DisplayFilteredData để hiển thị
             }
         }
 

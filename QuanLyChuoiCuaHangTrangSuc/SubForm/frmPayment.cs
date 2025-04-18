@@ -98,7 +98,7 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
                 }
                 else if (btnMoMo.Checked)
                 {
-                    paymentMethod = "VIMOMO";
+                    paymentMethod = "MOMO";
                 }
                 else if (btnZaloPay.Checked)
                 {

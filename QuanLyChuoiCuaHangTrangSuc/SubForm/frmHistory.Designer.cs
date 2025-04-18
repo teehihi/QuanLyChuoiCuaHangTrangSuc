@@ -191,6 +191,7 @@
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BorderRadius = 7;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.FillColor = System.Drawing.Color.Transparent;
             this.btnClose.ForeColor = System.Drawing.Color.Black;
             this.btnClose.IconColor = System.Drawing.Color.Black;
@@ -294,7 +295,7 @@
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(431, 8);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(430, 8);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(65, 19);
             this.guna2HtmlLabel6.TabIndex = 6;
@@ -306,7 +307,7 @@
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(547, 8);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(546, 8);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(94, 19);
             this.guna2HtmlLabel7.TabIndex = 7;
@@ -318,7 +319,7 @@
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(664, 8);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(662, 8);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             this.guna2HtmlLabel8.Size = new System.Drawing.Size(67, 19);
             this.guna2HtmlLabel8.TabIndex = 8;
@@ -330,7 +331,7 @@
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(771, 8);
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(769, 8);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(63, 19);
             this.guna2HtmlLabel9.TabIndex = 9;
@@ -458,7 +459,7 @@
             this.cboPayment.Items.AddRange(new object[] {
             "Thanh toán",
             "Cash",
-            "MoMo",
+            "MOMO",
             "VNPAY",
             "ZaloPay"});
             this.cboPayment.Location = new System.Drawing.Point(3, 3);

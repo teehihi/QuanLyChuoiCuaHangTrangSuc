@@ -203,6 +203,16 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icnExcel {
+            get {
+                object obj = ResourceManager.GetObject("icnExcel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icnHistory {
             get {
                 object obj = ResourceManager.GetObject("icnHistory", resourceCulture);
@@ -333,6 +343,26 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconArrowDown {
+            get {
+                object obj = ResourceManager.GetObject("iconArrowDown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconArrowUp {
+            get {
+                object obj = ResourceManager.GetObject("iconArrowUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconBongTai {
             get {
                 object obj = ResourceManager.GetObject("iconBongTai", resourceCulture);
@@ -376,6 +406,36 @@ namespace QuanLyChuoiCuaHangTrangSuc.Properties {
         internal static System.Drawing.Bitmap iconCheck {
             get {
                 object obj = ResourceManager.GetObject("iconCheck", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconFeet {
+            get {
+                object obj = ResourceManager.GetObject("iconFeet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconMoney {
+            get {
+                object obj = ResourceManager.GetObject("iconMoney", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconMoney1 {
+            get {
+                object obj = ResourceManager.GetObject("iconMoney1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -106,7 +106,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void LoadRevenueTarget_Donut()
         {
-            var data = ProductBusiness.GetTopSellingProducts();
+            var data = ProductBusiness.GetMonthlyStatistics();
             if (data == null || data.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu để hiển thị biểu đồ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -114,8 +114,10 @@ namespace QuanLyChuoiCuaHangTrangSuc
             }
 
             double totalRevenue = 0;
+            
             foreach (DataRow row in data.Rows)
-                totalRevenue += Convert.ToDouble(row["TotalRevenue"]);
+                if (Convert.ToInt32(row["Month"]) == DateTime.Now.Month && Convert.ToInt32(row["Year"]) == DateTime.Now.Year)
+                    totalRevenue += Convert.ToDouble(row["TotalRevenue"]);
 
             pieChart.Datasets.Clear();
             pieChart.BackColor = SystemColors.ControlLight;

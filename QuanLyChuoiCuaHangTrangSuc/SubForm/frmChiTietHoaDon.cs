@@ -141,7 +141,8 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
         {
             if (!KiemTraThongTinDayDu(tlpAddCustomer))
                 return;
-            dBCustomer.ThemKhachHang(txtCustomerName.Text, txtCustomerType.Text, txtCustomerAddress.Text, txtCustomerPhone.Text);
+            string customerAddress = txtCustomerAddress.Text.Trim() + $", {cboThanhPho.Text}";
+            dBCustomer.ThemKhachHang(txtCustomerName.Text, txtCustomerType.Text, customerAddress, txtCustomerPhone.Text);
             
             seph2.Visible = false;
             tlpAddCustomer.Visible = false;

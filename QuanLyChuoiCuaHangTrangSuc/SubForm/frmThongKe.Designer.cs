@@ -92,6 +92,7 @@
             this.topSaleChart = new Guna.Charts.WinForms.GunaChart();
             this.gunaBarDataset1 = new Guna.Charts.WinForms.GunaBarDataset();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblDoanhSoCanDat = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelMid.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
@@ -381,6 +382,7 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 7;
+            this.guna2Panel1.Controls.Add(this.lblDoanhSoCanDat);
             this.guna2Panel1.Controls.Add(this.lblAchive);
             this.guna2Panel1.Controls.Add(this.pieChart);
             this.guna2Panel1.FillColor = System.Drawing.SystemColors.ControlLight;
@@ -407,7 +409,7 @@
             chartFont1.Size = 10;
             chartFont1.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
             this.pieChart.Legend.LabelFont = chartFont1;
-            this.pieChart.Location = new System.Drawing.Point(1, 59);
+            this.pieChart.Location = new System.Drawing.Point(1, 71);
             this.pieChart.Name = "pieChart";
             this.pieChart.Size = new System.Drawing.Size(356, 260);
             this.pieChart.TabIndex = 0;
@@ -539,6 +541,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1134, 175);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
+            // lblDoanhSoCanDat
+            // 
+            this.lblDoanhSoCanDat.BackColor = System.Drawing.Color.Transparent;
+            this.lblDoanhSoCanDat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblDoanhSoCanDat.ForeColor = System.Drawing.Color.Black;
+            this.lblDoanhSoCanDat.Location = new System.Drawing.Point(15, 49);
+            this.lblDoanhSoCanDat.Name = "lblDoanhSoCanDat";
+            this.lblDoanhSoCanDat.Size = new System.Drawing.Size(185, 15);
+            this.lblDoanhSoCanDat.TabIndex = 8;
+            this.lblDoanhSoCanDat.Text = "Đã đạt 79.000.000 đ / 100.000.000 đ";
+            // 
             // frmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -611,5 +624,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTotalCustomer;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDoanhSoCanDat;
     }
 }

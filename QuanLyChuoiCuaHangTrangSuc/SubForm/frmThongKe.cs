@@ -131,6 +131,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
             pieChart.XAxes.Display = false;
             pieChart.YAxes.Display = false;
             pieChart.Update();
+            lblDoanhSoCanDat.Text = $"Đã đạt: {totalRevenue.ToString("C0", CultureInfo.GetCultureInfo("vi-VN"))} / {100000000.ToString("C0", CultureInfo.GetCultureInfo("vi-VN"))}";
         }
 
         private void LoadMonthlyStats()

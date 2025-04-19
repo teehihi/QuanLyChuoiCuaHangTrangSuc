@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace QuanLyChuoiCuaHangTrangSuc
 {
-    public partial class frmInvoices : Form
+    public partial class frmInvoices : Form, IReloadable
     {
         
         DBProduct dbProduct = new DBProduct();
@@ -29,6 +29,12 @@ namespace QuanLyChuoiCuaHangTrangSuc
         private byte[] imageData; // Biến lưu ảnh dưới dạng byte[]
         private List<CartItem> cart;
 
+        public void ReloadData()
+        {
+            // Gọi lại phương thức load dữ liệu
+            Reload();
+        }
+
         public frmInvoices()
         {
             InitializeComponent();
@@ -38,14 +44,16 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void frmInvoices_Load(object sender, EventArgs e)
         {
-
-            
             LoadLoaiTrangSuc();
             cbLoaiSP.SelectedIndex = 0;
             flpCart.Controls.Clear();
 
         }
 
+        public void Reload()
+        {
+            btnXoa.PerformClick(); 
+        }
         private void LoadProducts(string loai)
         {
             DataTable dt = dbProduct.LayTrangSucTheoLoai(loai).Tables[0];

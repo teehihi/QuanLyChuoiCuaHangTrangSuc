@@ -153,7 +153,7 @@
             this.btnClose.ForeColor = System.Drawing.Color.Red;
             this.btnClose.IndicateFocus = true;
             this.btnClose.Location = new System.Drawing.Point(808, -4);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(46, 40);
             this.btnClose.TabIndex = 17;
@@ -260,6 +260,7 @@
             this.txtUsername.Size = new System.Drawing.Size(340, 36);
             this.txtUsername.TabIndex = 0;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // guna2PictureBox1
             // 

@@ -21,7 +21,6 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
 
         // Định nghĩa sự kiện để gọi từ frmHome
         public event Action<string> OnChildFormRequested;
-
         public frmMenu()
         {
             InitializeComponent();
@@ -141,24 +140,83 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
             }
         }
 
-
-
         private void OpenChildForm(string formName)
         {
-            if (!openForms.ContainsKey(formName)) return;
-
-            Form childForm = openForms[formName];
-
-            // Ẩn các Form hiện có trong panelMid
-            foreach (Control control in panelMid.Controls)
+            if (!openForms.ContainsKey(formName))
             {
-                if (control is Form form)
+                Form formToAdd = null;
+
+                switch (formName)
                 {
-                    form.Hide();
+                    case "frmHome":
+                        formToAdd = new frmHome();
+                        break;
+                    case "frmHomeNV":
+                        formToAdd = new frmHomeNV();
+                        break;
+                    case "frmCustomer":
+                        formToAdd = new frmCustomer();
+                        break;
+                    case "frmProduct":
+                        formToAdd = new frmProduct();
+                        break;
+                    case "frmSupplier":
+                        formToAdd = new frmSupplier();
+                        break;
+                    case "frmInvoices":
+                        formToAdd = new frmInvoices();
+                        break;
+                    case "frmThongKe":
+                        formToAdd = new frmThongKe();
+                        break;
+                    // Thêm case mới tại đây
+                    default:
+                        MessageBox.Show($"Form '{formName}' chưa được hỗ trợ hoặc gõ sai tên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                }
+
+
+                if (formToAdd == null)
+                {
+                    MessageBox.Show($"Form '{formName}' chưa được hỗ trợ hoặc gõ sai tên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                openForms[formName] = formToAdd;
+
+                // Nếu là frmHome hay frmHomeNV thì gán sự kiện RequestFormChange
+                if (formToAdd is frmHome homeForm)
+                {
+                    homeForm.RequestFormChange += (fName) =>
+                    {
+                        OpenChildForm(fName);
+                        UpdateSelectedButton(fName);
+                    };
+                }
+                else if (formToAdd is frmHomeNV homeNVForm)
+                {
+                    homeNVForm.RequestFormChange += (fName) =>
+                    {
+                        OpenChildForm(fName);
+                        UpdateSelectedButton(fName);
+                    };
                 }
             }
 
-            // Thêm Form con vào Panel nếu chưa có
+            Form childForm = openForms[formName];
+
+            if (panelMid.Tag == childForm && childForm is IReloadable reloadableForm)
+            {
+                reloadableForm.ReloadData();
+                return;
+            }
+
+            foreach (Control control in panelMid.Controls)
+            {
+                if (control is Form form)
+                    form.Hide();
+            }
+
             if (!panelMid.Controls.Contains(childForm))
             {
                 childForm.TopLevel = false;
@@ -173,7 +231,8 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
             btnChat.BringToFront();
         }
 
-        
+
+
         private void picMenu_Click(object sender, EventArgs e)
         {
             UIHelper.TogglePannelVisibility(panelLeft, lblAdmin, picLogo, picMenu, btnHome, btnCustomer,
@@ -287,4 +346,9 @@ namespace QuanLyChuoiCuaHangTrangSuc.MainForm
       
 
     }
+}
+
+public interface IReloadable
+{
+    void ReloadData();
 }

@@ -65,6 +65,13 @@
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelLeft = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panelMid = new Guna.UI2.WinForms.Guna2Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picTangGiam = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblTangGiam = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblTongSP = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picTangGiamKH = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -77,13 +84,8 @@
             this.lblTangGiamTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picTangGiam = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblTangGiam = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblTongSP = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblDoanhSoCanDat = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblAchive = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pieChart = new Guna.Charts.WinForms.GunaChart();
             this.panelChart = new Guna.UI2.WinForms.Guna2Panel();
@@ -91,21 +93,19 @@
             this.lblTopSale = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.topSaleChart = new Guna.Charts.WinForms.GunaChart();
             this.gunaBarDataset1 = new Guna.Charts.WinForms.GunaBarDataset();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblDoanhSoCanDat = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelMid.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTangGiam)).BeginInit();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTangGiamKH)).BeginInit();
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTangGiamDT)).BeginInit();
-            this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTangGiam)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.panelChart.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -153,155 +153,21 @@
             this.panelMid.Size = new System.Drawing.Size(1264, 681);
             this.panelMid.TabIndex = 15;
             // 
-            // guna2Panel4
+            // tableLayoutPanel1
             // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel4.BorderRadius = 15;
-            this.guna2Panel4.Controls.Add(this.guna2PictureBox3);
-            this.guna2Panel4.Controls.Add(this.picTangGiamKH);
-            this.guna2Panel4.Controls.Add(this.lblTangGiamCustomer);
-            this.guna2Panel4.Controls.Add(this.lblTotalCustomer);
-            this.guna2Panel4.Controls.Add(this.guna2HtmlLabel5);
-            this.guna2Panel4.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.guna2Panel4.Location = new System.Drawing.Point(777, 3);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(354, 169);
-            this.guna2Panel4.TabIndex = 9;
-            this.guna2Panel4.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconFeet;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(290, 13);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 7;
-            this.guna2PictureBox3.TabStop = false;
-            this.guna2PictureBox3.UseTransparentBackground = true;
-            // 
-            // picTangGiamKH
-            // 
-            this.picTangGiamKH.FillColor = System.Drawing.Color.Transparent;
-            this.picTangGiamKH.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconArrowUp;
-            this.picTangGiamKH.ImageRotate = 0F;
-            this.picTangGiamKH.Location = new System.Drawing.Point(22, 120);
-            this.picTangGiamKH.Name = "picTangGiamKH";
-            this.picTangGiamKH.Size = new System.Drawing.Size(20, 20);
-            this.picTangGiamKH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTangGiamKH.TabIndex = 6;
-            this.picTangGiamKH.TabStop = false;
-            this.picTangGiamKH.UseTransparentBackground = true;
-            // 
-            // lblTangGiamCustomer
-            // 
-            this.lblTangGiamCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.lblTangGiamCustomer.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
-            this.lblTangGiamCustomer.ForeColor = System.Drawing.Color.White;
-            this.lblTangGiamCustomer.Location = new System.Drawing.Point(40, 118);
-            this.lblTangGiamCustomer.Name = "lblTangGiamCustomer";
-            this.lblTangGiamCustomer.Size = new System.Drawing.Size(238, 23);
-            this.lblTangGiamCustomer.TabIndex = 5;
-            this.lblTangGiamCustomer.Text = "Tăng 1000% so với tháng trước";
-            // 
-            // lblTotalCustomer
-            // 
-            this.lblTotalCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalCustomer.Font = new System.Drawing.Font("Segoe UI", 24.25F, System.Drawing.FontStyle.Bold);
-            this.lblTotalCustomer.ForeColor = System.Drawing.Color.White;
-            this.lblTotalCustomer.Location = new System.Drawing.Point(22, 56);
-            this.lblTotalCustomer.Name = "lblTotalCustomer";
-            this.lblTotalCustomer.Size = new System.Drawing.Size(57, 47);
-            this.lblTotalCustomer.TabIndex = 4;
-            this.lblTotalCustomer.Text = "205";
-            // 
-            // guna2HtmlLabel5
-            // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(22, 16);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(192, 27);
-            this.guna2HtmlLabel5.TabIndex = 3;
-            this.guna2HtmlLabel5.Text = "Số lượng khách hàng";
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel3.BorderRadius = 15;
-            this.guna2Panel3.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel3.Controls.Add(this.picTangGiamDT);
-            this.guna2Panel3.Controls.Add(this.lblTangGiamTotal);
-            this.guna2Panel3.Controls.Add(this.lblTotal);
-            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel4);
-            this.guna2Panel3.FillColor = System.Drawing.Color.MediumOrchid;
-            this.guna2Panel3.Location = new System.Drawing.Point(390, 3);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(359, 169);
-            this.guna2Panel3.TabIndex = 8;
-            this.guna2Panel3.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconMoney1;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(290, 13);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 7;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.UseTransparentBackground = true;
-            // 
-            // picTangGiamDT
-            // 
-            this.picTangGiamDT.FillColor = System.Drawing.Color.Transparent;
-            this.picTangGiamDT.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconArrowUp;
-            this.picTangGiamDT.ImageRotate = 0F;
-            this.picTangGiamDT.Location = new System.Drawing.Point(22, 120);
-            this.picTangGiamDT.Name = "picTangGiamDT";
-            this.picTangGiamDT.Size = new System.Drawing.Size(20, 20);
-            this.picTangGiamDT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picTangGiamDT.TabIndex = 6;
-            this.picTangGiamDT.TabStop = false;
-            this.picTangGiamDT.UseTransparentBackground = true;
-            // 
-            // lblTangGiamTotal
-            // 
-            this.lblTangGiamTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblTangGiamTotal.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
-            this.lblTangGiamTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTangGiamTotal.Location = new System.Drawing.Point(40, 118);
-            this.lblTangGiamTotal.Name = "lblTangGiamTotal";
-            this.lblTangGiamTotal.Size = new System.Drawing.Size(238, 23);
-            this.lblTangGiamTotal.TabIndex = 5;
-            this.lblTangGiamTotal.Text = "Tăng 1000% so với tháng trước";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 24.25F, System.Drawing.FontStyle.Bold);
-            this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(22, 56);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(57, 47);
-            this.lblTotal.TabIndex = 4;
-            this.lblTotal.Text = "205";
-            // 
-            // guna2HtmlLabel4
-            // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(22, 16);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(147, 27);
-            this.guna2HtmlLabel4.TabIndex = 3;
-            this.guna2HtmlLabel4.Text = "Tổng doanh thu";
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 360F));
+            this.tableLayoutPanel1.Controls.Add(this.guna2Panel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.guna2Panel4, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.guna2Panel3, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(90, 75);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1136, 175);
+            this.tableLayoutPanel1.TabIndex = 10;
             // 
             // guna2Panel2
             // 
@@ -378,6 +244,156 @@
             this.guna2HtmlLabel1.TabIndex = 3;
             this.guna2HtmlLabel1.Text = "Tổng sản phẩm bán ra";
             // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel4.BorderRadius = 15;
+            this.guna2Panel4.Controls.Add(this.guna2PictureBox3);
+            this.guna2Panel4.Controls.Add(this.picTangGiamKH);
+            this.guna2Panel4.Controls.Add(this.lblTangGiamCustomer);
+            this.guna2Panel4.Controls.Add(this.lblTotalCustomer);
+            this.guna2Panel4.Controls.Add(this.guna2HtmlLabel5);
+            this.guna2Panel4.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.guna2Panel4.Location = new System.Drawing.Point(779, 3);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(354, 169);
+            this.guna2Panel4.TabIndex = 9;
+            this.guna2Panel4.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconFeet;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(290, 13);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 7;
+            this.guna2PictureBox3.TabStop = false;
+            this.guna2PictureBox3.UseTransparentBackground = true;
+            // 
+            // picTangGiamKH
+            // 
+            this.picTangGiamKH.FillColor = System.Drawing.Color.Transparent;
+            this.picTangGiamKH.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconArrowUp;
+            this.picTangGiamKH.ImageRotate = 0F;
+            this.picTangGiamKH.Location = new System.Drawing.Point(22, 120);
+            this.picTangGiamKH.Name = "picTangGiamKH";
+            this.picTangGiamKH.Size = new System.Drawing.Size(20, 20);
+            this.picTangGiamKH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTangGiamKH.TabIndex = 6;
+            this.picTangGiamKH.TabStop = false;
+            this.picTangGiamKH.UseTransparentBackground = true;
+            // 
+            // lblTangGiamCustomer
+            // 
+            this.lblTangGiamCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.lblTangGiamCustomer.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.lblTangGiamCustomer.ForeColor = System.Drawing.Color.White;
+            this.lblTangGiamCustomer.Location = new System.Drawing.Point(40, 118);
+            this.lblTangGiamCustomer.Name = "lblTangGiamCustomer";
+            this.lblTangGiamCustomer.Size = new System.Drawing.Size(238, 23);
+            this.lblTangGiamCustomer.TabIndex = 5;
+            this.lblTangGiamCustomer.Text = "Tăng 1000% so với tháng trước";
+            // 
+            // lblTotalCustomer
+            // 
+            this.lblTotalCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalCustomer.Font = new System.Drawing.Font("Segoe UI", 24.25F, System.Drawing.FontStyle.Bold);
+            this.lblTotalCustomer.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCustomer.Location = new System.Drawing.Point(22, 56);
+            this.lblTotalCustomer.Name = "lblTotalCustomer";
+            this.lblTotalCustomer.Size = new System.Drawing.Size(57, 47);
+            this.lblTotalCustomer.TabIndex = 4;
+            this.lblTotalCustomer.Text = "205";
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(22, 16);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(192, 27);
+            this.guna2HtmlLabel5.TabIndex = 3;
+            this.guna2HtmlLabel5.Text = "Số lượng khách hàng";
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel3.BorderRadius = 15;
+            this.guna2Panel3.Controls.Add(this.guna2PictureBox2);
+            this.guna2Panel3.Controls.Add(this.picTangGiamDT);
+            this.guna2Panel3.Controls.Add(this.lblTangGiamTotal);
+            this.guna2Panel3.Controls.Add(this.lblTotal);
+            this.guna2Panel3.Controls.Add(this.guna2HtmlLabel4);
+            this.guna2Panel3.FillColor = System.Drawing.Color.MediumOrchid;
+            this.guna2Panel3.Location = new System.Drawing.Point(391, 3);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(359, 169);
+            this.guna2Panel3.TabIndex = 8;
+            this.guna2Panel3.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconMoney1;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(290, 13);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 7;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.UseTransparentBackground = true;
+            // 
+            // picTangGiamDT
+            // 
+            this.picTangGiamDT.FillColor = System.Drawing.Color.Transparent;
+            this.picTangGiamDT.Image = global::QuanLyChuoiCuaHangTrangSuc.Properties.Resources.iconArrowUp;
+            this.picTangGiamDT.ImageRotate = 0F;
+            this.picTangGiamDT.Location = new System.Drawing.Point(22, 120);
+            this.picTangGiamDT.Name = "picTangGiamDT";
+            this.picTangGiamDT.Size = new System.Drawing.Size(20, 20);
+            this.picTangGiamDT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTangGiamDT.TabIndex = 6;
+            this.picTangGiamDT.TabStop = false;
+            this.picTangGiamDT.UseTransparentBackground = true;
+            // 
+            // lblTangGiamTotal
+            // 
+            this.lblTangGiamTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblTangGiamTotal.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Bold);
+            this.lblTangGiamTotal.ForeColor = System.Drawing.Color.White;
+            this.lblTangGiamTotal.Location = new System.Drawing.Point(40, 118);
+            this.lblTangGiamTotal.Name = "lblTangGiamTotal";
+            this.lblTangGiamTotal.Size = new System.Drawing.Size(238, 23);
+            this.lblTangGiamTotal.TabIndex = 5;
+            this.lblTangGiamTotal.Text = "Tăng 1000% so với tháng trước";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 24.25F, System.Drawing.FontStyle.Bold);
+            this.lblTotal.ForeColor = System.Drawing.Color.White;
+            this.lblTotal.Location = new System.Drawing.Point(22, 56);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(57, 47);
+            this.lblTotal.TabIndex = 4;
+            this.lblTotal.Text = "205";
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(22, 16);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(147, 27);
+            this.guna2HtmlLabel4.TabIndex = 3;
+            this.guna2HtmlLabel4.Text = "Tổng doanh thu";
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
@@ -391,6 +407,17 @@
             this.guna2Panel1.Size = new System.Drawing.Size(359, 393);
             this.guna2Panel1.TabIndex = 3;
             this.guna2Panel1.UseTransparentBackground = true;
+            // 
+            // lblDoanhSoCanDat
+            // 
+            this.lblDoanhSoCanDat.BackColor = System.Drawing.Color.Transparent;
+            this.lblDoanhSoCanDat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblDoanhSoCanDat.ForeColor = System.Drawing.Color.Black;
+            this.lblDoanhSoCanDat.Location = new System.Drawing.Point(15, 49);
+            this.lblDoanhSoCanDat.Name = "lblDoanhSoCanDat";
+            this.lblDoanhSoCanDat.Size = new System.Drawing.Size(185, 15);
+            this.lblDoanhSoCanDat.TabIndex = 8;
+            this.lblDoanhSoCanDat.Text = "Đã đạt 79.000.000 đ / 100.000.000 đ";
             // 
             // lblAchive
             // 
@@ -525,33 +552,6 @@
             this.gunaBarDataset1.AutoRoundedCorners = true;
             this.gunaBarDataset1.Label = "Bar1";
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 360F));
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel4, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.guna2Panel3, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(90, 75);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1134, 175);
-            this.tableLayoutPanel1.TabIndex = 10;
-            // 
-            // lblDoanhSoCanDat
-            // 
-            this.lblDoanhSoCanDat.BackColor = System.Drawing.Color.Transparent;
-            this.lblDoanhSoCanDat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
-            this.lblDoanhSoCanDat.ForeColor = System.Drawing.Color.Black;
-            this.lblDoanhSoCanDat.Location = new System.Drawing.Point(15, 49);
-            this.lblDoanhSoCanDat.Name = "lblDoanhSoCanDat";
-            this.lblDoanhSoCanDat.Size = new System.Drawing.Size(185, 15);
-            this.lblDoanhSoCanDat.TabIndex = 8;
-            this.lblDoanhSoCanDat.Text = "Đã đạt 79.000.000 đ / 100.000.000 đ";
-            // 
             // frmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -570,6 +570,11 @@
             this.Text = "Thống kê doanh thu";
             this.Load += new System.EventHandler(this.frmThongKe_Load);
             this.panelMid.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTangGiam)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
@@ -578,15 +583,10 @@
             this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTangGiamDT)).EndInit();
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTangGiam)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.panelChart.ResumeLayout(false);
             this.panelChart.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -44,5 +44,50 @@ namespace QuanLyChuoiCuaHangTrangSuc.SubForm
                 this.Close();
             }
         }
+
+        private void txtSearch_IconRightClick(object sender, EventArgs e)
+        {
+            string tuKhoa = txtSearch.Text.Trim();
+
+            if (string.IsNullOrEmpty(tuKhoa))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                DataSet ds = dbPromotion.TimKhuyenMaiTongHop(tuKhoa);
+                if (ds != null && ds.Tables.Count > 0)
+                {
+                    dgvPromotion.DataSource = ds.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng phù hợp.", "Kết quả", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm kiếm khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSearch_IconRightClick(sender, e);
+                e.SuppressKeyPress = true; // Chặn tiếng beep hoặc hành động mặc định
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtSearch.Text.Trim()))
+            {
+                dgvPromotion.DataSource = dbPromotion.LayDanhSachKhuyenMai();
+            }
+        }
     }
 }

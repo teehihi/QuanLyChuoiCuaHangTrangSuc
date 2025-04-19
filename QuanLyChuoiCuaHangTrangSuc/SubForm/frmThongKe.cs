@@ -11,10 +11,15 @@ using Guna.UI2.WinForms;
 
 namespace QuanLyChuoiCuaHangTrangSuc
 {
-    public partial class frmThongKe : Form
+    public partial class frmThongKe : Form, IReloadable
     {
         private readonly Random random = new Random();
 
+        public void ReloadData()
+        {
+            // Gọi lại phương thức load dữ liệu
+            Reload();
+        }
         public frmThongKe()
         {
             InitializeComponent();
@@ -23,6 +28,11 @@ namespace QuanLyChuoiCuaHangTrangSuc
         }
 
         private void frmThongKe_Load(object sender, EventArgs e)
+        {
+            Reload();
+        }
+
+        public void Reload()
         {
             LoadTopSellingProducts();
             LoadRevenueTarget_Donut();
@@ -152,29 +162,32 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
             int currentSold = 0, previousSold = 0;
             int currentRevenue = 0, previousRevenue = 0;
-
+            int currentCustomer = 0, previousCustomer = 0;
             foreach (DataRow row in data.Rows)
             {
                 int month = Convert.ToInt32(row["Month"]);
                 int year = Convert.ToInt32(row["Year"]);
                 int sold = Convert.ToInt32(row["TotalSold"]);
                 int revenue = Convert.ToInt32(row["TotalRevenue"]);
+                int customer = Convert.ToInt32(row["TotalCustomers"]);
 
                 if (month == currMonth && year == currYear)
                 {
                     currentSold = sold;
                     currentRevenue = revenue;
+                    currentCustomer = customer;
                 }
                 else if (month == prevMonth && year == prevYear)
                 {
                     previousSold = sold;
                     previousRevenue = revenue;
+                    previousCustomer = customer;
                 }
             }
 
             SetStats(previousSold, currentSold, lblTongSP, lblTangGiam, picTangGiam);
             SetStats(previousRevenue, currentRevenue, lblTotal, lblTangGiamTotal, picTangGiamDT, true);
-            SetStats(previousSold, currentSold, lblTotalCustomer, lblTangGiamCustomer, picTangGiamKH);
+            SetStats(previousCustomer,currentCustomer , lblTotalCustomer, lblTangGiamCustomer, picTangGiamKH);
         }
 
         private void SetStats(int previous, int current, Guna2HtmlLabel totalLabel, Guna2HtmlLabel changeLabel, Guna2PictureBox icon, bool isCurrency = false)

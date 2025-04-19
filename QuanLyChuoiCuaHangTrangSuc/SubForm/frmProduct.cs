@@ -136,14 +136,68 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
         private void LoadLoaiTrangSuc()
         {
-            btnAll.Click += (s, e) => { UIHelper.SetSelectedButton(btnAll); LoadProducts(""); };
-            btnRing.Click += (s, e) => { UIHelper.SetSelectedButton(btnRing); LoadProducts("Nhẫn"); };
-            btnNecklace.Click += (s, e) => { UIHelper.SetSelectedButton(btnNecklace); LoadProducts("Dây chuyền"); };
-            btnEarrings.Click += (s, e) => { UIHelper.SetSelectedButton(btnEarrings); LoadProducts("Bông tai"); };
-            btnBracelet.Click += (s, e) => { UIHelper.SetSelectedButton(btnBracelet); LoadProducts("Lắc tay"); };
-            btnPendant.Click += (s, e) => { UIHelper.SetSelectedButton(btnPendant); LoadProducts("Mặt dây chuyền"); };
-
+            btnAll.Click += (s, e) => { 
+                btnAll.Checked = true;
+                btnRing.Checked = false;
+                btnNecklace.Checked = false; 
+                btnEarrings.Checked = false;
+                btnBracelet.Checked = false;
+                btnPendant.Checked = false;
+                LoadProducts(""); 
+            };
+            btnRing.Click += (s, e) => { 
+                btnRing.Checked = true;
+                btnAll.Checked = false;
+                btnNecklace.Checked = false;
+                btnEarrings.Checked = false;
+                btnBracelet.Checked = false;
+                btnPendant.Checked = false;
+                LoadProducts("Nhẫn"); 
+            };
+            btnNecklace.Click += (s, e) => {
+                btnNecklace.Checked = true;
+                btnAll.Checked = false;
+                btnRing.Checked = false;
+                btnEarrings.Checked = false;
+                btnBracelet.Checked = false;
+                btnPendant.Checked = false;
+                LoadProducts("Dây chuyền"); 
+            };
+            btnEarrings.Click += (s, e) => { 
+                btnEarrings.Checked = true;
+                btnAll.Checked = false;
+                btnRing.Checked = false;
+                btnNecklace.Checked = false;
+                btnBracelet.Checked = false;
+                btnPendant.Checked = false;
+                LoadProducts("Bông tai"); 
+            };
+            btnBracelet.Click += (s, e) => { 
+                btnBracelet.Checked = true;
+                btnAll.Checked = false;
+                btnRing.Checked = false;
+                btnNecklace.Checked = false;
+                btnEarrings.Checked = false;
+                btnPendant.Checked = false;
+                LoadProducts("Lắc tay"); 
+            };
+            btnPendant.Click += (s, e) =>
+            {
+                btnPendant.Checked = true;
+                btnAll.Checked = false;
+                btnRing.Checked = false;
+                btnNecklace.Checked = false;
+                btnEarrings.Checked = false;
+                btnBracelet.Checked = false;
+                LoadProducts("Mặt dây chuyền");
+            };
             // Ban đầu hiển thị tất cả
+            btnAll.Checked = true;
+            btnRing.Checked = false;
+            btnNecklace.Checked = false;
+            btnEarrings.Checked = false;
+            btnBracelet.Checked = false;
+            btnPendant.Checked = false;
             LoadProducts("");
         }
 
@@ -249,7 +303,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
             flpProduct.Enabled = false;
             panelLuuHuy.Visible = true;
             panelThemSuaXoa.Visible = false;
-            txtBranchId.Focus();
+            txtProductName.Focus();
 
 
         }
@@ -260,7 +314,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
             flpProduct.Enabled = false;
             panelThemSuaXoa.Visible = false;
             panelLuuHuy.Visible = true;
-            txtBranchId.Focus();
+            txtProductName.Focus();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -287,7 +341,7 @@ namespace QuanLyChuoiCuaHangTrangSuc
             float weight = float.TryParse(txtWeight.Text, out float w) ? w : 0;
             string description = txtDescription.Text;
             int groupId = dbProduct.LayGroupIDTuGroupName(cbLoaiSP.SelectedItem.ToString());
-            int branchId = Convert.ToInt32(txtBranchId.Text);
+            int branchId = 1;
             byte[] prodImage = ImageToByteArray(pictureBoxProduct.Image);
 
             if (string.IsNullOrWhiteSpace(txtProductID.Text))
@@ -380,7 +434,6 @@ namespace QuanLyChuoiCuaHangTrangSuc
             txtWeight.Enabled = true;
             txtDescription.Enabled = true;
             cbLoaiSP.Enabled = true;
-            txtBranchId.Enabled = true;
             btnChoosePic.Enabled = true;
         }
 
@@ -393,7 +446,6 @@ namespace QuanLyChuoiCuaHangTrangSuc
             txtWeight.Enabled = false;
             txtDescription.Enabled = false;
             cbLoaiSP.Enabled = false;
-            txtBranchId.Enabled = false;
             btnChoosePic.Enabled = false;
         }
 

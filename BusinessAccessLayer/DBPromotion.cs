@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,5 +17,12 @@ namespace BusinessAccessLayer
         {
             return db.ExecuteQueryDataSet("sp_LayDanhSachKhuyenMai", CommandType.StoredProcedure).Tables[0];
         }
+
+        public DataSet TimKhuyenMaiTongHop(string tuKhoa)
+        {
+            return db.ExecuteQueryDataSet("sp_TimKhuyenMaiTongHop", CommandType.StoredProcedure,
+                new SqlParameter[] { new SqlParameter("@TuKhoa", tuKhoa) });
+        }
+
     }
 }

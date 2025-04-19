@@ -19,6 +19,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Security.Cryptography;
+
 
 namespace QuanLyChuoiCuaHangTrangSuc
 {
@@ -49,9 +51,14 @@ namespace QuanLyChuoiCuaHangTrangSuc
             this.Icon = Properties.Resources.fvicon;
 
 
-            txtUsername.Focus();
+            
             // Đảm bảo txtPassword ban đầu là ẩn
             txtPassword.UseSystemPasswordChar = true;
+
+            txtUsername.Text = Properties.Settings.Default.SavedUsername;
+            txtPassword.Text = Decrypt(Properties.Settings.Default.SavedPassword);
+            //txtPassword.Text = Properties.Settings.Default.SavedPassword;
+            checkRemember.Checked = Properties.Settings.Default.RememberMe;
 
         }
 
@@ -87,6 +94,23 @@ namespace QuanLyChuoiCuaHangTrangSuc
 
                     // Ẩn label nếu đang hiển thị lỗi
                     lblWrongAccount.Visible = false;
+
+                    if (checkRemember.Checked)
+                    {
+                        Properties.Settings.Default.SavedUsername = txtUsername.Text;
+                        Properties.Settings.Default.SavedPassword = Encrypt(txtPassword.Text);
+                        //Properties.Settings.Default.SavedPassword = txtPassword.Text;
+                        Properties.Settings.Default.RememberMe = true;
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.SavedUsername = "";
+                        Properties.Settings.Default.SavedPassword = "";
+                        Properties.Settings.Default.RememberMe = false;
+                    }
+
+                    Properties.Settings.Default.Save(); // Lưu lại tất cả thay đổi
+
 
                     // Mở form Menu (màn hình chính)
                     UIHelper.SwitchForm(this, new frmMenu());
@@ -280,6 +304,18 @@ namespace QuanLyChuoiCuaHangTrangSuc
                 return null;
             }
 
+        }
+        //Mã hóa mật khẩu
+        public static string Encrypt(string input)
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes(input);
+            return Convert.ToBase64String(bytes);
+        }
+
+        public static string Decrypt(string encrypted)
+        {
+            byte[] bytes = Convert.FromBase64String(encrypted);
+            return Encoding.UTF8.GetString(bytes);
         }
     }
 }

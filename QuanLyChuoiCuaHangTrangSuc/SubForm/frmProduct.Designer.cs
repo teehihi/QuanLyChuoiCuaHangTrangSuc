@@ -33,12 +33,13 @@
             this.panelTop = new Guna.UI2.WinForms.Guna2Panel();
             this.panelLeft = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panelMid = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblProduct = new System.Windows.Forms.Label();
+            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.flpProduct = new System.Windows.Forms.FlowLayoutPanel();
             this.panelProduct = new Guna.UI2.WinForms.Guna2Panel();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblNameSP = new System.Windows.Forms.Label();
             this.picProduct = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblProduct = new System.Windows.Forms.Label();
             this.panelRight = new Guna.UI2.WinForms.Guna2Panel();
             this.cbLoaiSP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtBranchId = new Guna.UI2.WinForms.Guna2TextBox();
@@ -77,7 +78,6 @@
             this.btnRing = new Guna.UI2.WinForms.Guna2Button();
             this.btnAll = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
-            this.guna2VScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             this.panelMid.SuspendLayout();
             this.flpProduct.SuspendLayout();
             this.panelProduct.SuspendLayout();
@@ -128,17 +128,19 @@
             this.panelMid.Size = new System.Drawing.Size(1264, 681);
             this.panelMid.TabIndex = 15;
             // 
-            // lblProduct
+            // guna2VScrollBar1
             // 
-            this.lblProduct.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.lblProduct, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblProduct.Font = new System.Drawing.Font("Segoe UI", 13.25F, System.Drawing.FontStyle.Bold);
-            this.lblProduct.ForeColor = System.Drawing.Color.White;
-            this.lblProduct.Location = new System.Drawing.Point(86, 251);
-            this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(185, 25);
-            this.lblProduct.TabIndex = 21;
-            this.lblProduct.Text = "Danh mục sản phẩm";
+            this.guna2VScrollBar1.BindingContainer = this.flpProduct;
+            this.guna2VScrollBar1.BorderRadius = 7;
+            this.guna2Transition1.SetDecoration(this.guna2VScrollBar1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2VScrollBar1.InUpdate = false;
+            this.guna2VScrollBar1.LargeChange = 10;
+            this.guna2VScrollBar1.Location = new System.Drawing.Point(963, 283);
+            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
+            this.guna2VScrollBar1.ScrollbarSize = 10;
+            this.guna2VScrollBar1.Size = new System.Drawing.Size(10, 398);
+            this.guna2VScrollBar1.TabIndex = 1;
+            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.Aqua;
             // 
             // flpProduct
             // 
@@ -203,6 +205,18 @@
             this.picProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picProduct.TabIndex = 0;
             this.picProduct.TabStop = false;
+            // 
+            // lblProduct
+            // 
+            this.lblProduct.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblProduct, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblProduct.Font = new System.Drawing.Font("Segoe UI", 13.25F, System.Drawing.FontStyle.Bold);
+            this.lblProduct.ForeColor = System.Drawing.Color.White;
+            this.lblProduct.Location = new System.Drawing.Point(86, 251);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(185, 25);
+            this.lblProduct.TabIndex = 21;
+            this.lblProduct.Text = "Danh mục sản phẩm";
             // 
             // panelRight
             // 
@@ -284,7 +298,7 @@
             this.txtBranchId.PlaceholderText = "";
             this.txtBranchId.SelectedText = "";
             this.txtBranchId.Size = new System.Drawing.Size(42, 35);
-            this.txtBranchId.TabIndex = 1;
+            this.txtBranchId.TabIndex = 0;
             // 
             // label8
             // 
@@ -495,7 +509,7 @@
             this.txtDescription.PlaceholderText = "";
             this.txtDescription.SelectedText = "";
             this.txtDescription.Size = new System.Drawing.Size(183, 35);
-            this.txtDescription.TabIndex = 7;
+            this.txtDescription.TabIndex = 6;
             // 
             // label7
             // 
@@ -530,7 +544,7 @@
             this.txtWeight.PlaceholderText = "";
             this.txtWeight.SelectedText = "";
             this.txtWeight.Size = new System.Drawing.Size(183, 35);
-            this.txtWeight.TabIndex = 6;
+            this.txtWeight.TabIndex = 5;
             // 
             // label6
             // 
@@ -565,7 +579,7 @@
             this.txtPrice.PlaceholderText = "";
             this.txtPrice.SelectedText = "";
             this.txtPrice.Size = new System.Drawing.Size(183, 35);
-            this.txtPrice.TabIndex = 5;
+            this.txtPrice.TabIndex = 4;
             this.txtPrice.Enter += new System.EventHandler(this.txtPrice_Enter);
             this.txtPrice.Leave += new System.EventHandler(this.txtPrice_Leave);
             // 
@@ -602,7 +616,7 @@
             this.txtStockQuantity.PlaceholderText = "";
             this.txtStockQuantity.SelectedText = "";
             this.txtStockQuantity.Size = new System.Drawing.Size(183, 35);
-            this.txtStockQuantity.TabIndex = 4;
+            this.txtStockQuantity.TabIndex = 3;
             // 
             // label4
             // 
@@ -637,7 +651,7 @@
             this.txtMaterial.PlaceholderText = "";
             this.txtMaterial.SelectedText = "";
             this.txtMaterial.Size = new System.Drawing.Size(183, 35);
-            this.txtMaterial.TabIndex = 3;
+            this.txtMaterial.TabIndex = 2;
             // 
             // label3
             // 
@@ -672,7 +686,7 @@
             this.txtProductName.PlaceholderText = "";
             this.txtProductName.SelectedText = "";
             this.txtProductName.Size = new System.Drawing.Size(183, 35);
-            this.txtProductName.TabIndex = 2;
+            this.txtProductName.TabIndex = 1;
             // 
             // label2
             // 
@@ -935,20 +949,6 @@
             animation1.TimeCoeff = 0F;
             animation1.TransparencyCoeff = 0F;
             this.guna2Transition1.DefaultAnimation = animation1;
-            // 
-            // guna2VScrollBar1
-            // 
-            this.guna2VScrollBar1.BindingContainer = this.flpProduct;
-            this.guna2VScrollBar1.BorderRadius = 7;
-            this.guna2Transition1.SetDecoration(this.guna2VScrollBar1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2VScrollBar1.InUpdate = false;
-            this.guna2VScrollBar1.LargeChange = 10;
-            this.guna2VScrollBar1.Location = new System.Drawing.Point(963, 283);
-            this.guna2VScrollBar1.Name = "guna2VScrollBar1";
-            this.guna2VScrollBar1.ScrollbarSize = 10;
-            this.guna2VScrollBar1.Size = new System.Drawing.Size(10, 398);
-            this.guna2VScrollBar1.TabIndex = 1;
-            this.guna2VScrollBar1.ThumbColor = System.Drawing.Color.Aqua;
             // 
             // frmProduct
             // 

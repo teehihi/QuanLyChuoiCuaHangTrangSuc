@@ -2,140 +2,147 @@ CREATE DATABASE JwelrySystemDBMSFinal
 GO
 USE JwelrySystemDBMSFinal
 GO
+/*=======================================================
+                        CREATE TABLE
+=========================================================*/
 
-	CREATE TABLE Customer (
-		CustomerID INT IDENTITY(1,1) PRIMARY KEY,
-		FullName NVARCHAR(255) NOT NULL,
-		CustomerType NVARCHAR(50) NOT NULL CHECK (CustomerType IN (N'VIP', N'Regular')),
-		Address NVARCHAR(255) NOT NULL,
-		Phone NVARCHAR(15) NOT NULL UNIQUE
-	);
-	GO
+CREATE TABLE Customer (
+	CustomerID INT IDENTITY(1,1) PRIMARY KEY,
+	FullName NVARCHAR(255) NOT NULL,
+	CustomerType NVARCHAR(50) NOT NULL CHECK (CustomerType IN (N'VIP', N'Regular')),
+	Address NVARCHAR(255) NOT NULL,
+	Phone NVARCHAR(15) NOT NULL UNIQUE
+);
+GO
 
-	CREATE TABLE Branch (
-		BranchID INT IDENTITY(1,1) PRIMARY KEY,
-		Name NVARCHAR(255),
-		Address NVARCHAR(255),
-		Phone NVARCHAR(15)
-	);
-	GO
+CREATE TABLE Branch (
+	BranchID INT IDENTITY(1,1) PRIMARY KEY,
+	Name NVARCHAR(255),
+	Address NVARCHAR(255),
+	Phone NVARCHAR(15)
+);
+GO
 
-	CREATE TABLE ProductGroup (
-		GroupID INT IDENTITY(1,1) PRIMARY KEY,
-		Name NVARCHAR(100),
-		Description NVARCHAR(255)
-	);
-	GO
+CREATE TABLE ProductGroup (
+	GroupID INT IDENTITY(1,1) PRIMARY KEY,
+	Name NVARCHAR(100),
+	Description NVARCHAR(255)
+);
+GO
 
-	CREATE TABLE Product (
-		ProductID INT IDENTITY(1,1) PRIMARY KEY,
-		Name NVARCHAR(255) NOT NULL,
-		Material NVARCHAR(100) NOT NULL,
-		StockQuantity INT CHECK (StockQuantity >= 0),
-		Price DECIMAL(18,2) CHECK (Price > 0),
-		Weight FLOAT CHECK (Weight > 0),
-		Description NVARCHAR(255),
-		GroupID INT,
-		BranchID INT,
-		ProdImage IMAGE,
-		FOREIGN KEY (GroupID) REFERENCES ProductGroup(GroupID),
-		FOREIGN KEY (BranchID) REFERENCES Branch(BranchID)
-	);
+CREATE TABLE Product (
+	ProductID INT IDENTITY(1,1) PRIMARY KEY,
+	Name NVARCHAR(255) NOT NULL,
+	Material NVARCHAR(100) NOT NULL,
+	StockQuantity INT CHECK (StockQuantity >= 0),
+	Price DECIMAL(18,2) CHECK (Price > 0),
+	Weight FLOAT CHECK (Weight > 0),
+	Description NVARCHAR(255),
+	GroupID INT,
+	BranchID INT,
+	ProdImage IMAGE,
+	FOREIGN KEY (GroupID) REFERENCES ProductGroup(GroupID),
+	FOREIGN KEY (BranchID) REFERENCES Branch(BranchID)
+);
 
-	GO
+GO
 
-	CREATE TABLE Application (
-		AppID INT IDENTITY(1,1) PRIMARY KEY,
-		Name NVARCHAR(255) NOT NULL,
-		DiscountRate DECIMAL(5,2) CHECK (DiscountRate BETWEEN 0 AND 100),
-		PaymentMethods NVARCHAR(255) NOT NULL
-	);
+CREATE TABLE Application (
+	AppID INT IDENTITY(1,1) PRIMARY KEY,
+	Name NVARCHAR(255) NOT NULL,
+	DiscountRate DECIMAL(5,2) CHECK (DiscountRate BETWEEN 0 AND 100),
+	PaymentMethods NVARCHAR(255) NOT NULL
+);
 
-	GO
+GO
 
-	CREATE TABLE OrderTable (
-		OrderID INT IDENTITY(1,1) PRIMARY KEY,
-		OrderDate DATETIME NOT NULL,
-		TotalAmount DECIMAL(18,2) CHECK (TotalAmount >= 0),
-		PaymentMethod NVARCHAR(50) NOT NULL,
-		OrderStatus NVARCHAR(100) CHECK (OrderStatus IN (N'Pending', N'Completed', N'Cancelled')),
-		ShippingMethod NVARCHAR(100),
-		BranchID INT,
-		CustomerID INT,
-		AppID INT,
-		FOREIGN KEY (BranchID) REFERENCES Branch(BranchID),
-		FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
-		FOREIGN KEY (AppID) REFERENCES Application(AppID)
-	);
+CREATE TABLE OrderTable (
+	OrderID INT IDENTITY(1,1) PRIMARY KEY,
+	OrderDate DATETIME NOT NULL,
+	TotalAmount DECIMAL(18,2) CHECK (TotalAmount >= 0),
+	PaymentMethod NVARCHAR(50) NOT NULL,
+	OrderStatus NVARCHAR(100) CHECK (OrderStatus IN (N'Pending', N'Completed', N'Cancelled')),
+	ShippingMethod NVARCHAR(100),
+	BranchID INT,
+	CustomerID INT,
+	AppID INT,
+	FOREIGN KEY (BranchID) REFERENCES Branch(BranchID),
+	FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
+	FOREIGN KEY (AppID) REFERENCES Application(AppID)
+);
 
-	GO
+GO
 
-	CREATE TABLE OrderDetail (
-		OrderID INT,
-		ProductID INT,
-		Quantity INT CHECK (Quantity > 0),
-		UnitPrice DECIMAL(18,2) CHECK (UnitPrice > 0),
-		SubTotal DECIMAL(18,2),
-		PRIMARY KEY (OrderID, ProductID),
-		FOREIGN KEY (OrderID) REFERENCES OrderTable(OrderID),
-		FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
-	);
+CREATE TABLE OrderDetail (
+	OrderID INT,
+	ProductID INT,
+	Quantity INT CHECK (Quantity > 0),
+	UnitPrice DECIMAL(18,2) CHECK (UnitPrice > 0),
+	SubTotal DECIMAL(18,2),
+	PRIMARY KEY (OrderID, ProductID),
+	FOREIGN KEY (OrderID) REFERENCES OrderTable(OrderID),
+	FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+);
 
-	GO
+GO
 
-	CREATE TABLE Supplier (
-		SupplierID INT IDENTITY(1,1) PRIMARY KEY,
-		Name NVARCHAR(255),
-		Address NVARCHAR(255),
-		Phone NVARCHAR(15)
-	);
-	GO
+CREATE TABLE Supplier (
+	SupplierID INT IDENTITY(1,1) PRIMARY KEY,
+	Name NVARCHAR(255),
+	Address NVARCHAR(255),
+	Phone NVARCHAR(15)
+);
+GO
 
-	CREATE TABLE TransactionTable (
-		TransactionID INT IDENTITY(1,1) PRIMARY KEY,
-		TransactionDate DATETIME NOT NULL,
-		Amount DECIMAL(18,2) CHECK (Amount > 0),
-		Type NVARCHAR(50),
-		Description NVARCHAR(255),
-		BranchID INT,
-		OrderID INT,
-		FOREIGN KEY (BranchID) REFERENCES Branch(BranchID),
-		FOREIGN KEY (OrderID) REFERENCES OrderTable(OrderID)
-	);
+CREATE TABLE TransactionTable (
+	TransactionID INT IDENTITY(1,1) PRIMARY KEY,
+	TransactionDate DATETIME NOT NULL,
+	Amount DECIMAL(18,2) CHECK (Amount > 0),
+	Type NVARCHAR(50),
+	Description NVARCHAR(255),
+	BranchID INT,
+	OrderID INT,
+	FOREIGN KEY (BranchID) REFERENCES Branch(BranchID),
+	FOREIGN KEY (OrderID) REFERENCES OrderTable(OrderID)
+);
 
-	GO
+GO
 
-	CREATE TABLE Promotion (
-		PromotionID INT IDENTITY(1,1) PRIMARY KEY,
-		Name NVARCHAR(255) NOT NULL,
-		Type NVARCHAR(50) CHECK (Type IN (N'Discount', N'Gift')),
-		Condition NVARCHAR(255),
-		StartDate DATETIME NOT NULL,
-		EndDate DATETIME NOT NULL,
-		DiscountRate DECIMAL(5,2) CHECK (DiscountRate BETWEEN 0 AND 100)
-	);
+CREATE TABLE Promotion (
+	PromotionID INT IDENTITY(1,1) PRIMARY KEY,
+	Name NVARCHAR(255) NOT NULL,
+	Type NVARCHAR(50) CHECK (Type IN (N'Discount', N'Gift')),
+	Condition NVARCHAR(255),
+	StartDate DATETIME NOT NULL,
+	EndDate DATETIME NOT NULL,
+	DiscountRate DECIMAL(5,2) CHECK (DiscountRate BETWEEN 0 AND 100)
+);
 
-	GO
+GO
 
-	CREATE TABLE OrderPromotion (
-		OrderID INT,
-		PromotionID INT,
-		DiscountValue DECIMAL(18,2),
-		PRIMARY KEY (OrderID, PromotionID),
-		FOREIGN KEY (OrderID) REFERENCES OrderTable(OrderID),
-		FOREIGN KEY (PromotionID) REFERENCES Promotion(PromotionID)
-	);
-	GO
+CREATE TABLE OrderPromotion (
+	OrderID INT,
+	PromotionID INT,
+	DiscountValue DECIMAL(18,2),
+	PRIMARY KEY (OrderID, PromotionID),
+	FOREIGN KEY (OrderID) REFERENCES OrderTable(OrderID),
+	FOREIGN KEY (PromotionID) REFERENCES Promotion(PromotionID)
+);
+GO
 
-	CREATE TABLE SupplierProduct (
-		SupplierID INT,
-		ProductID INT,
-		SupplyDate DATETIME,
-		PRIMARY KEY (SupplierID, ProductID),
-		FOREIGN KEY (SupplierID) REFERENCES Supplier(SupplierID),
-		FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
-	);
-	GO
+CREATE TABLE SupplierProduct (
+	SupplierID INT,
+	ProductID INT,
+	SupplyDate DATETIME,
+	PRIMARY KEY (SupplierID, ProductID),
+	FOREIGN KEY (SupplierID) REFERENCES Supplier(SupplierID),
+	FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+);
+GO
+
+/*=======================================================
+                       INSERT VALUE
+=========================================================*/
 
 INSERT INTO Customer (FullName, CustomerType, Address, Phone) VALUES
 (N'Trần Thị Bình', N'Regular', N'45 Lê Lợi, TP.HCM', N'0987654321'),
@@ -146,7 +153,7 @@ INSERT INTO Customer (FullName, CustomerType, Address, Phone) VALUES
 GO
 
 INSERT INTO Branch (Name, Address, Phone) VALUES
-(N'Chi nhánh Lê Lợi', N'45 Lê Lợi, TP.HCM', N'02812345678'),
+(N'Chi nhánh Thảo Điền', N'32 Xuân Thủy, Thảo Điền, TP.Thủ Đức, TP.HCM', N'02812345678'),
 (N'Chi nhánh Nguyễn Trãi', N'123 Nguyễn Trãi, TP.HCM', N'02887654321'),
 (N'Chi nhánh CMT8', N'78 CMT8, TP.HCM', N'02856789012'),
 (N'Chi nhánh Pasteur', N'56 Pasteur, TP.HCM', N'02834567890'),
@@ -210,11 +217,11 @@ GO
 
 
 INSERT INTO Promotion (Name, Type, Condition, StartDate, EndDate, DiscountRate) VALUES
-(N'Khuyến mãi tháng 4', N'Discount', N'Mua trên 1 triệu', '2025-03-01 00:00:00', '2025-03-31 23:59:59', 10),
-(N'Quà tặng VIP', N'Gift', N'Khách VIP', '2025-03-01 00:00:00', '2025-03-15 23:59:59',1),
-(N'Sale 10%', N'Discount', N'Mua trên 2 triệu', '2025-03-05 00:00:00', '2025-03-20 23:59:59',10),
-(N'Tặng hộp quà', N'Gift', N'Mua 2 sản phẩm', '2025-03-10 00:00:00', '2025-03-25 23:59:59',0),
-(N'Giảm giá cuối tuần', N'Discount', N'Mua ngày thứ 7', '2025-03-01 00:00:00', '2025-03-31 23:59:59',0.2);
+(N'Khuyến mãi tháng 4', N'Discount', N'Mua trên 1 triệu', '2025-04-01 00:00:00', '2025-04-30 23:59:59', 0.1),
+(N'Quà tặng VIP', N'Gift', N'Khách VIP', '2025-04-01 00:00:00', '2025-05-15 23:59:59',0.01),
+(N'Sale 12%', N'Discount', N'Mua trên 2 triệu', '2025-04-05 00:00:00', '2025-05-20 23:59:59',0.12),
+(N'Tặng hộp quà', N'Gift', N'Mua 2 sản phẩm', '2025-04-10 00:00:00', '2025-06-25 23:59:59',0),
+(N'Giảm giá cuối tuần', N'Discount', N'Mua ngày thứ 7', '2025-04-01 00:00:00', '2025-09-30 23:59:59',0.2);
 GO
 
 INSERT INTO OrderPromotion (OrderID, PromotionID, DiscountValue) VALUES
@@ -233,7 +240,9 @@ INSERT INTO SupplierProduct (SupplierID, ProductID, SupplyDate) VALUES
 (5, 5, '2025-03-01 09:00:00');
 GO
 
-
+/*=======================================================
+					CREATE TRIGGER
+=========================================================*/
 -- TRIGGER
 -- Kiểm tra số lượng tồn kho khi thêm đơn hàng
 CREATE TRIGGER trg_CheckStockBeforeInsertOrderDetail
@@ -366,6 +375,10 @@ ALTER TABLE TransactionTable
 ADD CONSTRAINT DF_TransactionDate DEFAULT GETDATE() FOR TransactionDate;
 
 GO
+
+/*=======================================================
+					CREATE VIEW
+=========================================================*/
 --Lấy thông tin đơn hàng kèm chi tiết khách hàng và chi nhánh
 CREATE VIEW v_OrderDetails AS
 SELECT 
@@ -439,7 +452,9 @@ GROUP BY g.GroupID, g.Name;
 
 GO
 
-
+/*=======================================================
+				CREATE STORED PROCEDURES
+=========================================================*/
 --STORED PROCEDURE
 
 --thêm khách hàng mới
@@ -536,58 +551,117 @@ BEGIN
 END;
 GO
 
--- Sửa thông tin đơn hàng theo OrderID
 CREATE PROCEDURE sp_UpdateOrder
     @OrderID INT,
     @CustomerID INT,
     @OrderDate DATETIME,
     @TotalAmount DECIMAL(18,2),
     @OrderStatus NVARCHAR(50),
-    @ShippingAddress NVARCHAR(255),
+    @ShippingMethod NVARCHAR(50),
     @PaymentMethod NVARCHAR(50),
-    @OrderDetails NVARCHAR(MAX)
+    @BranchID INT,
+    @AppID INT
 AS
 BEGIN
-    
-
-    -- Kiểm tra xem đơn hàng có tồn tại không
-    IF NOT EXISTS (SELECT 1 FROM [Order] WHERE OrderID = @OrderID)
+    -- Kiểm tra đơn hàng tồn tại
+    IF NOT EXISTS (SELECT 1 FROM [OrderTable] WHERE OrderID = @OrderID)
     BEGIN
         RAISERROR (N'Đơn hàng không tồn tại!', 16, 1);
         RETURN;
     END
+
     -- Cập nhật thông tin đơn hàng
-    UPDATE [Order]
+    UPDATE [OrderTable]
     SET CustomerID = @CustomerID,
         OrderDate = @OrderDate,
         TotalAmount = @TotalAmount,
         OrderStatus = @OrderStatus,
-        ShippingAddress = @ShippingAddress,
+        ShippingMethod = @ShippingMethod,
         PaymentMethod = @PaymentMethod,
-        OrderDetails = @OrderDetails
+        BranchID = @BranchID,
+        AppID = @AppID
     WHERE OrderID = @OrderID;
-END;
+END
+
 GO
+
 
 -- Xóa đơn hàng theo OrderID
 CREATE PROCEDURE sp_DeleteOrder
     @OrderID INT
 AS
 BEGIN
-   
-
     -- Kiểm tra xem đơn hàng có tồn tại không
-    IF NOT EXISTS (SELECT 1 FROM [Order] WHERE OrderID = @OrderID)
+    IF NOT EXISTS (SELECT 1 FROM [OrderTable] WHERE OrderID = @OrderID)
     BEGIN
         RAISERROR (N'Đơn hàng không tồn tại!', 16, 1);
         RETURN;
     END
 
-    -- Xóa đơn hàng
-    DELETE FROM [Order]
-    WHERE OrderID = @OrderID;
+    -- Bắt đầu giao dịch
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        -- Xóa các bản ghi trong OrderDetail
+        DELETE FROM OrderDetail
+        WHERE OrderID = @OrderID;
+
+        -- Xóa các bản ghi trong OrderPromotion
+        DELETE FROM OrderPromotion
+        WHERE OrderID = @OrderID;
+
+        -- Xóa các bản ghi trong TransactionTable
+        DELETE FROM TransactionTable
+        WHERE OrderID = @OrderID;
+
+        -- Xóa đơn hàng trong OrderTable
+        DELETE FROM [OrderTable]
+        WHERE OrderID = @OrderID;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        SET @ErrorMessage = ERROR_MESSAGE();
+        RAISERROR (@ErrorMessage, 16, 1);
+    END CATCH
 END;
 GO
+
+
+--Lấy thông tin đơn hàng đã lưu
+CREATE PROCEDURE sp_GetOrderFullInfo
+    @OrderID INT
+AS
+BEGIN
+    -- 1. Thông tin đơn hàng
+    SELECT * 
+    FROM OrderTable 
+    WHERE OrderID = @OrderID;
+
+    -- 2. Chi tiết đơn hàng và tên sản phẩm
+    SELECT od.ProductID, od.Quantity, od.UnitPrice, od.SubTotal, p.Name 
+    FROM OrderDetail od
+    JOIN Product p ON od.ProductID = p.ProductID
+    WHERE od.OrderID = @OrderID;
+
+    -- 3. Khuyến mãi
+    SELECT op.DiscountValue, pr.Name 
+    FROM OrderPromotion op
+    JOIN Promotion pr ON op.PromotionID = pr.PromotionID
+    WHERE op.OrderID = @OrderID;
+
+    -- 4. Phương thức vận chuyển
+    SELECT ShippingMethod, AppID 
+    FROM OrderTable
+    WHERE OrderID = @OrderID;
+
+    -- 5. Danh sách ứng dụng
+    SELECT AppID, Name 
+    FROM Application;
+END;
+Go
 
 --Thêm giao dịch
 CREATE PROCEDURE sp_AddTransaction
@@ -856,28 +930,94 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE [dbo].[sp_TimKhuyenMaiTongHop]
+    @TuKhoa NVARCHAR(200)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT * 
+    FROM Promotion
+    WHERE 
+        Name LIKE N'%' + @TuKhoa + '%' OR
+        Type LIKE N'%' + @TuKhoa + '%' OR
+        Condition LIKE N'%' + @TuKhoa + '%' OR
+		DiscountRate LIKE N'%' + @TuKhoa + '%';
+END
+GO
+
+
+CREATE PROCEDURE sp_LayHoaDonTheoBoLoc
+    @BranchID NVARCHAR(50),
+    @PaymentMethod NVARCHAR(50),
+    @ShippingMethod NVARCHAR(50),
+    @AppID NVARCHAR(50),
+    @OrderStatus NVARCHAR(50)
+AS
+BEGIN
+    SELECT * FROM OrderTable
+    WHERE BranchID = @BranchID
+      AND (@PaymentMethod = '' OR PaymentMethod = @PaymentMethod)
+      AND (@ShippingMethod = '' OR ShippingMethod = @ShippingMethod)
+      AND (@AppID = '' OR AppID = @AppID)
+      AND (@OrderStatus = '' OR OrderStatus = @OrderStatus)
+END
+GO
+
+CREATE PROCEDURE sp_GetTopSellingProducts
+AS
+BEGIN
+    SELECT 
+        p.ProductID,
+        p.Name,
+        SUM(od.Quantity) AS TotalSold,
+        SUM(od.Quantity * od.UnitPrice) AS TotalRevenue
+    FROM 
+        OrderDetail od
+    JOIN 
+        Product p ON od.ProductID = p.ProductID
+    GROUP BY 
+        p.ProductID, p.Name
+    ORDER BY 
+        TotalSold DESC;
+END
+GO
+CREATE PROCEDURE [dbo].[sp_GetMonthlyStatistics]
+AS
+BEGIN
+    SELECT 
+        YEAR(o.OrderDate) AS [Year],
+        MONTH(o.OrderDate) AS [Month],
+        SUM(od.Quantity) AS TotalSold,
+        SUM(od.Quantity * od.UnitPrice) AS TotalRevenue,
+        COUNT(DISTINCT o.CustomerID) AS TotalCustomers -- sửa bên dưới
+    FROM OrderDetail od
+    JOIN OrderTable o ON od.OrderID = o.OrderID
+    GROUP BY YEAR(o.OrderDate), MONTH(o.OrderDate)
+    ORDER BY [Year], [Month]
+END
+GO
+
+/*=======================================================
+					USER VÀ PHÂN QUYỀN
+=========================================================*/
 
 -- Tạo user và phân quyền
 -- Tài khoản Quản lý
 CREATE LOGIN admintns WITH PASSWORD = '2105';
 USE JwelrySystemDBMSFinal;
-CREATE USER Quan_Ly FOR LOGIN quanlytns;
+CREATE USER Quan_Ly FOR LOGIN admintns;
+-- Quản lý toàn quyền trong database
+EXEC sp_addrolemember 'db_owner', 'Quan_Ly';
+
 
 -- Tài khoản Nhân viên bán hàng
 CREATE LOGIN nhanvientns WITH PASSWORD = '2105';
 USE JwelrySystemDBMSFinal;
 CREATE USER Nhan_Vien FOR LOGIN nhanvientns;
 
-
--- Quản lý toàn quyền trong database
-EXEC sp_addrolemember 'db_owner', 'Quan_Ly';
--- 3. Gán quyền cho TNS_Seller (nhân viên bán hàng)
-EXEC sp_addrolemember 'NhanVienRole', 'Nhan_Vien';
-
-
 -- (Tùy chọn) Thu hồi quyền nếu trước đó đã gán nhầm
 -- REVOKE SELECT ON Product FROM TNS_Seller;
-
 
 -- 1. Tạo vai trò nhân viên
 CREATE ROLE NhanVienRole;
@@ -888,10 +1028,25 @@ GRANT SELECT ON Promotion TO NhanVienRole;
 GRANT SELECT ON Application TO NhanVienRole;
 GRANT SELECT ON ProductGroup TO NhanVienRole;
 GRANT SELECT ON Product TO NhanVienRole;
-GRANT EXECUTE ON sp_GetProductsByGroup TO NhanVienRole;
-GRANT SELECT, INSERT, UPDATE, DELETE ON Customer TO NhanVienRole;
--- 3. (Tuỳ chọn) Cho xem lịch sử giao dịch
 GRANT SELECT ON TransactionTable TO NhanVienRole;
+GRANT SELECT, INSERT, UPDATE, DELETE ON Customer TO NhanVienRole;
+GRANT SELECT, INSERT, UPDATE, DELETE ON OrderDetail TO NhanVienRole;
+GRANT SELECT, INSERT, UPDATE, DELETE ON OrderPromotion TO NhanVienRole;
+GRANT SELECT, INSERT, UPDATE, DELETE ON OrderTable TO NhanVienRole;
+GRANT EXECUTE ON sp_GetProductsByGroup TO NhanVienRole;
+GRANT EXECUTE ON sp_LayDanhSachKhuyenMai TO NhanVienRole;
+GRANT EXECUTE ON sp_TimKhachHangTongHop TO NhanVienRole;
+GRANT EXECUTE ON sp_AddCustomer TO NhanVienRole;
+GRANT EXECUTE ON sp_AddTransaction TO NhanVienRole;
+GRANT EXECUTE ON sp_AddOrder TO NhanVienRole;
+GRANT EXECUTE ON sp_LayHoaDonTheoBoLoc TO NhanVienRole;
+GRANT EXECUTE ON sp_UpdateOrder TO NhanVienRole;
+GRANT EXECUTE ON sp_GetOrderFullInfo TO NhanVienRole;
+GRANT EXECUTE ON sp_GetMonthlyStatistics TO NhanVienRole;
+GRANT EXECUTE ON sp_GetTopSellingProducts TO NhanVienRole;
+-- 3. Gán quyền cho TNS_Seller (nhân viên bán hàng)
+EXEC sp_addrolemember 'NhanVienRole', 'Nhan_Vien';
+
 
 
 ALTER LOGIN sa WITH PASSWORD = '2105';
